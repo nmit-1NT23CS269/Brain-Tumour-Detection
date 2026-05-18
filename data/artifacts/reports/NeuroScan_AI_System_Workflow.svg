@@ -1,0 +1,315 @@
+<svg width="1400" height="4300" viewBox="0 0 1400 4300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="4300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F9FCFF"/>
+      <stop offset="1" stop-color="#EEF7FF"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="250" y1="0" x2="1150" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B1D3A"/>
+      <stop offset="0.5" stop-color="#0E4C92"/>
+      <stop offset="1" stop-color="#14B8FF"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="420" y1="0" x2="980" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A1C35"/>
+      <stop offset="0.55" stop-color="#123B6B"/>
+      <stop offset="1" stop-color="#1682D6"/>
+    </linearGradient>
+    <linearGradient id="cardGradLight" x1="420" y1="0" x2="980" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FDFEFF"/>
+      <stop offset="1" stop-color="#EAF6FF"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="700" y1="0" x2="700" y2="4300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F7BFF"/>
+      <stop offset="1" stop-color="#00D1FF"/>
+    </linearGradient>
+    <radialGradient id="brainGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1110 1840) rotate(90) scale(280 280)">
+      <stop offset="0" stop-color="#44C8FF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#44C8FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="heatGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1120 2490) rotate(90) scale(320 240)">
+      <stop offset="0" stop-color="#FF5E7E" stop-opacity="0.55"/>
+      <stop offset="0.45" stop-color="#FF9B43" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cardShadow" x="380" y="-20" width="640" height="250" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#0F5FA8" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#63D7FF" flood-opacity="0.24"/>
+    </filter>
+    <filter id="smallGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#50C8FF" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrowHead" markerWidth="14" markerHeight="14" refX="7" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1L13 7L1 13V1Z" fill="#119DFF"/>
+    </marker>
+    <style>
+      .titleMain { font: 700 38px 'Segoe UI', Arial, sans-serif; fill: #FFFFFF; letter-spacing: 0.6px; }
+      .titleSub { font: 500 18px 'Segoe UI', Arial, sans-serif; fill: #DFF4FF; letter-spacing: 0.4px; }
+      .stepNo { font: 700 22px 'Segoe UI', Arial, sans-serif; fill: #0B3A66; }
+      .stepTitle { font: 700 27px 'Segoe UI', Arial, sans-serif; fill: #FFFFFF; }
+      .stepBody { font: 500 15px 'Segoe UI', Arial, sans-serif; fill: #D8F1FF; }
+      .stepBodyDark { font: 500 14px 'Segoe UI', Arial, sans-serif; fill: #2D5373; }
+      .chipText { font: 700 16px 'Segoe UI', Arial, sans-serif; fill: #0B3458; }
+      .iconStroke { stroke: #BDEFFF; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+      .iconFill { fill: #BDEFFF; }
+      .tinyLabel { font: 700 12px 'Segoe UI', Arial, sans-serif; fill: #FFFFFF; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="4300" fill="url(#bgGrad)"/>
+  <rect x="70" y="45" width="1260" height="170" rx="34" fill="url(#titleGrad)"/>
+  <rect x="92" y="67" width="1216" height="126" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="700" y="120" text-anchor="middle" class="titleMain">NeuroScan AI – System Workflow</text>
+  <text x="700" y="156" text-anchor="middle" class="titleSub">AI-based Brain Tumor Detection Platform • Professional Medical Workflow Diagram</text>
+
+  <path d="M700 235 V4140" stroke="url(#arrowGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="0 0" marker-end="url(#arrowHead)"/>
+
+  <circle cx="1110" cy="1840" r="200" fill="url(#brainGlow)"/>
+  <circle cx="1120" cy="2490" r="190" fill="url(#heatGlow)"/>
+
+  <!-- helper groups for repeated card style -->
+  <!-- Card 1 -->
+  <g transform="translate(0,0)">
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="270" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="270" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="331" r="30" fill="#E6F7FF"/>
+    <text x="478" y="338" text-anchor="middle" class="stepNo">1</text>
+    <path d="M873 318C873 306 883 297 895 297H931C943 297 953 306 953 318V344C953 356 943 365 931 365H895C883 365 873 356 873 344V318Z" class="iconStroke"/>
+    <circle cx="898" cy="319" r="5" class="iconFill"/>
+    <path d="M892 345H934" class="iconStroke"/>
+    <path d="M906 309H925" class="iconStroke"/>
+    <text x="530" y="326" class="stepTitle">User Opens NeuroScan AI</text>
+    <text x="530" y="352" class="stepBody">Launch the intelligent medical web platform</text>
+  </g>
+
+  <!-- Card 2 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="470" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="470" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="531" r="30" fill="#E6F7FF"/><text x="478" y="538" text-anchor="middle" class="stepNo">2</text>
+    <circle cx="912" cy="515" r="14" class="iconStroke"/><path d="M888 551C897 534 916 531 928 531C941 531 959 534 968 551" class="iconStroke"/><path d="M934 503L947 490" class="iconStroke"/><path d="M949 507L961 495" class="iconStroke"/>
+    <text x="530" y="526" class="stepTitle">User Registration / Login</text>
+    <text x="530" y="552" class="stepBody">Secure account access for patients and operators</text>
+  </g>
+
+  <!-- Card 3 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="670" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="670" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="731" r="30" fill="#E6F7FF"/><text x="478" y="738" text-anchor="middle" class="stepNo">3</text>
+    <rect x="890" y="700" width="46" height="34" rx="8" class="iconStroke"/><path d="M900 700V690C900 677 909 668 923 668C937 668 946 677 946 690V700" class="iconStroke"/><text x="946" y="758" class="tinyLabel">OTP</text>
+    <text x="530" y="726" class="stepTitle">Authentication and OTP Verification</text>
+    <text x="530" y="752" class="stepBody">Validate identity and authorize protected access</text>
+  </g>
+
+  <!-- Card 4 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="870" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="870" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="931" r="30" fill="#E6F7FF"/><text x="478" y="938" text-anchor="middle" class="stepNo">4</text>
+    <rect x="884" y="896" width="78" height="52" rx="10" class="iconStroke"/><path d="M904 913L918 924L943 902" class="iconStroke"/><path d="M908 951V963" class="iconStroke"/><path d="M938 951V963" class="iconStroke"/>
+    <text x="530" y="926" class="stepTitle">Upload MRI Scan</text>
+    <text x="530" y="952" class="stepBody">User submits brain MRI image for AI analysis</text>
+  </g>
+
+  <!-- Card 5 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="1070" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="1070" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="1131" r="30" fill="#E6F7FF"/><text x="478" y="1138" text-anchor="middle" class="stepNo">5</text>
+    <path d="M901 1112L913 1124L941 1096" class="iconStroke"/><rect x="886" y="1088" width="70" height="72" rx="14" class="iconStroke"/>
+    <text x="530" y="1126" class="stepTitle">File Validation</text>
+    <text x="530" y="1152" class="stepBody">Check file type, integrity, size, and scan usability</text>
+  </g>
+
+  <!-- Card 6 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="1270" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="1270" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="1331" r="30" fill="#E6F7FF"/><text x="478" y="1338" text-anchor="middle" class="stepNo">6</text>
+    <path d="M890 1327C901 1300 928 1286 955 1291C978 1294 997 1311 1000 1336C1003 1362 988 1385 965 1393C940 1402 912 1395 895 1377" class="iconStroke"/><path d="M910 1318L928 1337L965 1303" class="iconStroke"/>
+    <text x="530" y="1326" class="stepTitle">Image Preprocessing</text>
+    <text x="530" y="1352" class="stepBody">Prepare the MRI for standardized model input</text>
+  </g>
+
+  <!-- Card 7 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="1470" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="1470" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="1531" r="30" fill="#E6F7FF"/><text x="478" y="1538" text-anchor="middle" class="stepNo">7</text>
+    <rect x="886" y="1498" width="74" height="58" rx="10" class="iconStroke"/><path d="M901 1514H946" class="iconStroke"/><path d="M901 1530H946" class="iconStroke"/><text x="923" y="1580" text-anchor="middle" class="tinyLabel">224×224</text>
+    <text x="530" y="1526" class="stepTitle">Resize Image to 224×224</text>
+    <text x="530" y="1552" class="stepBody">Align scan dimensions with CNN backbone requirements</text>
+  </g>
+
+  <!-- Card 8 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="1670" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="1670" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="1731" r="30" fill="#E6F7FF"/><text x="478" y="1738" text-anchor="middle" class="stepNo">8</text>
+    <circle cx="920" cy="1730" r="25" class="iconStroke"/><path d="M905 1730H935" class="iconStroke"/><path d="M920 1715V1745" class="iconStroke"/><circle cx="949" cy="1748" r="11" class="iconStroke"/>
+    <text x="530" y="1726" class="stepTitle">Gaussian Blur and Normalization</text>
+    <text x="530" y="1752" class="stepBody">Reduce noise and scale pixel intensities consistently</text>
+  </g>
+
+  <!-- Card 9 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="1870" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="1870" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="1931" r="30" fill="#E6F7FF"/><text x="478" y="1938" text-anchor="middle" class="stepNo">9</text>
+    <rect x="886" y="1896" width="80" height="58" rx="12" class="iconStroke"/><circle cx="906" cy="1916" r="5" class="iconFill"/><circle cx="926" cy="1916" r="5" class="iconFill"/><circle cx="946" cy="1916" r="5" class="iconFill"/><circle cx="916" cy="1936" r="5" class="iconFill"/><circle cx="936" cy="1936" r="5" class="iconFill"/><path d="M906 1916L916 1936L926 1916L936 1936L946 1916" class="iconStroke"/>
+    <text x="530" y="1926" class="stepTitle">Deep Learning Model Prediction</text>
+    <text x="530" y="1952" class="stepBody">AI inference runs on MRI features and learned patterns</text>
+    <!-- brain scan illustration -->
+    <g transform="translate(1060,1820)" filter="url(#smallGlow)">
+      <rect x="0" y="0" width="220" height="180" rx="22" fill="#F7FCFF" stroke="#92E1FF"/>
+      <rect x="16" y="18" width="188" height="144" rx="18" fill="#0D2445"/>
+      <path d="M90 48C58 54 39 81 45 109C49 133 70 148 90 151C98 164 113 170 130 166C147 162 160 149 164 133C180 128 192 113 192 95C192 68 171 46 143 44C131 30 111 24 90 48Z" fill="#153D73" stroke="#8ADEFF" stroke-width="3"/>
+      <path d="M104 59C94 73 90 91 92 109C95 128 104 140 118 152" stroke="#A5EBFF" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="146" cy="92" r="18" fill="#FF6B8D" fill-opacity="0.75"/>
+      <circle cx="152" cy="98" r="28" fill="#FF9E47" fill-opacity="0.35"/>
+    </g>
+  </g>
+
+  <!-- Card 10 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="370" y="2070" width="660" height="176" rx="34" fill="url(#cardGradLight)" stroke="#8CDFFF"/>
+    </g>
+    <circle cx="438" cy="2158" r="34" fill="#0E4D8B"/><text x="438" y="2166" text-anchor="middle" style="font:700 24px 'Segoe UI', Arial, sans-serif; fill:#FFFFFF;">10</text>
+    <text x="495" y="2135" style="font:700 30px 'Segoe UI', Arial, sans-serif; fill:#0E3A69;">Tumor Classification</text>
+    <text x="495" y="2162" class="stepBodyDark">Final class decision from the multi-class prediction head</text>
+    <g>
+      <rect x="495" y="2186" width="116" height="34" rx="17" fill="#FFDDE3" stroke="#FF6B8D"/><text x="553" y="2208" text-anchor="middle" class="chipText">Glioma</text>
+      <rect x="630" y="2186" width="152" height="34" rx="17" fill="#FFF2D8" stroke="#FFB347"/><text x="706" y="2208" text-anchor="middle" class="chipText">Meningioma</text>
+      <rect x="800" y="2186" width="124" height="34" rx="17" fill="#DBF5FF" stroke="#4EC8FF"/><text x="862" y="2208" text-anchor="middle" class="chipText">Pituitary</text>
+      <rect x="940" y="2186" width="90" height="34" rx="17" fill="#DFF7EA" stroke="#4AD084"/><text x="985" y="2208" text-anchor="middle" class="chipText">Normal</text>
+    </g>
+  </g>
+
+  <!-- Card 11 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="2335" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="2335" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="2396" r="30" fill="#E6F7FF"/><text x="478" y="2403" text-anchor="middle" class="stepNo">11</text>
+    <path d="M894 2412C906 2374 941 2363 969 2373C990 2381 1002 2400 1000 2421C997 2445 977 2461 952 2461C924 2461 903 2447 894 2412Z" class="iconStroke"/>
+    <circle cx="958" cy="2407" r="16" fill="#FF6D8F" fill-opacity="0.85"/>
+    <circle cx="964" cy="2410" r="26" fill="#FFAE42" fill-opacity="0.35"/>
+    <text x="530" y="2391" class="stepTitle">Grad-CAM Explainability</text>
+    <text x="530" y="2417" class="stepBody">Visualize the critical regions influencing AI prediction</text>
+    <!-- heatmap accent -->
+    <g transform="translate(1055,2290)">
+      <rect x="0" y="0" width="240" height="185" rx="24" fill="#F7FCFF" stroke="#9FE6FF"/>
+      <rect x="18" y="18" width="204" height="149" rx="18" fill="#0E2444"/>
+      <path d="M82 43C56 58 47 84 53 108C58 128 74 143 97 148C104 159 118 163 136 160C152 157 163 146 168 132C188 127 199 112 200 95C202 70 184 50 160 44C147 31 118 28 82 43Z" fill="#183F73" stroke="#87E2FF" stroke-width="3"/>
+      <ellipse cx="132" cy="86" rx="14" ry="12" fill="#FF5D7D"/>
+      <ellipse cx="136" cy="94" rx="31" ry="25" fill="#FFA540" fill-opacity="0.36"/>
+      <ellipse cx="142" cy="101" rx="50" ry="41" fill="#FFD75E" fill-opacity="0.12"/>
+    </g>
+  </g>
+
+  <!-- Card 12 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="2535" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="2535" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="2596" r="30" fill="#E6F7FF"/><text x="478" y="2603" text-anchor="middle" class="stepNo">12</text>
+    <rect x="889" y="2559" width="74" height="74" rx="14" class="iconStroke"/>
+    <path d="M903 2605L919 2587L932 2601L951 2577" class="iconStroke"/>
+    <path d="M897 2618C909 2607 919 2607 930 2611C942 2615 950 2615 959 2607" stroke="#FF8B6B" stroke-width="4" stroke-linecap="round"/>
+    <text x="530" y="2591" class="stepTitle">Tumor Segmentation Overlay</text>
+    <text x="530" y="2617" class="stepBody">Highlight suspected tumor zone with contour-driven overlay</text>
+  </g>
+
+  <!-- Card 13 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="2735" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="2735" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="2796" r="30" fill="#E6F7FF"/><text x="478" y="2803" text-anchor="middle" class="stepNo">13</text>
+    <path d="M892 2822V2772" class="iconStroke"/><path d="M915 2822V2752" class="iconStroke"/><path d="M938 2822V2788" class="iconStroke"/><path d="M961 2822V2763" class="iconStroke"/>
+    <circle cx="915" cy="2752" r="7" fill="#FFD166"/><circle cx="961" cy="2763" r="7" fill="#5EEAD4"/>
+    <text x="530" y="2791" class="stepTitle">Confidence and Severity Analysis</text>
+    <text x="530" y="2817" class="stepBody">Interpret prediction certainty and estimated clinical priority</text>
+  </g>
+
+  <!-- Card 14 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="2935" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="2935" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="2996" r="30" fill="#E6F7FF"/><text x="478" y="3003" text-anchor="middle" class="stepNo">14</text>
+    <ellipse cx="921" cy="2980" rx="35" ry="12" class="iconStroke"/><path d="M886 2980V3019C886 3026 902 3035 921 3035C940 3035 956 3026 956 3019V2980" class="iconStroke"/><path d="M886 3000C886 3007 902 3016 921 3016C940 3016 956 3007 956 3000" class="iconStroke"/>
+    <text x="530" y="2991" class="stepTitle">Store Results in SQLite Database</text>
+    <text x="530" y="3017" class="stepBody">Persist scan outcome, analytics, patient context, and model metadata</text>
+  </g>
+
+  <!-- Card 15 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="3135" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="3135" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="3196" r="30" fill="#E6F7FF"/><text x="478" y="3203" text-anchor="middle" class="stepNo">15</text>
+    <rect x="886" y="3162" width="80" height="50" rx="10" class="iconStroke"/><path d="M886 3217H966" class="iconStroke"/><path d="M904 3197V3217" class="iconStroke"/><path d="M926 3183V3217" class="iconStroke"/><path d="M948 3190V3217" class="iconStroke"/>
+    <text x="530" y="3191" class="stepTitle">Dashboard and Scan History Update</text>
+    <text x="530" y="3217" class="stepBody">Refresh visual analytics and append user scan timeline</text>
+  </g>
+
+  <!-- Card 16 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="3335" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="3335" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="3396" r="30" fill="#E6F7FF"/><text x="478" y="3403" text-anchor="middle" class="stepNo">16</text>
+    <path d="M894 3360H947L965 3378V3430C965 3439 958 3446 949 3446H894C885 3446 878 3439 878 3430V3376C878 3367 885 3360 894 3360Z" class="iconStroke"/><path d="M947 3360V3378H965" class="iconStroke"/><path d="M894 3394H946" class="iconStroke"/><path d="M894 3412H938" class="iconStroke"/>
+    <text x="530" y="3391" class="stepTitle">Generate PDF Medical Report</text>
+    <text x="530" y="3417" class="stepBody">Package findings, visuals, and recommendations into report form</text>
+  </g>
+
+  <!-- Card 17 -->
+  <g>
+    <g filter="url(#cardShadow)">
+      <rect x="420" y="3535" width="560" height="122" rx="28" fill="url(#cardGrad)"/>
+      <rect x="420" y="3535" width="560" height="122" rx="28" stroke="#76DEFF" stroke-opacity="0.45"/>
+    </g>
+    <circle cx="478" cy="3596" r="30" fill="#E6F7FF"/><text x="478" y="3603" text-anchor="middle" class="stepNo">17</text>
+    <rect x="885" y="3563" width="86" height="56" rx="14" class="iconStroke"/><path d="M902 3634H954" class="iconStroke"/><circle cx="921" cy="3591" r="7" class="iconFill"/><path d="M935 3591H952" class="iconStroke"/>
+    <text x="530" y="3591" class="stepTitle">Display Final Result to User</text>
+    <text x="530" y="3617" class="stepBody">Present diagnosis output, heatmaps, confidence, and generated report</text>
+  </g>
+
+  <!-- Bottom footer panel -->
+  <rect x="165" y="3825" width="1070" height="250" rx="34" fill="#0D2444"/>
+  <rect x="185" y="3845" width="1030" height="210" rx="28" fill="#123765" stroke="#77DDFF" stroke-opacity="0.4"/>
+  <text x="700" y="3896" text-anchor="middle" style="font:700 30px 'Segoe UI', Arial, sans-serif; fill:#FFFFFF;">Integrated AI-Powered MRI Analysis Workflow</text>
+  <text x="700" y="3933" text-anchor="middle" style="font:500 17px 'Segoe UI', Arial, sans-serif; fill:#D6F1FF;">Secure access • Smart preprocessing • Deep learning classification • Explainability • Segmentation • Reporting</text>
+  <g transform="translate(255,3970)">
+    <circle cx="0" cy="0" r="10" fill="#55D5FF"/><text x="24" y="6" style="font:600 15px 'Segoe UI', Arial, sans-serif; fill:#E8F8FF;">Medical-grade presentation style for project and IEEE documentation</text>
+    <circle cx="0" cy="40" r="10" fill="#55D5FF"/><text x="24" y="46" style="font:600 15px 'Segoe UI', Arial, sans-serif; fill:#E8F8FF;">Neon blue clinical UI with vertical flow and process-linked arrows</text>
+    <circle cx="0" cy="80" r="10" fill="#55D5FF"/><text x="24" y="86" style="font:600 15px 'Segoe UI', Arial, sans-serif; fill:#E8F8FF;">Ready for report export, slide decks, and system methodology explanation</text>
+  </g>
+</svg>

@@ -1,0 +1,288 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Length 3691 >>
+stream
+BT
+/F2 20 Tf 1 0 0 1 50 800 Tm (NeuroScan AI) Tj
+/F2 20 Tf 1 0 0 1 50 781 Tm (Complete Project Explanation and Demo Guide) Tj
+/F1 11 Tf 1 0 0 1 50 762 Tm (Generated on 10 May 2026, 23:11) Tj
+/F2 14 Tf 1 0 0 1 50 724 Tm (1. Project Introduction) Tj
+/F1 11 Tf 1 0 0 1 50 705 Tm (NeuroScan AI is a full-stack AI/ML web application for brain tumour detection from MRI) Tj
+/F1 11 Tf 1 0 0 1 50 690 Tm (images. It combines a Streamlit frontend, authentication, SQLite database storage, image) Tj
+/F1 11 Tf 1 0 0 1 50 675 Tm (preprocessing, deep learning prediction, Grad-CAM explainability, segmentation overlay, PDF) Tj
+/F1 11 Tf 1 0 0 1 50 660 Tm (reporting, and dashboard analytics in one platform.) Tj
+/F1 11 Tf 1 0 0 1 50 645 Tm (The project is designed as an educational and research-grade demonstration of how artificial) Tj
+/F1 11 Tf 1 0 0 1 50 630 Tm (intelligence can be integrated into a medical imaging workflow.) Tj
+/F2 14 Tf 1 0 0 1 50 607 Tm (2. Problem Statement) Tj
+/F1 11 Tf 1 0 0 1 50 588 Tm (Brain tumours can be life-threatening and require timely analysis. MRI scans are widely used) Tj
+/F1 11 Tf 1 0 0 1 50 573 Tm (for tumour identification, but manual interpretation takes expert time. The goal of this) Tj
+/F1 11 Tf 1 0 0 1 50 558 Tm (project is to assist MRI-based screening by building a system that can accept MRI uploads,) Tj
+/F1 11 Tf 1 0 0 1 50 543 Tm (classify the scan, explain the model focus area, highlight suspicious regions, and generate) Tj
+/F1 11 Tf 1 0 0 1 50 528 Tm (a report.) Tj
+/F2 14 Tf 1 0 0 1 50 505 Tm (3. Main Objectives) Tj
+/F1 11 Tf 1 0 0 1 58 486 Tm (Build a secure web interface for MRI upload and analysis) Tj
+/F1 11 Tf 1 0 0 1 58 471 Tm (Classify MRI scans into Glioma, Meningioma, Pituitary, or Normal) Tj
+/F1 11 Tf 1 0 0 1 58 456 Tm (Preprocess images to create model-ready input) Tj
+/F1 11 Tf 1 0 0 1 58 441 Tm (Provide explainability with Grad-CAM) Tj
+/F1 11 Tf 1 0 0 1 58 426 Tm (Highlight suspicious tumour regions using segmentation overlay) Tj
+/F1 11 Tf 1 0 0 1 58 411 Tm (Generate PDF reports and save prediction history) Tj
+/F1 11 Tf 1 0 0 1 58 396 Tm (Store user, scan, and analytics data in SQLite) Tj
+/F1 11 Tf 1 0 0 1 58 381 Tm (Support future multi-model training and model comparison) Tj
+/F2 14 Tf 1 0 0 1 50 358 Tm (4. Technologies Used) Tj
+/F1 11 Tf 1 0 0 1 58 339 Tm (Python for the core implementation) Tj
+/F1 11 Tf 1 0 0 1 58 324 Tm (Streamlit for the user interface) Tj
+/F1 11 Tf 1 0 0 1 58 309 Tm (TensorFlow / Keras for deep learning) Tj
+/F1 11 Tf 1 0 0 1 58 294 Tm (OpenCV for preprocessing and segmentation logic) Tj
+/F1 11 Tf 1 0 0 1 58 279 Tm (NumPy and Pandas for data handling) Tj
+/F1 11 Tf 1 0 0 1 58 264 Tm (Plotly, Matplotlib, and Seaborn for analytics and charts) Tj
+/F1 11 Tf 1 0 0 1 58 249 Tm (SQLite for database storage) Tj
+/F1 11 Tf 1 0 0 1 58 234 Tm (bcrypt for password hashing) Tj
+/F1 11 Tf 1 0 0 1 58 219 Tm (Report generation utilities for downloadable scan documents) Tj
+/F2 14 Tf 1 0 0 1 50 196 Tm (5. Current Project Structure) Tj
+/F1 11 Tf 1 0 0 1 58 177 Tm (app.py: main Streamlit application and page router) Tj
+/F1 11 Tf 1 0 0 1 58 162 Tm (frontend/: UI theming and presentation helpers) Tj
+/F1 11 Tf 1 0 0 1 58 147 Tm (backend/: scan orchestration service) Tj
+/F1 11 Tf 1 0 0 1 58 132 Tm (authentication/: registration, login, OTP, session logic) Tj
+/F1 11 Tf 1 0 0 1 58 117 Tm (database/: SQLite schema and CRUD functions) Tj
+/F1 11 Tf 1 0 0 1 58 102 Tm (preprocessing/: image validation, preprocessing, dataset management) Tj
+/F1 11 Tf 1 0 0 1 58 87 Tm (model/: app-facing inference layer) Tj
+/F1 11 Tf 1 0 0 1 58 72 Tm (models/: training registry, evaluation, comparison pipeline) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Length 3537 >>
+stream
+BT
+/F1 11 Tf 1 0 0 1 58 800 Tm (explainability/: Grad-CAM generation) Tj
+/F1 11 Tf 1 0 0 1 58 785 Tm (segmentation/: tumour highlighting overlay) Tj
+/F1 11 Tf 1 0 0 1 58 770 Tm (reports/: PDF-related generation scripts) Tj
+/F1 11 Tf 1 0 0 1 58 755 Tm (utils/: shared helpers for paths, logging, summaries, and confidence interpretation) Tj
+/F2 14 Tf 1 0 0 1 50 732 Tm (6. Dataset Details) Tj
+/F1 11 Tf 1 0 0 1 50 713 Tm (The extracted MRI archive contains 7,200 images in total. The observed structure is Training) Tj
+/F1 11 Tf 1 0 0 1 50 698 Tm (and Testing folders with four categories.) Tj
+/F1 11 Tf 1 0 0 1 58 683 Tm (Training/glioma: 1400) Tj
+/F1 11 Tf 1 0 0 1 58 668 Tm (Training/meningioma: 1400) Tj
+/F1 11 Tf 1 0 0 1 58 653 Tm (Training/notumor: 1400) Tj
+/F1 11 Tf 1 0 0 1 58 638 Tm (Training/pituitary: 1400) Tj
+/F1 11 Tf 1 0 0 1 58 623 Tm (Testing/glioma: 400) Tj
+/F1 11 Tf 1 0 0 1 58 608 Tm (Testing/meningioma: 400) Tj
+/F1 11 Tf 1 0 0 1 58 593 Tm (Testing/notumor: 400) Tj
+/F1 11 Tf 1 0 0 1 58 578 Tm (Testing/pituitary: 400) Tj
+/F2 14 Tf 1 0 0 1 50 555 Tm (7. User Workflow) Tj
+/F1 11 Tf 1 0 0 1 50 536 Tm (The project follows a realistic end-user workflow. This is important to explain in the demo) Tj
+/F1 11 Tf 1 0 0 1 50 521 Tm (because it shows the system is more than a standalone ML notebook.) Tj
+/F1 11 Tf 1 0 0 1 58 506 Tm (User registers and verifies the account with OTP) Tj
+/F1 11 Tf 1 0 0 1 58 491 Tm (User logs in securely) Tj
+/F1 11 Tf 1 0 0 1 58 476 Tm (User uploads an MRI image) Tj
+/F1 11 Tf 1 0 0 1 58 461 Tm (The image is validated and previewed) Tj
+/F1 11 Tf 1 0 0 1 58 446 Tm (The MRI is preprocessed into model input form) Tj
+/F1 11 Tf 1 0 0 1 58 431 Tm (The deep learning model predicts the class) Tj
+/F1 11 Tf 1 0 0 1 58 416 Tm (Grad-CAM and segmentation visuals are generated) Tj
+/F1 11 Tf 1 0 0 1 58 401 Tm (Confidence, severity, quality, and AI summary are shown) Tj
+/F1 11 Tf 1 0 0 1 58 386 Tm (Prediction is stored in SQLite) Tj
+/F1 11 Tf 1 0 0 1 58 371 Tm (User downloads a report) Tj
+/F2 14 Tf 1 0 0 1 50 348 Tm (8. Authentication Module Explanation) Tj
+/F1 11 Tf 1 0 0 1 50 329 Tm (The authentication layer improves realism and security. Registration collects username,) Tj
+/F1 11 Tf 1 0 0 1 50 314 Tm (email, phone, and password. Passwords are hashed using bcrypt. OTP records are generated and) Tj
+/F1 11 Tf 1 0 0 1 50 299 Tm (verified to simulate phone-based validation. Streamlit session state tracks logged-in users,) Tj
+/F1 11 Tf 1 0 0 1 50 284 Tm (which restricts sensitive pages like upload, dashboard, and history.) Tj
+/F2 14 Tf 1 0 0 1 50 261 Tm (9. Database Design) Tj
+/F1 11 Tf 1 0 0 1 50 242 Tm (SQLite is used because it is lightweight, portable, and easy for a demo project. The) Tj
+/F1 11 Tf 1 0 0 1 50 227 Tm (database schema has been expanded beyond the original project.) Tj
+/F1 11 Tf 1 0 0 1 58 212 Tm (users table stores account details and hashed passwords) Tj
+/F1 11 Tf 1 0 0 1 58 197 Tm (otp_records stores OTP values, expiry, and usage state) Tj
+/F1 11 Tf 1 0 0 1 58 182 Tm (patient_records stores optional patient metadata) Tj
+/F1 11 Tf 1 0 0 1 58 167 Tm (predictions stores file details, class result, probabilities, severity, quality, summaries,) Tj
+/F1 11 Tf 1 0 0 1 58 152 Tm (  and model info) Tj
+/F1 11 Tf 1 0 0 1 58 137 Tm (model_versions stores best-model metadata for version tracking) Tj
+/F1 11 Tf 1 0 0 1 58 122 Tm (analytics_events stores structured scan events for future analytics) Tj
+/F2 14 Tf 1 0 0 1 50 99 Tm (10. Image Preprocessing Pipeline) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Length 3555 >>
+stream
+BT
+/F1 11 Tf 1 0 0 1 50 800 Tm (Image preprocessing is necessary because uploaded MRI images can differ in shape, scale, and) Tj
+/F1 11 Tf 1 0 0 1 50 785 Tm (format. The pipeline standardizes all inputs before inference.) Tj
+/F1 11 Tf 1 0 0 1 58 770 Tm (Validate file type and size) Tj
+/F1 11 Tf 1 0 0 1 58 755 Tm (Convert to RGB if needed) Tj
+/F1 11 Tf 1 0 0 1 58 740 Tm (Resize to 224 x 224) Tj
+/F1 11 Tf 1 0 0 1 58 725 Tm (Apply Gaussian blur for mild denoising) Tj
+/F1 11 Tf 1 0 0 1 58 710 Tm (Normalize pixel values into the 0 to 1 range) Tj
+/F1 11 Tf 1 0 0 1 58 695 Tm (Add batch dimension for Keras input) Tj
+/F1 11 Tf 1 0 0 1 58 680 Tm (Estimate MRI quality using contrast and sharpness heuristics) Tj
+/F2 14 Tf 1 0 0 1 50 657 Tm (11. Deep Learning Model Explanation) Tj
+/F1 11 Tf 1 0 0 1 50 638 Tm (The app-facing prediction layer loads the current best model for inference. The training) Tj
+/F1 11 Tf 1 0 0 1 50 623 Tm (design supports transfer learning and multiple backbone families such as VGG16, ResNet50,) Tj
+/F1 11 Tf 1 0 0 1 50 608 Tm (EfficientNetB0, and MobileNetV2.) Tj
+/F1 11 Tf 1 0 0 1 58 593 Tm (Transfer learning uses pretrained ImageNet features) Tj
+/F1 11 Tf 1 0 0 1 58 578 Tm (A classification head converts extracted features into four tumour classes) Tj
+/F1 11 Tf 1 0 0 1 58 563 Tm (Softmax output returns probabilities for all classes) Tj
+/F1 11 Tf 1 0 0 1 58 548 Tm (The highest probability class becomes the final prediction) Tj
+/F2 14 Tf 1 0 0 1 50 525 Tm (12. Predicted Classes) Tj
+/F1 11 Tf 1 0 0 1 58 506 Tm (Glioma: glial-cell tumour, generally treated as a high-risk class) Tj
+/F1 11 Tf 1 0 0 1 58 491 Tm (Meningioma: tumour related to meninges, often benign but clinically relevant) Tj
+/F1 11 Tf 1 0 0 1 58 476 Tm (Pituitary: tumour in the pituitary region, often linked to endocrine effects) Tj
+/F1 11 Tf 1 0 0 1 58 461 Tm (Normal: no tumour pattern detected by the model) Tj
+/F2 14 Tf 1 0 0 1 50 438 Tm (13. Grad-CAM Explainability) Tj
+/F1 11 Tf 1 0 0 1 50 419 Tm (Grad-CAM helps explain why the model predicted a class. Instead of producing only a label,) Tj
+/F1 11 Tf 1 0 0 1 50 404 Tm (it highlights the image regions that influenced the model most strongly. This makes the) Tj
+/F1 11 Tf 1 0 0 1 50 389 Tm (system more interpretable and demo-friendly.) Tj
+/F1 11 Tf 1 0 0 1 58 374 Tm (Feature maps from the last convolutional layer are extracted) Tj
+/F1 11 Tf 1 0 0 1 58 359 Tm (Gradients are computed for the predicted class) Tj
+/F1 11 Tf 1 0 0 1 58 344 Tm (A heatmap is generated from weighted activations) Tj
+/F1 11 Tf 1 0 0 1 58 329 Tm (The heatmap is overlaid on the MRI) Tj
+/F1 11 Tf 1 0 0 1 58 314 Tm (The app derives a coarse focus-region description from the heatmap center) Tj
+/F2 14 Tf 1 0 0 1 50 291 Tm (14. Segmentation Feature) Tj
+/F1 11 Tf 1 0 0 1 50 272 Tm (The segmentation module uses OpenCV heuristics instead of a U-Net for now. It is still) Tj
+/F1 11 Tf 1 0 0 1 50 257 Tm (useful in a demo because it highlights suspicious bright regions and outlines them with) Tj
+/F1 11 Tf 1 0 0 1 50 242 Tm (contours.) Tj
+/F1 11 Tf 1 0 0 1 58 227 Tm (MRI is converted to grayscale) Tj
+/F1 11 Tf 1 0 0 1 58 212 Tm (Adaptive thresholding is applied) Tj
+/F1 11 Tf 1 0 0 1 58 197 Tm (Morphological operations clean the mask) Tj
+/F1 11 Tf 1 0 0 1 58 182 Tm (Contours are extracted) Tj
+/F1 11 Tf 1 0 0 1 58 167 Tm (Small noise regions are ignored) Tj
+/F1 11 Tf 1 0 0 1 58 152 Tm (A binary mask and overlay image are generated) Tj
+/F2 14 Tf 1 0 0 1 50 129 Tm (15. AI Summary and Confidence Interpretation) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 3271 >>
+stream
+BT
+/F1 11 Tf 1 0 0 1 50 800 Tm (The project converts raw prediction outputs into human-readable explanation. Confidence) Tj
+/F1 11 Tf 1 0 0 1 50 785 Tm (values are mapped to bands like Very high, High, Moderate, or Low confidence. Severity is) Tj
+/F1 11 Tf 1 0 0 1 50 770 Tm (estimated from the predicted class and confidence. The system also generates a concise AI) Tj
+/F1 11 Tf 1 0 0 1 50 755 Tm (summary and assistant-style recommendation text.) Tj
+/F2 14 Tf 1 0 0 1 50 732 Tm (16. Dashboard Analytics) Tj
+/F1 11 Tf 1 0 0 1 50 713 Tm (The dashboard adds a full-stack analytics layer to the project.) Tj
+/F1 11 Tf 1 0 0 1 58 698 Tm (Total scans) Tj
+/F1 11 Tf 1 0 0 1 58 683 Tm (Tumour versus normal counts) Tj
+/F1 11 Tf 1 0 0 1 58 668 Tm (Prediction distribution charts) Tj
+/F1 11 Tf 1 0 0 1 58 653 Tm (MRI quality breakdown) Tj
+/F1 11 Tf 1 0 0 1 58 638 Tm (Recent scan history) Tj
+/F1 11 Tf 1 0 0 1 58 623 Tm (Model usage information) Tj
+/F2 14 Tf 1 0 0 1 50 600 Tm (17. PDF Reporting Feature) Tj
+/F1 11 Tf 1 0 0 1 50 581 Tm (The reporting flow packages the scan output into a downloadable document so the application) Tj
+/F1 11 Tf 1 0 0 1 50 566 Tm (behaves more like a practical AI platform.) Tj
+/F1 11 Tf 1 0 0 1 58 551 Tm (User and scan details) Tj
+/F1 11 Tf 1 0 0 1 58 536 Tm (Prediction and confidence) Tj
+/F1 11 Tf 1 0 0 1 58 521 Tm (Severity and model information) Tj
+/F1 11 Tf 1 0 0 1 58 506 Tm (Probability distribution) Tj
+/F1 11 Tf 1 0 0 1 58 491 Tm (Original MRI and preprocessed MRI) Tj
+/F1 11 Tf 1 0 0 1 58 476 Tm (Grad-CAM image) Tj
+/F1 11 Tf 1 0 0 1 58 461 Tm (Segmentation overlay) Tj
+/F1 11 Tf 1 0 0 1 58 446 Tm (AI summary and recommendations) Tj
+/F2 14 Tf 1 0 0 1 50 423 Tm (18. Training Pipeline Design) Tj
+/F1 11 Tf 1 0 0 1 50 404 Tm (The upgraded training pipeline is designed to support automatic dataset preparation,) Tj
+/F1 11 Tf 1 0 0 1 50 389 Tm (corrupted file handling, image organization, train/validation/test splitting, transfer) Tj
+/F1 11 Tf 1 0 0 1 50 374 Tm (learning, model comparison, and best-model selection.) Tj
+/F1 11 Tf 1 0 0 1 58 359 Tm (ZIP extraction) Tj
+/F1 11 Tf 1 0 0 1 58 344 Tm (Image validation) Tj
+/F1 11 Tf 1 0 0 1 58 329 Tm (Folder normalization) Tj
+/F1 11 Tf 1 0 0 1 58 314 Tm (Train/validation/test splits) Tj
+/F1 11 Tf 1 0 0 1 58 299 Tm (Data augmentation) Tj
+/F1 11 Tf 1 0 0 1 58 284 Tm (EarlyStopping) Tj
+/F1 11 Tf 1 0 0 1 58 269 Tm (ReduceLROnPlateau) Tj
+/F1 11 Tf 1 0 0 1 58 254 Tm (Checkpoint saving) Tj
+/F1 11 Tf 1 0 0 1 58 239 Tm (TensorBoard and CSV logs) Tj
+/F1 11 Tf 1 0 0 1 58 224 Tm (Best model chosen by evaluation metrics such as F1 score) Tj
+/F2 14 Tf 1 0 0 1 50 201 Tm (19. Strengths of the Project) Tj
+/F1 11 Tf 1 0 0 1 58 182 Tm (Combines AI and web development in one application) Tj
+/F1 11 Tf 1 0 0 1 58 167 Tm (Provides explainability and segmentation, not just classification) Tj
+/F1 11 Tf 1 0 0 1 58 152 Tm (Includes secure user workflow and stored history) Tj
+/F1 11 Tf 1 0 0 1 58 137 Tm (Uses modular architecture for easier maintenance) Tj
+/F1 11 Tf 1 0 0 1 58 122 Tm (Demonstrates a realistic medical-AI platform flow) Tj
+/F2 14 Tf 1 0 0 1 50 99 Tm (20. Limitations) Tj
+/F1 11 Tf 1 0 0 1 58 80 Tm (This is an educational and research project, not a clinical diagnostic system) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Length 2416 >>
+stream
+BT
+/F1 11 Tf 1 0 0 1 58 800 Tm (Segmentation is heuristic and not a medical-grade segmentation model) Tj
+/F1 11 Tf 1 0 0 1 58 785 Tm (Model performance depends on training quality and dataset characteristics) Tj
+/F1 11 Tf 1 0 0 1 58 770 Tm (Hospital deployment would require stronger security, validation, and compliance) Tj
+/F2 14 Tf 1 0 0 1 50 747 Tm (21. Future Enhancements) Tj
+/F1 11 Tf 1 0 0 1 58 728 Tm (Integrate true U-Net segmentation) Tj
+/F1 11 Tf 1 0 0 1 58 713 Tm (Support DICOM images) Tj
+/F1 11 Tf 1 0 0 1 58 698 Tm (Add doctor/admin role-based access) Tj
+/F1 11 Tf 1 0 0 1 58 683 Tm (Deploy with Docker and cloud infrastructure) Tj
+/F1 11 Tf 1 0 0 1 58 668 Tm (Add REST APIs) Tj
+/F1 11 Tf 1 0 0 1 58 653 Tm (Extend to multi-slice or 3D MRI analysis) Tj
+/F2 14 Tf 1 0 0 1 50 630 Tm (22. Demo Presentation Flow) Tj
+/F1 11 Tf 1 0 0 1 50 611 Tm (A simple way to present the project is: problem statement, objectives, technology stack,) Tj
+/F1 11 Tf 1 0 0 1 50 596 Tm (live application workflow, prediction result, Grad-CAM and segmentation output, dashboard) Tj
+/F1 11 Tf 1 0 0 1 50 581 Tm (analytics, architecture, and finally future scope.) Tj
+/F2 14 Tf 1 0 0 1 50 558 Tm (23. Common Viva Questions) Tj
+/F1 11 Tf 1 0 0 1 58 539 Tm (Why did you use Streamlit? Because it allows quick AI dashboard development in Python.) Tj
+/F1 11 Tf 1 0 0 1 58 524 Tm (Why 224 x 224? Because it matches many pretrained CNN backbones.) Tj
+/F1 11 Tf 1 0 0 1 58 509 Tm (Why transfer learning? It improves performance and reduces training time.) Tj
+/F1 11 Tf 1 0 0 1 58 494 Tm (What is Grad-CAM? It is a visual explanation method for CNN predictions.) Tj
+/F1 11 Tf 1 0 0 1 58 479 Tm (Why SQLite? It is lightweight and easy for demo deployment.) Tj
+/F1 11 Tf 1 0 0 1 58 464 Tm (How are passwords stored? Using bcrypt hashing, not plain text.) Tj
+/F1 11 Tf 1 0 0 1 58 449 Tm (What is the limitation? The project is educational and not a final clinical tool.) Tj
+/F2 14 Tf 1 0 0 1 50 426 Tm (24. Conclusion) Tj
+/F1 11 Tf 1 0 0 1 50 407 Tm (NeuroScan AI is a complete educational AI platform for brain MRI analysis. It is strong for) Tj
+/F1 11 Tf 1 0 0 1 50 392 Tm (demo and viva because it combines machine learning, image preprocessing, explainability,) Tj
+/F1 11 Tf 1 0 0 1 50 377 Tm (segmentation, authentication, database management, analytics, and reporting in one coherent) Tj
+/F1 11 Tf 1 0 0 1 50 362 Tm (system.) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Pages /Kids [ 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R ] /Count 5 >>
+endobj
+9 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
+endobj
+10 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 4 0 R >>
+endobj
+11 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
+endobj
+12 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 6 0 R >>
+endobj
+13 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
+endobj
+14 0 obj
+<< /Type /Catalog /Pages 8 0 R >>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000000160 00000 n 
+0000003903 00000 n 
+0000007492 00000 n 
+0000011099 00000 n 
+0000014422 00000 n 
+0000016890 00000 n 
+0000016977 00000 n 
+0000017113 00000 n 
+0000017250 00000 n 
+0000017387 00000 n 
+0000017524 00000 n 
+0000017661 00000 n 
+trailer
+<< /Size 15 /Root 14 0 R >>
+startxref
+17711
+%%EOF
