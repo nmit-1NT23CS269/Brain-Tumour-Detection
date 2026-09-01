@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sqlite3
 from contextlib import contextmanager
 from datetime import datetime, timedelta
@@ -34,9 +35,14 @@ def get_connection():
 
 
 def _ensure_column(conn, table_name: str, column_name: str, column_type: str) -> None:
+    if not re.match(r"^[A-Za-z0-9_]+$", table_name):
+        raise ValueError(f"Invalid table_name identifier: {table_name}")
+    if not re.match(r"^[A-Za-z0-9_]+$", column_name):
+        raise ValueError(f"Invalid column_name identifier: {column_name}")
     columns = {row["name"] for row in conn.execute(f"PRAGMA table_info({table_name})").fetchall()}
     if column_name not in columns:
         conn.execute(f"ALTER TABLE {table_name} ADD COLUMN {column_name} {column_type}")
+
 
 
 def _create_demo_doctor_files(conn, user_id: int, degree_name: str, license_name: str) -> None:
