@@ -18,17 +18,21 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## 4. Launch the Streamlit app
+## 4. Download the dataset
+
+Download the dataset separately (see [DATASET.md](file:///d:/MAJOR%20PROJRCT/brain_tumour_detection/DATASET.md)) to populate `data/raw/archive/`.
+
+## 5. Launch the Streamlit app
 
 ```powershell
 streamlit run app.py
 ```
 
-## 5. Open the app
+## 6. Open the app
 
 Visit `http://localhost:8501`.
 
 ## Notes
 
-- The uploaded dataset archive is already extracted under `data/raw/archive`.
 - If TensorFlow install fails, verify that you are using Python `3.10` or `3.11`.
+
