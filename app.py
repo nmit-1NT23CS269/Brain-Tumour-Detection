@@ -315,7 +315,7 @@ def page_register() -> None:
             st.error(message)
 
     if st.session_state.get("pending_phone"):
-        st.info(f"Demo OTP: {st.session_state.get('otp_demo')}")
+        st.info("Demo mode: OTP delivery is simulated. Check server logs for the code.")
         otp_value = st.text_input("Enter OTP", key="otp_input")
         if st.button("Verify OTP"):
             if confirm_otp(st.session_state["pending_phone"], otp_value):

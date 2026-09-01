@@ -150,8 +150,10 @@ def generate_otp() -> str:
 def send_otp(phone: str) -> str:
     """
     Generate OTP, persist it, and (in production) send via SMS gateway.
-    For demo purposes the OTP is returned and displayed on-screen.
+    For demo purposes the OTP is logged to server logs.
     """
+    # TODO: Integrate real SMS gateway provider (e.g. Twilio, MSG91, AWS SNS)
+    # replacing simulated logger delivery before production deployment.
     otp = generate_otp()
     store_otp(phone, otp, ttl_minutes=10)
     logger.info(f"OTP for {phone}: {otp}  [DEMO — replace with SMS API]")

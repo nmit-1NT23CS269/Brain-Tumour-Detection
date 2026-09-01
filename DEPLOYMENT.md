@@ -32,7 +32,7 @@ streamlit run app.py --server.port 8501 --server.address 0.0.0.0
 
 ## Production notes
 
-- Replace the demo OTP flow with a real SMS provider.
+- Replace the simulated demo OTP flow in authentication/auth.py with an integration to a real SMS gateway provider (e.g. Twilio, MSG91, AWS SNS) before production deployment.
 - Back up `brain_tumour.db`.
 - Keep trained model files under `models/exports/`.
 - Store sensitive configuration in environment variables.
