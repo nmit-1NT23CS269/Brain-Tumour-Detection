@@ -359,11 +359,19 @@ def page_login() -> None:
             st.error(message)
     _card_end()
 
-    # Demonstration Credentials Section (Controlled by DEMO_MODE env var, defaults to true)
+    # CRITICAL SECURITY NOTE: DEMO_MODE renders automated login buttons with demo credentials.
+    # THIS MUST REMAIN DISABLED (DEMO_MODE=false) FOR ANY REAL DEPLOYMENT TO PREVENT UNAUTHORIZED ACCESS.
     import os
-    demo_mode = os.getenv("DEMO_MODE", "true").lower() in ("true", "1", "yes")
+    demo_mode = os.getenv("DEMO_MODE", "false").lower() in ("true", "1", "yes")
 
     if demo_mode:
+        demo_patient_email = os.getenv("DEMO_PATIENT_EMAIL", "patient.demo@example.com")
+        demo_patient_password = os.getenv("DEMO_PATIENT_PASSWORD", "Patient@123")
+        demo_doctor_email = os.getenv("DEMO_DOCTOR_EMAIL", "doctor.demo@example.com")
+        demo_doctor_password = os.getenv("DEMO_DOCTOR_PASSWORD", "Doctor@123")
+        demo_admin_email = os.getenv("DEMO_ADMIN_EMAIL", "admin.demo@example.com")
+        demo_admin_password = os.getenv("DEMO_ADMIN_PASSWORD", "Admin@123")
+
         _card_start()
         st.subheader("🔑 Demonstration Credentials & Quick Login")
         st.caption("Faculty & Evaluator Demo Environment — One-Click Authentication into standard SQLite RBAC accounts.")
@@ -372,9 +380,9 @@ def page_login() -> None:
 
         with dcol1:
             st.markdown("#### 👤 Demo Patient")
-            st.write("**Email**: `patient.demo@example.com`  \n**Password**: `Patient@123`  \n**Data**: 1 Sample Scan, Assigned Specialist")
+            st.write(f"**Email**: `{demo_patient_email}`  \n**Data**: 1 Sample Scan, Assigned Specialist")
             if st.button("⚡ Login as Demo Patient", use_container_width=True, type="secondary"):
-                success, message, user = login_user("patient.demo@example.com", "Patient@123")
+                success, message, user = login_user(demo_patient_email, demo_patient_password)
                 if success and user:
                     set_session(user)
                     st.session_state["page"] = "upload"
@@ -385,9 +393,9 @@ def page_login() -> None:
 
         with dcol2:
             st.markdown("#### 👨‍⚕️ Verified Doctor — ✓ Approved")
-            st.write("**Email**: `doctor.demo@example.com`  \n**Password**: `Doctor@123`  \n**Data**: Medical License, My Patients, Scan Workspace")
+            st.write(f"**Email**: `{demo_doctor_email}`  \n**Data**: Medical License, My Patients, Scan Workspace")
             if st.button("⚡ Login as Verified Doctor", use_container_width=True, type="primary"):
-                success, message, user = login_user("doctor.demo@example.com", "Doctor@123")
+                success, message, user = login_user(demo_doctor_email, demo_doctor_password)
                 if success and user:
                     set_session(user)
                     st.session_state["page"] = "doctor_dashboard"
@@ -398,9 +406,9 @@ def page_login() -> None:
 
         with dcol3:
             st.markdown("#### ⚙️ Demo Administrator")
-            st.write("**Email**: `admin.demo@example.com`  \n**Password**: `Admin@123`  \n**Data**: Doctor Approval Queue, User Control, Audit Logs")
+            st.write(f"**Email**: `{demo_admin_email}`  \n**Data**: Doctor Approval Queue, User Control, Audit Logs")
             if st.button("⚡ Login as Demo Admin", use_container_width=True, type="secondary"):
-                success, message, user = login_user("admin.demo@example.com", "Admin@123")
+                success, message, user = login_user(demo_admin_email, demo_admin_password)
                 if success and user:
                     set_session(user)
                     st.session_state["page"] = "admin_dashboard"
@@ -412,6 +420,7 @@ def page_login() -> None:
         st.markdown("---")
         st.info("💡 **Pending Doctor Application Demo**: To demonstrate Doctor Document Review and Verification, log in as **Admin**, click **Doctor Verifications**, and inspect `pending.doctor@example.com` (`dr_pending_demo`).")
         _card_end()
+
 
 
 def _save_scan_result(result: dict, uploaded_file, patient_id: int | None = None, doctor_id: int | None = None) -> int:
