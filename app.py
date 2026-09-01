@@ -701,6 +701,52 @@ def page_about() -> None:
     _card_end()
 
 
+def page_mastishka() -> None:
+    _hero("🧠 Mastishka Assistant", "Ask basic questions about NeuroScan AI, tumour types, or your latest scan")
+
+    st.session_state.setdefault(
+        "mastishka_chat",
+        [
+            {
+                "role": "assistant",
+                "content": (
+                    "Hi, I'm **Mastishka** 🧠 — your NeuroScan AI assistant. Ask me about "
+                    "tumour types, how the app works, or your latest scan result. I run entirely "
+                    "offline (no external AI API), so I stick to basic, pre-defined answers."
+                ),
+            }
+        ],
+    )
+
+    _card_start()
+    st.caption("Quick questions")
+    quick_cols = st.columns(len(SUGGESTED_QUESTIONS))
+    quick_pick = None
+    for col, question in zip(quick_cols, SUGGESTED_QUESTIONS):
+        if col.button(question, use_container_width=True, key=f"quick_{question}"):
+            quick_pick = question
+    _card_end()
+
+    _card_start()
+    for turn in st.session_state["mastishka_chat"]:
+        with st.chat_message(turn["role"]):
+            st.markdown(turn["content"])
+    _card_end()
+
+    user_message = st.chat_input("Ask Mastishka a question...")
+    incoming = quick_pick or user_message
+
+    if incoming:
+        st.session_state["mastishka_chat"].append({"role": "user", "content": incoming})
+        reply = mastishka_response(incoming, scan_result=st.session_state.get("last_scan_result"))
+        st.session_state["mastishka_chat"].append({"role": "assistant", "content": reply})
+        st.rerun()
+
+    if st.button("Clear conversation"):
+        st.session_state["mastishka_chat"] = []
+        st.rerun()
+
+
 def page_doctor_pending() -> None:
     _hero("Doctor Application Status", "Medical Credential & Verification Dashboard")
     _card_start()
