@@ -4,6 +4,7 @@
 [![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B.svg)](https://streamlit.io/)
 [![TensorFlow 2.15](https://img.shields.io/badge/ML-TensorFlow%202.15-FF6F00.svg)](https://tensorflow.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CI Tests](https://github.com/nmit-1NT23CS269/Brain-Tumour-Detection/actions/workflows/tests.yml/badge.svg)](https://github.com/nmit-1NT23CS269/Brain-Tumour-Detection/actions/workflows/tests.yml)
 
 **NeuroScan AI** is a medical-grade Brain MRI Analysis and Clinical Workflow platform designed for high-accuracy brain tumor detection, deep learning explainability (Grad-CAM), OpenCV tumor segmentation overlays, specialist doctor-patient collaboration, and AI-assisted diagnostics.
 
@@ -35,27 +36,30 @@
 - **`🔬 Scan Patient`**: Approved doctors can initiate brain MRI scans specifically linked to authorized patient records. Results automatically appear in the patient's personal report history.
 - **Strict Backend Authorization**: Doctors cannot scan or view arbitrary patient records unless an active relationship is verified by backend middleware (`can_doctor_scan_patient`).
 
-### 5. 👥 Role-Based Access Control (RBAC)
+### 5. 👥 Role-Based Access Control (RBAC) & Secure Auth
 - **Patient Workspace**: Upload MRI scans, view Grad-CAM heatmaps, download PDF reports, assign specialist doctors, and view attached doctor clinical notes.
 - **Doctor Clinical Workspace**: Manage patient roster, perform patient scans, inspect heatmaps, and append signed clinical observations & recommendations.
 - **Admin Console**: Doctor verification portal, user account management, platform metrics, and immutable audit logging (`audit_logs`).
+- **Simulated OTP Flow**: Phone authentication uses simulated OTP delivery (logged to server logs for dev/testing; ready for SMS provider integration in production).
 
 ---
 
 ## 🔑 Demo Accounts for Faculty & Reviewers
 
-To make evaluation simple and seamless, **NeuroScan AI** includes a pre-seeded demonstration environment controlled by `DEMO_MODE=true`.
+To make evaluation simple and seamless, **NeuroScan AI** includes a demonstration environment controlled by `DEMO_MODE=true` (defaults to `false` for production security).
 
-Below are the pre-configured **Demo Credentials** for manual testing:
+To enable quick-login buttons for evaluation, copy `.env.example` to `.env` and set `DEMO_MODE=true`.
 
-| User Role | Email Address | Password | Account Status | Pre-Populated Demo Content |
+Below are the pre-configured **Demo Credentials**:
+
+| User Role | Email Address | Default Password | Account Status | Pre-Populated Demo Content |
 |---|---|---|---|---|
 | **👤 Demo Patient** | `patient.demo@example.com` | `Patient@123` | `ACTIVE` | Patient Code `PAT-000024`, 1 Sample Brain Scan Report (Glioma 96.8%), Assigned Specialist Doctor. |
 | **👨‍⚕️ Verified Doctor** | `doctor.demo@example.com` | `Doctor@123` | `APPROVED` | `MBBS, MD Neuro-oncology`, `NMC-DEMO-9948`, uploaded PDF Degree & License certificates, "My Patients" workspace containing `demo_patient`. |
 | **⏳ Pending Doctor** | `pending.doctor@example.com` | `Doctor@123` | `PENDING` | `MBBS, MD Pediatric Neurology`, `NMC-PENDING-7712`, uploaded PDF verification certificates for testing the Admin Verification & Approval workflow. |
 | **⚙️ Demo Admin** | `admin.demo@example.com` | `Admin@123` | `ACTIVE` | Full administrative privileges, Doctor Approval Queue, User Control, Metrics, & Audit Trail. |
 
-> ⚡ **One-Click Quick Login**: On the Sign In page, click **"Login as Demo Patient"**, **"Login as Verified Doctor"**, or **"Login as Demo Admin"** to authenticate instantly without typing credentials!
+> ⚡ **One-Click Quick Login**: When `DEMO_MODE=true`, the Sign In page renders one-click login buttons to authenticate instantly into standard SQLite RBAC accounts!
 
 ---
 
@@ -63,11 +67,14 @@ Below are the pre-configured **Demo Credentials** for manual testing:
 
 ```text
 brain_tumour_detection/
+├── .github/
+│   └── workflows/
+│       └── tests.yml           # GitHub Actions CI automated test workflow
 ├── app.py                      # Main Streamlit web application & role routing
 ├── authentication/             # Password hashing, bcrypt verification, OTP, & RBAC auth
 ├── backend/                    # Core scan service execution & ML inference handler
 ├── chatbot/                    # Mastishka AI Medical Assistant module & knowledge base
-├── data/                       # Raw & processed MRI dataset directory
+├── data/                       # Raw & processed MRI dataset directory (see DATASET.md)
 ├── database/                   # SQLite database schema, CRUD helpers, & migration engine
 ├── explainability/             # Grad-CAM heatmap generation module
 ├── frontend/                   # Custom dark-theme CSS styling & UI layout tiles
@@ -75,13 +82,17 @@ brain_tumour_detection/
 ├── preprocessing/              # Image normalization, resizing, quality checks, & histograms
 ├── reports/                    # FPDF automated PDF diagnostic report generator
 ├── segmentation/               # OpenCV contour extraction & tumor area calculation
-├── uploads/                    # Secure storage for uploaded doctor medical certificates
-├── brain_tumour.db             # Local SQLite database file
-├── requirements.txt            # Python dependencies
-├── README.md                   # Project documentation
+├── test_images/                # Sample MRI images for smoke testing
+├── tests/                      # Pytest automated test suite (test_smoke.py)
+├── uploads/                    # Local storage for uploaded doctor medical certificates (git-ignored)
+├── .env.example                # Template for environment configuration
+├── DATASET.md                  # Dataset download & extraction layout instructions
+├── DEPLOYMENT.md               # Production deployment instructions
+├── LICENSE                     # MIT License file
+├── README.md                   # Complete project documentation
+├── requirements.txt            # Python dependencies (including pytest)
 ├── SETUP.md                    # Environment setup guide
-├── TRAINING.md                 # Model training workflow guide
-└── DEPLOYMENT.md               # Production deployment instructions
+└── TRAINING.md                 # Model training workflow guide
 ```
 
 ---
@@ -112,7 +123,11 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 3. Launch Application
+### 3. Download Dataset (Optional for training)
+
+Follow instructions in [DATASET.md](DATASET.md) to download the Kaggle Brain Tumor MRI dataset into `data/raw/archive/`.
+
+### 4. Launch Application
 
 Run the Streamlit server:
 
@@ -126,26 +141,30 @@ Open your browser and navigate to: **`http://localhost:8501`**
 
 ## ⚙️ Environment Configuration
 
+Copy `.env.example` to `.env` to configure environment variables:
+
 | Variable | Default | Description |
 |---|---|---|
-| `DEMO_MODE` | `true` | When `true`, renders One-Click Demo Credentials Card on the Sign In page. Set `DEMO_MODE=false` for production builds. |
+| `DEMO_MODE` | `false` | Set to `true` to render One-Click Demo Login buttons on the Sign In page. Keep `false` for production builds. |
+| `DEMO_PATIENT_EMAIL` | `patient.demo@example.com` | Email address for demo patient account. |
+| `DEMO_PATIENT_PASSWORD` | `Patient@123` | Password for demo patient account. |
+| `DEMO_DOCTOR_EMAIL` | `doctor.demo@example.com` | Email address for demo doctor account. |
+| `DEMO_DOCTOR_PASSWORD` | `Doctor@123` | Password for demo doctor account. |
+| `DEMO_ADMIN_EMAIL` | `admin.demo@example.com` | Email address for demo admin account. |
+| `DEMO_ADMIN_PASSWORD` | `Admin@123` | Password for demo admin account. |
 
 ---
 
-## 🧪 Automated Testing
+## 🧪 Automated Testing & CI
 
-Run system test scripts to verify backend logic, RBAC security, and document verification:
+Execute the pytest suite to verify preprocessing, model prediction, password hashing, and security rules:
 
 ```powershell
-# Test Doctor Mandatory Credentials & Admin Verification Workflow
-python scratch/test_doctor_credentials_workflow.py
-
-# Test Doctor Add Patient & Scan Patient Integration
-python scratch/test_doctor_patient_scan_workflow.py
-
-# Test Demo Accounts Authentication & RBAC Integrity
-python scratch/test_demo_credentials_workflow.py
+# Run full smoke test suite
+pytest -v tests/test_smoke.py
 ```
+
+Automated testing is integrated with **GitHub Actions CI** (`.github/workflows/tests.yml`), running tests automatically on every push and pull request.
 
 ---
 
@@ -157,4 +176,4 @@ This application is designed for **educational, capstone demonstration, and rese
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more details.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more details.
