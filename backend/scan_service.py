@@ -48,6 +48,15 @@ def analyze_uploaded_scan(uploaded_file, enable_gradcam: bool = True, enable_seg
         severity,
         quality["label"],
     )
+
+    if inference.get("status") == "low_confidence":
+        thresh = inference.get("confidence_threshold", 0.70)
+        inference["low_confidence_warning"] = (
+            f"⚠️ Low Diagnostic Confidence Warning: Calibrated model confidence ({inference['confidence'] * 100:.1f}%) "
+            f"is below the clinical threshold of {thresh * 100:.0f}%. "
+            "Due to diagnostic uncertainty, immediate consultation with a medical specialist / neuro-oncologist is strongly recommended."
+        )
+
     inference["segmentation"] = segmentation
     inference["steps"] = steps
     inference["model_metadata"] = get_model_metadata()

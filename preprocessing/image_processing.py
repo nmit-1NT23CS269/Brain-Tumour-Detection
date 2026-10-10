@@ -57,11 +57,30 @@ def validate_mri_image_quality(img_array: np.ndarray) -> tuple[bool, str]:
     return True, "Valid MRI scan"
 
 
+def reencode_uploaded_image(uploaded_file, output_format: str = "PNG") -> bytes:
+    """Sanitize uploaded image file by stripping EXIF tags and re-drawing onto a clean canvas."""
+    if hasattr(uploaded_file, "read"):
+        content = uploaded_file.read()
+        if hasattr(uploaded_file, "seek"):
+            uploaded_file.seek(0)
+    else:
+        content = uploaded_file
+
+    with Image.open(io.BytesIO(content)) as img:
+        img.verify()
+
+    with Image.open(io.BytesIO(content)) as img:
+        clean_img = Image.new("RGB", img.size)
+        clean_img.paste(img.convert("RGB"))
+        buffer = io.BytesIO()
+        clean_img.save(buffer, format=output_format)
+        return buffer.getvalue()
+
+
 def load_image_from_upload(uploaded_file) -> np.ndarray:
-    """Read uploaded file bytes into an RGB numpy array."""
-    raw = uploaded_file.read()
-    uploaded_file.seek(0)
-    return np.array(Image.open(io.BytesIO(raw)).convert("RGB"))
+    """Read uploaded file bytes into an RGB numpy array after EXIF stripping and re-encoding."""
+    clean_bytes = reencode_uploaded_image(uploaded_file)
+    return np.array(Image.open(io.BytesIO(clean_bytes)).convert("RGB"))
 
 
 def resize_image(img: np.ndarray, size: tuple[int, int] = TARGET_SIZE) -> np.ndarray:

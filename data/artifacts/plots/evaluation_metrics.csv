@@ -1,0 +1,7 @@
+Class,Precision,Recall,F1-Score,Support
+Glioma,0.2565,0.9325,0.4024,400
+Meningioma,0.1667,0.06,0.0882,400
+Normal,0.0,0.0,0.0,400
+Pituitary,0.0,0.0,0.0,400
+Macro Average,0.1058,0.2481,0.1227,1600
+Weighted Average,0.1058,0.2481,0.1227,1600

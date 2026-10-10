@@ -208,7 +208,10 @@ marimo/_lsp/
 __marimo__/
 
 # Sensitive & oversized files
+*.db
 brain_tumour.db
+logs/
+models/exports/
 data/raw/
 data/splits/
 uploads/

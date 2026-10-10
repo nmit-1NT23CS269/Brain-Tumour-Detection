@@ -1,0 +1,832 @@
+{
+  "dataset_summary": {
+    "samples_evaluated": 80,
+    "samples_flagged": 78,
+    "flag_rate": 0.975,
+    "flag_threshold": 0.4
+  },
+  "backbone_audit": {
+    "VGG16": {
+      "status": "success",
+      "resolved_layer": "block5_conv3",
+      "hint": "block5_conv3"
+    },
+    "ResNet50": {
+      "status": "success",
+      "resolved_layer": "conv5_block3_out",
+      "hint": "conv5_block3_out"
+    },
+    "EfficientNetB0": {
+      "status": "success",
+      "resolved_layer": "top_conv",
+      "hint": "top_conv"
+    },
+    "MobileNetV2": {
+      "status": "success",
+      "resolved_layer": "Conv_1",
+      "hint": "Conv_1"
+    }
+  },
+  "records": [
+    {
+      "file_name": "Te-gl_90.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3265,
+      "border_share": 0.402,
+      "background_share": 0.2636,
+      "combined_share": 0.6657,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_173.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.318,
+      "border_share": 0.2998,
+      "background_share": 0.3175,
+      "combined_share": 0.6173,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_348.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.2971,
+      "border_share": 0.4073,
+      "background_share": 0.4494,
+      "combined_share": 0.8567,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_98.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3241,
+      "border_share": 0.3911,
+      "background_share": 0.3023,
+      "combined_share": 0.6934,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_343.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3217,
+      "border_share": 0.3475,
+      "background_share": 0.414,
+      "combined_share": 0.7615,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_1.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.2952,
+      "border_share": 0.3776,
+      "background_share": 0.2724,
+      "combined_share": 0.65,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_375.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.331,
+      "border_share": 0.3431,
+      "background_share": 0.2894,
+      "combined_share": 0.6325,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_248.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.2932,
+      "border_share": 0.466,
+      "background_share": 0.5426,
+      "combined_share": 1.0086,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_324.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.327,
+      "border_share": 0.3217,
+      "background_share": 0.3123,
+      "combined_share": 0.634,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_107.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.328,
+      "border_share": 0.4231,
+      "background_share": 0.3784,
+      "combined_share": 0.8016,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_150.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3222,
+      "border_share": 0.4431,
+      "background_share": 0.4263,
+      "combined_share": 0.8694,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_266.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3434,
+      "border_share": 0.4236,
+      "background_share": 0.2978,
+      "combined_share": 0.7214,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_240.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3411,
+      "border_share": 0.3217,
+      "background_share": 0.2384,
+      "combined_share": 0.5601,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_209.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3081,
+      "border_share": 0.4275,
+      "background_share": 0.5769,
+      "combined_share": 1.0044,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_125.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.326,
+      "border_share": 0.2661,
+      "background_share": 0.4193,
+      "combined_share": 0.6854,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_21.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.301,
+      "border_share": 0.4658,
+      "background_share": 0.406,
+      "combined_share": 0.8717,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_360.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3185,
+      "border_share": 0.4145,
+      "background_share": 0.3778,
+      "combined_share": 0.7922,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_135.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3024,
+      "border_share": 0.2586,
+      "background_share": 0.3053,
+      "combined_share": 0.5639,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_138.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3319,
+      "border_share": 0.3229,
+      "background_share": 0.2737,
+      "combined_share": 0.5966,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-gl_76.jpg",
+      "ground_truth": "Glioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3483,
+      "border_share": 0.4135,
+      "background_share": 0.1913,
+      "combined_share": 0.6047,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_23.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3041,
+      "border_share": 0.4918,
+      "background_share": 0.6184,
+      "combined_share": 1.1102,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-aug-me_38.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3293,
+      "border_share": 0.3698,
+      "background_share": 0.3217,
+      "combined_share": 0.6915,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_9.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3091,
+      "border_share": 0.553,
+      "background_share": 0.0107,
+      "combined_share": 0.5636,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_251.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3156,
+      "border_share": 0.4478,
+      "background_share": 0.2665,
+      "combined_share": 0.7143,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_92.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3136,
+      "border_share": 0.3773,
+      "background_share": 0.2883,
+      "combined_share": 0.6656,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-aug-me_64.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3255,
+      "border_share": 0.3692,
+      "background_share": 0.2526,
+      "combined_share": 0.6218,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-aug-me_65.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.335,
+      "border_share": 0.2968,
+      "background_share": 0.199,
+      "combined_share": 0.4957,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_42.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3273,
+      "border_share": 0.2785,
+      "background_share": 0.1694,
+      "combined_share": 0.4479,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_225.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.347,
+      "border_share": 0.2283,
+      "background_share": 0.3456,
+      "combined_share": 0.5738,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_26.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.382,
+      "border_share": 0.3287,
+      "background_share": 0.1843,
+      "combined_share": 0.513,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-aug-me_82.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3366,
+      "border_share": 0.3307,
+      "background_share": 0.326,
+      "combined_share": 0.6566,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_128.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3225,
+      "border_share": 0.4016,
+      "background_share": 0.3613,
+      "combined_share": 0.763,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_25.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.2873,
+      "border_share": 0.4641,
+      "background_share": 0.6435,
+      "combined_share": 1.1076,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_286.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.2961,
+      "border_share": 0.4665,
+      "background_share": 0.5808,
+      "combined_share": 1.0473,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_200.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3129,
+      "border_share": 0.3556,
+      "background_share": 0.362,
+      "combined_share": 0.7176,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_103.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3268,
+      "border_share": 0.3485,
+      "background_share": 0.3007,
+      "combined_share": 0.6492,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_255.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3252,
+      "border_share": 0.4113,
+      "background_share": 0.1916,
+      "combined_share": 0.6029,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_87.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3133,
+      "border_share": 0.3929,
+      "background_share": 0.3647,
+      "combined_share": 0.7575,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_75.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.2976,
+      "border_share": 0.4774,
+      "background_share": 0.3238,
+      "combined_share": 0.8012,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-me_57.jpg",
+      "ground_truth": "Meningioma",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3063,
+      "border_share": 0.373,
+      "background_share": 0.3278,
+      "combined_share": 0.7008,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_191.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.289,
+      "border_share": 0.4313,
+      "background_share": 0.4935,
+      "combined_share": 0.9248,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_68.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.308,
+      "border_share": 0.2797,
+      "background_share": 0.2507,
+      "combined_share": 0.5304,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_242.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3016,
+      "border_share": 0.2814,
+      "background_share": 0.2894,
+      "combined_share": 0.5708,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_283.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3218,
+      "border_share": 0.3225,
+      "background_share": 0.1665,
+      "combined_share": 0.4891,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_48.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3065,
+      "border_share": 0.4017,
+      "background_share": 0.4026,
+      "combined_share": 0.8043,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_399.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3052,
+      "border_share": 0.2891,
+      "background_share": 0.0602,
+      "combined_share": 0.3493,
+      "flagged": false
+    },
+    {
+      "file_name": "Te-no_271.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3077,
+      "border_share": 0.3396,
+      "background_share": 0.3638,
+      "combined_share": 0.7034,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_300.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3062,
+      "border_share": 0.3718,
+      "background_share": 0.119,
+      "combined_share": 0.4908,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_337.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.2942,
+      "border_share": 0.4013,
+      "background_share": 0.3986,
+      "combined_share": 0.7999,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_307.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3068,
+      "border_share": 0.4716,
+      "background_share": 0.2933,
+      "combined_share": 0.7649,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_154.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3076,
+      "border_share": 0.5795,
+      "background_share": 0.6515,
+      "combined_share": 1.231,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_212.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.2967,
+      "border_share": 0.4046,
+      "background_share": 0.3959,
+      "combined_share": 0.8005,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_202.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.2886,
+      "border_share": 0.3731,
+      "background_share": 0.5048,
+      "combined_share": 0.8779,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_128.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.2882,
+      "border_share": 0.43,
+      "background_share": 0.4517,
+      "combined_share": 0.8817,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_255.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.2965,
+      "border_share": 0.3711,
+      "background_share": 0.3216,
+      "combined_share": 0.6927,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_108.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3056,
+      "border_share": 0.3942,
+      "background_share": 0.4245,
+      "combined_share": 0.8187,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_370.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3038,
+      "border_share": 0.4122,
+      "background_share": 0.3839,
+      "combined_share": 0.7961,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_354.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3237,
+      "border_share": 0.4345,
+      "background_share": 0.292,
+      "combined_share": 0.7265,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_204.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3093,
+      "border_share": 0.3528,
+      "background_share": 0.3573,
+      "combined_share": 0.7101,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-no_20.jpg",
+      "ground_truth": "Normal",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3231,
+      "border_share": 0.3239,
+      "background_share": 0.2284,
+      "combined_share": 0.5523,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_101.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3025,
+      "border_share": 0.4514,
+      "background_share": 0.2866,
+      "combined_share": 0.738,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_131.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3389,
+      "border_share": 0.3923,
+      "background_share": 0.2012,
+      "combined_share": 0.5935,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_65.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3317,
+      "border_share": 0.4835,
+      "background_share": 0.2569,
+      "combined_share": 0.7404,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_390.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3285,
+      "border_share": 0.3895,
+      "background_share": 0.4034,
+      "combined_share": 0.7929,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_126.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3455,
+      "border_share": 0.4028,
+      "background_share": 0.1672,
+      "combined_share": 0.5699,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_204.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3421,
+      "border_share": 0.3086,
+      "background_share": 0.3201,
+      "combined_share": 0.6287,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_13.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3031,
+      "border_share": 0.4604,
+      "background_share": 0.2837,
+      "combined_share": 0.7441,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_113.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3351,
+      "border_share": 0.4747,
+      "background_share": 0.1917,
+      "combined_share": 0.6664,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_251.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3396,
+      "border_share": 0.2803,
+      "background_share": 0.2479,
+      "combined_share": 0.5282,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_336.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3604,
+      "border_share": 0.3457,
+      "background_share": 0.2867,
+      "combined_share": 0.6325,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_208.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3213,
+      "border_share": 0.2304,
+      "background_share": 0.1158,
+      "combined_share": 0.3462,
+      "flagged": false
+    },
+    {
+      "file_name": "Te-pi_227.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3366,
+      "border_share": 0.4717,
+      "background_share": 0.1971,
+      "combined_share": 0.6688,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_47.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3213,
+      "border_share": 0.4477,
+      "background_share": 0.22,
+      "combined_share": 0.6678,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_322.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3372,
+      "border_share": 0.4338,
+      "background_share": 0.2416,
+      "combined_share": 0.6754,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_198.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.331,
+      "border_share": 0.4396,
+      "background_share": 0.1936,
+      "combined_share": 0.6332,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_348.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3274,
+      "border_share": 0.4458,
+      "background_share": 0.2656,
+      "combined_share": 0.7114,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_16.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3303,
+      "border_share": 0.37,
+      "background_share": 0.208,
+      "combined_share": 0.578,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_72.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3215,
+      "border_share": 0.4362,
+      "background_share": 0.2494,
+      "combined_share": 0.6856,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_362.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.323,
+      "border_share": 0.4815,
+      "background_share": 0.2933,
+      "combined_share": 0.7747,
+      "flagged": true
+    },
+    {
+      "file_name": "Te-pi_365.jpg",
+      "ground_truth": "Pituitary",
+      "predicted_class": "Pituitary",
+      "confidence": 0.3423,
+      "border_share": 0.5003,
+      "background_share": 0.2071,
+      "combined_share": 0.7074,
+      "flagged": true
+    }
+  ]
+}

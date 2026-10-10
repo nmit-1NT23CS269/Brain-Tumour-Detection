@@ -71,6 +71,15 @@ def save_uploaded_doctor_document(
     filename = getattr(file_obj, "name", "document")
     ext = Path(filename).suffix.lower()
     content = file_obj.getvalue() if hasattr(file_obj, "getvalue") else file_obj.read()
+
+    if ext in (".png", ".jpg", ".jpeg"):
+        from preprocessing.image_processing import reencode_uploaded_image
+        try:
+            fmt = "PNG" if ext == ".png" else "JPEG"
+            content = reencode_uploaded_image(content, output_format=fmt)
+        except Exception as exc:
+            logger.warning("Failed to re-encode image document: %s", exc)
+
     file_size = len(content)
     mime_type, _ = mimetypes.guess_type(filename)
     mime_type = mime_type or "application/octet-stream"
@@ -148,23 +157,33 @@ def generate_otp() -> str:
 
 
 def send_otp(phone: str) -> str:
-    """
-    Generate OTP, persist it, and (in production) send via SMS gateway.
-    For demo purposes the OTP is logged to server logs.
-    """
-    # TODO: Integrate real SMS gateway provider (e.g. Twilio, MSG91, AWS SNS)
-    # replacing simulated logger delivery before production deployment.
+    """Generate OTP, persist hashed record, and dispatch via configured OTP provider."""
+    from authentication.otp_provider import get_otp_provider
+
     otp = generate_otp()
-    store_otp(phone, otp, ttl_minutes=10)
-    logger.info(f"OTP for {phone}: {otp}  [DEMO — replace with SMS API]")
+    ok, store_msg = store_otp(phone, otp, ttl_minutes=5)
+    if not ok:
+        logger.error("Failed to store OTP for %s: %s", phone, store_msg)
+        return ""
+
+    provider = get_otp_provider()
+    sent_ok, send_msg = provider.send_otp(phone, otp)
+    if not sent_ok:
+        logger.error("Failed to send OTP to %s: %s", phone, send_msg)
+        return ""
+
     return otp
 
 
 def confirm_otp(phone: str, entered: str) -> bool:
-    """Verify entered OTP and mark user as verified on success."""
-    if verify_otp(phone, entered.strip()):
+    """Verify entered OTP against stored hash and mark user as verified on success."""
+    from database.db import verify_otp_detailed
+
+    ok, msg = verify_otp_detailed(phone, entered.strip())
+    if ok:
         verify_user(phone)
         return True
+    logger.warning("OTP verification failed for %s: %s", phone, msg)
     return False
 
 
@@ -328,12 +347,8 @@ def set_session(user: dict):
 
 
 def clear_session():
-    """Wipe authentication data from session state."""
-    for key in [
-        SESSION_KEY, SESSION_USERNAME, SESSION_ROLE, SESSION_STATUS,
-        "user_email", "user_phone", "logged_in", SESSION_VERIFIED,
-    ]:
-        st.session_state.pop(key, None)
+    """Wipe all session state data on logout to prevent residual state leaks."""
+    st.session_state.clear()
 
 
 def is_logged_in() -> bool:

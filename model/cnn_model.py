@@ -107,11 +107,25 @@ def get_model_metadata() -> dict:
     return _CACHED_METADATA
 
 
-def predict(model_input: np.ndarray, include_gradcam: bool = False, use_tta: bool = False) -> dict:
-    """Run model inference with backbone-specific preprocessing and uncertainty analysis."""
+def predict(
+    model_input: np.ndarray,
+    include_gradcam: bool = False,
+    use_tta: bool = False,
+    confidence_threshold: float | None = None,
+) -> dict:
+    """Run model inference with temperature scaling calibration and uncertainty analysis."""
+    from model.calibrate import apply_temperature_to_logits, load_temperature_config, probabilities_to_logits
+
     model = load_model()
     metadata = get_model_metadata()
     model_name = metadata.get("model_name", "VGG16")
+    calib_config = load_temperature_config()
+    temperature = float(calib_config.get("temperature", 1.0))
+    thresh = (
+        confidence_threshold
+        if confidence_threshold is not None
+        else float(calib_config.get("low_confidence_threshold", 0.70))
+    )
 
     # Format model input and apply ImageNet backbone preprocessing
     inp = model_input.copy()
@@ -138,26 +152,38 @@ def predict(model_input: np.ndarray, include_gradcam: bool = False, use_tta: boo
     else:
         raw_preds = model.predict(preprocessed_input, verbose=0)[0]
 
-    sorted_indices = np.argsort(raw_preds)
+    # Temperature Scaling Calibration on Logits
+    logits = probabilities_to_logits(np.expand_dims(raw_preds, axis=0))
+    calibrated_probs_array = apply_temperature_to_logits(logits, temperature)[0]
+
+    sorted_indices = np.argsort(calibrated_probs_array)
     class_idx = int(sorted_indices[-1])
     class_name = CLASS_NAMES[class_idx]
-    confidence = float(raw_preds[class_idx])
-    
-    top2_idx = int(sorted_indices[-2]) if len(sorted_indices) > 1 else class_idx
-    top2_gap = float(confidence - raw_preds[top2_idx])
-    is_uncertain = (confidence < 0.70) or (top2_gap < 0.15)
+    confidence = float(calibrated_probs_array[class_idx])
+    uncalibrated_confidence = float(raw_preds[class_idx])
 
-    probs = {CLASS_NAMES[i]: float(raw_preds[i]) for i in range(NUM_CLASSES)}
+    top2_idx = int(sorted_indices[-2]) if len(sorted_indices) > 1 else class_idx
+    top2_gap = float(confidence - calibrated_probs_array[top2_idx])
+
+    is_low_confidence = confidence < thresh
+    is_uncertain = is_low_confidence or (top2_gap < 0.15)
+    status = "low_confidence" if is_low_confidence else "normal"
+
+    probs = {CLASS_NAMES[i]: float(calibrated_probs_array[i]) for i in range(NUM_CLASSES)}
     severity = estimate_severity(class_name, confidence)
 
     result = {
         "class": class_name,
         "class_idx": class_idx,
         "confidence": confidence,
-        "probabilities": probs,
+        "uncalibrated_confidence": uncalibrated_confidence,
+        "temperature": temperature,
+        "confidence_threshold": thresh,
+        "status": status,
         "is_tumour": class_name != "Normal",
         "is_uncertain": is_uncertain,
         "top2_gap": round(top2_gap, 4),
+        "probabilities": probs,
         "info": {
             **CLASS_INFO.get(class_name, CLASS_INFO["Normal"]),
             "severity": severity,

@@ -69,7 +69,7 @@ from database import (
 )
 from frontend import inject_theme
 from model import CLASS_INFO, CLASS_NAMES
-from preprocessing import plot_pixel_histogram, plot_preprocessing_steps, validate_image
+from preprocessing import is_probable_brain_mri, load_image_from_upload, plot_pixel_histogram, plot_preprocessing_steps, validate_image
 from reports import generate_pdf_report
 
 
@@ -511,7 +511,7 @@ def page_upload() -> None:
         _card_start()
         uploaded_file = st.file_uploader("Upload MRI scan", type=["jpg", "jpeg", "png"])
         show_preprocessing = st.checkbox("Show preprocessing visuals", value=True)
-        enable_segmentation = st.checkbox("Enable segmentation overlay", value=True)
+        enable_segmentation = st.checkbox("Enable Region highlight (heuristic)", value=True)
         enable_gradcam = st.checkbox("Enable Grad-CAM", value=True)
         st.markdown("Optional patient details")
         patient_name = st.text_input("Patient name")
@@ -530,7 +530,7 @@ def page_upload() -> None:
             - Resize to 224x224 and Gaussian denoising
             - Confidence scoring and class probabilities
             - MRI quality estimation and AI summary
-            - Grad-CAM heatmap and segmentation overlay
+            - Grad-CAM heatmap and Region highlight (heuristic)
             - PDF report generation and database logging
             """
         )
@@ -542,6 +542,13 @@ def page_upload() -> None:
     valid, message = validate_image(uploaded_file)
     if not valid:
         st.error(message)
+        return
+
+    img_array = load_image_from_upload(uploaded_file)
+    is_mri, ood_message = is_probable_brain_mri(img_array)
+    if not is_mri:
+        st.error(f"❌ Out-of-Distribution Error: {ood_message}")
+        st.info("Please upload a standard grayscale Brain MRI scan for diagnostic classification.")
         return
 
     st.image(uploaded_file, caption="MRI preview", use_column_width=True)
@@ -563,6 +570,16 @@ def page_upload() -> None:
     _card_start()
     st.subheader("Prediction Summary")
     st.success(f"Scan #{prediction_id:06d} classified as {result['class']}")
+
+    if result.get("status") == "low_confidence" or result.get("low_confidence_warning"):
+        st.warning(
+            result.get(
+                "low_confidence_warning",
+                f"⚠️ **Low Diagnostic Confidence Warning**: Calibrated confidence ({result['confidence']*100:.1f}%) "
+                "is below the clinical threshold of 70%. **Consultation with a medical specialist / neuro-oncologist is strongly advised.**",
+            )
+        )
+
     st.write(result["ai_summary"])
     st.caption(result["assistant_text"])
     _card_end()
@@ -588,7 +605,8 @@ def page_upload() -> None:
         image_cols[idx].image(result["gradcam"], caption="Grad-CAM")
         idx += 1
     if result.get("segmentation"):
-        image_cols[idx].image(result["segmentation"]["overlay"], caption="Segmentation Overlay")
+        method_label = result["segmentation"].get("method", "Region highlight (heuristic)")
+        image_cols[idx].image(result["segmentation"]["overlay"], caption=method_label)
 
     pdf_bytes = generate_pdf_report(
         username=current_username(),
@@ -669,39 +687,135 @@ def page_history() -> None:
     st.dataframe(df, use_container_width=True, hide_index=True)
 
 
+def _render_eval_metrics_summary(metrics: dict) -> None:
+    """Render overall metrics, tumour recall highlights, and per-class performance table."""
+    c1, c2, c3, c4 = st.columns(4)
+    _metric_tile(c1, "VGG16 Transfer Model", "Evaluated Model")
+    _metric_tile(c2, f"{metrics['accuracy'] * 100:.1f}%", "Overall Accuracy", "#00d4a5")
+    _metric_tile(c3, f"{metrics['macro_avg']['f1_score'] * 100:.1f}%", "Macro F1 Score", "#16b9ff")
+    _metric_tile(c4, str(metrics.get("total_samples", 0)), "Test Samples", "#fcbf49")
+
+    _card_start()
+    st.subheader("🎯 Tumour Class Recall Highlights")
+    st.caption("Recall (Sensitivity) is the critical clinical metric measuring the percentage of actual tumour cases correctly identified by the model.")
+
+    r_col1, r_col2, r_col3 = st.columns(3)
+    recalls = metrics.get("tumour_recalls", {})
+    per_cls = metrics.get("per_class", {})
+
+    glioma_rec = recalls.get("Glioma", per_cls.get("Glioma", {}).get("recall", 0.0))
+    meningioma_rec = recalls.get("Meningioma", per_cls.get("Meningioma", {}).get("recall", 0.0))
+    pituitary_rec = recalls.get("Pituitary", per_cls.get("Pituitary", {}).get("recall", 0.0))
+
+    _metric_tile(r_col1, f"{glioma_rec * 100:.1f}%", "Glioma Recall", "#ff6b6b")
+    _metric_tile(r_col2, f"{meningioma_rec * 100:.1f}%", "Meningioma Recall", "#ffd43b")
+    _metric_tile(r_col3, f"{pituitary_rec * 100:.1f}%", "Pituitary Recall", "#74c0fc")
+    _card_end()
+
+    _card_start()
+    st.subheader("📊 Detailed Classification Performance by Class")
+    if per_cls:
+        df_rows = []
+        for cls_name, stat in per_cls.items():
+            df_rows.append({
+                "Class": cls_name,
+                "Precision": f"{stat['precision'] * 100:.2f}%",
+                "Recall (Sensitivity)": f"{stat['recall'] * 100:.2f}%",
+                "F1-Score": f"{stat['f1_score'] * 100:.2f}%",
+                "Support (Samples)": stat["support"],
+            })
+        if "macro_avg" in metrics:
+            df_rows.append({
+                "Class": "Macro Average",
+                "Precision": f"{metrics['macro_avg']['precision'] * 100:.2f}%",
+                "Recall (Sensitivity)": f"{metrics['macro_avg']['recall'] * 100:.2f}%",
+                "F1-Score": f"{metrics['macro_avg']['f1_score'] * 100:.2f}%",
+                "Support (Samples)": metrics.get("total_samples", "-"),
+            })
+        if "weighted_avg" in metrics:
+            df_rows.append({
+                "Class": "Weighted Average",
+                "Precision": f"{metrics['weighted_avg']['precision'] * 100:.2f}%",
+                "Recall (Sensitivity)": f"{metrics['weighted_avg']['recall'] * 100:.2f}%",
+                "F1-Score": f"{metrics['weighted_avg']['f1_score'] * 100:.2f}%",
+                "Support (Samples)": metrics.get("total_samples", "-"),
+            })
+        st.dataframe(pd.DataFrame(df_rows), use_container_width=True, hide_index=True)
+    _card_end()
+
+
+def _render_eval_plots() -> None:
+    """Display confusion matrix and One-vs-Rest ROC curve plots."""
+    cm_path = Path("logs/confusion_matrix.png")
+    if not cm_path.exists():
+        cm_path = Path("data/artifacts/plots/confusion_matrix.png")
+
+    roc_path = Path("logs/roc_curves.png")
+    if not roc_path.exists():
+        roc_path = Path("data/artifacts/plots/roc_curves.png")
+
+    p_col1, p_col2 = st.columns(2, gap="large")
+    with p_col1:
+        _card_start()
+        st.subheader("Confusion Matrix")
+        if cm_path.exists():
+            st.image(str(cm_path), caption="Testing Split Confusion Matrix", use_column_width=True)
+        else:
+            st.info("Confusion matrix plot not found.")
+        _card_end()
+
+    with p_col2:
+        _card_start()
+        st.subheader("One-vs-Rest ROC Curves")
+        if roc_path.exists():
+            st.image(str(roc_path), caption="Multi-Class One-vs-Rest ROC Curves & AUC", use_column_width=True)
+        else:
+            st.info("ROC curves plot not found.")
+        _card_end()
+
+
 def page_training() -> None:
+    """Render Training Hub page with evaluation analytics, tumour recall highlights, and plots."""
     if not is_logged_in():
         st.warning("Please log in to view training analytics.")
         return
 
-    _hero("Training Hub", "Model comparison and experiment outputs")
+    _hero("Training Hub", "Model evaluation, confusion matrix, ROC curves, and tumour recall metrics")
+
+    eval_json_path = Path("logs/evaluation_metrics.json")
+    if not eval_json_path.exists():
+        eval_json_path = Path("data/artifacts/plots/evaluation_metrics.json")
+
     summary_path = Path("logs/training_summary.json")
-    if not summary_path.exists():
+
+    if not eval_json_path.exists() and not summary_path.exists():
         _card_start()
-        st.info("No training summary found yet. Run `python model/train.py --dataset_zip <path>` after restoring a working Python environment.")
+        st.info("No evaluation outputs found yet. Run `python model/evaluate.py` to evaluate the model on the Testing split and generate confusion matrix and ROC curves.")
         _card_end()
         return
 
-    summary = json.loads(summary_path.read_text(encoding="utf-8"))
-    leaderboard = pd.DataFrame(summary["leaderboard"])
-    best = summary["best_model"]
+    if eval_json_path.exists():
+        eval_metrics = json.loads(eval_json_path.read_text(encoding="utf-8"))
+        _render_eval_metrics_summary(eval_metrics)
+        _render_eval_plots()
 
-    c1, c2, c3, c4 = st.columns(4)
-    _metric_tile(c1, best["model_name"], "Best Model")
-    _metric_tile(c2, f"{best['accuracy'] * 100:.1f}%", "Accuracy", "#00d4a5")
-    _metric_tile(c3, f"{best['precision'] * 100:.1f}%", "Precision", "#16b9ff")
-    _metric_tile(c4, f"{best['f1_score'] * 100:.1f}%", "F1 Score", "#fcbf49")
-
-    st.dataframe(leaderboard, use_container_width=True, hide_index=True)
-    comparison = px.bar(
-        leaderboard.melt(id_vars="model_name", value_vars=["accuracy", "precision", "recall", "f1_score"]),
-        x="model_name",
-        y="value",
-        color="variable",
-        barmode="group",
-    )
-    st.plotly_chart(comparison, use_container_width=True)
-    st.json(summary["dataset_summary"])
+    if summary_path.exists():
+        st.markdown("---")
+        _card_start()
+        st.subheader("Model Architecture Comparison (Leaderboard)")
+        summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        if "leaderboard" in summary:
+            leaderboard = pd.DataFrame(summary["leaderboard"])
+            st.dataframe(leaderboard, use_container_width=True, hide_index=True)
+            comparison = px.bar(
+                leaderboard.melt(id_vars="model_name", value_vars=["accuracy", "precision", "recall", "f1_score"]),
+                x="model_name",
+                y="value",
+                color="variable",
+                barmode="group",
+            )
+            st.plotly_chart(comparison, use_container_width=True)
+        _card_end()
 
 
 def page_about() -> None:

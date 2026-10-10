@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
@@ -249,6 +250,9 @@ def initialize_database() -> None:
             )
             """
         )
+
+        # Migrate otp_records table columns
+        _ensure_column(conn, "otp_records", "attempts", "INTEGER DEFAULT 0")
 
         # Migrate users table columns
         for column_name, column_type in [
@@ -524,33 +528,83 @@ def check_duplicate(username: str, email: str, phone: str) -> str | None:
     return None
 
 
-def store_otp(phone: str, otp_code: str, ttl_minutes: int = 10) -> bool:
-    expires_at = datetime.now() + timedelta(minutes=ttl_minutes)
+def hash_otp_code(otp_code: str, salt: str = "neuroscan_otp_salt_2026") -> str:
+    """Compute salted SHA-256 hash of an OTP code."""
+    return hashlib.sha256(f"{salt}:{otp_code.strip()}".encode("utf-8")).hexdigest()
+
+
+def store_otp(phone: str, otp_code: str, ttl_minutes: int = 5) -> tuple[bool, str]:
+    """Store salted SHA-256 hashed OTP with 5-minute expiry and rate limit enforcement (max 3 per hour)."""
+    now = datetime.now()
+    one_hour_ago = now - timedelta(hours=1)
+    hashed_code = hash_otp_code(otp_code)
+    expires_at = now + timedelta(minutes=ttl_minutes)
+
     with get_connection() as conn:
+        count_row = conn.execute(
+            "SELECT COUNT(*) as count FROM otp_records WHERE phone = ? AND created_at >= ?",
+            (phone, one_hour_ago),
+        ).fetchone()
+        if count_row and count_row["count"] >= 3:
+            return False, "Rate limit exceeded. Maximum 3 OTP requests per hour."
+
         conn.execute("UPDATE otp_records SET is_used = 1 WHERE phone = ? AND is_used = 0", (phone,))
         conn.execute(
-            "INSERT INTO otp_records (phone, otp_code, expires_at) VALUES (?, ?, ?)",
-            (phone, otp_code, expires_at),
+            "INSERT INTO otp_records (phone, otp_code, created_at, expires_at, attempts, is_used) VALUES (?, ?, ?, ?, 0, 0)",
+            (phone, hashed_code, now, expires_at),
         )
-    return True
+    return True, "OTP stored successfully."
 
 
-def verify_otp(phone: str, otp_code: str) -> bool:
+def verify_otp_detailed(phone: str, otp_code: str) -> tuple[bool, str]:
+    """Verify entered OTP code against stored hash, enforcing expiry and 5-attempt cap."""
+    hashed_input = hash_otp_code(otp_code)
     with get_connection() as conn:
         row = conn.execute(
             """
             SELECT * FROM otp_records
-            WHERE phone = ? AND otp_code = ? AND is_used = 0
+            WHERE phone = ? AND is_used = 0
             ORDER BY created_at DESC LIMIT 1
             """,
-            (phone, otp_code),
+            (phone,),
         ).fetchone()
         if not row:
-            return False
-        if datetime.now() > datetime.fromisoformat(str(row["expires_at"])):
-            return False
-        conn.execute("UPDATE otp_records SET is_used = 1 WHERE id = ?", (row["id"],))
-    return True
+            return False, "Invalid or expired OTP code."
+
+        attempts = row["attempts"] if "attempts" in row.keys() and row["attempts"] is not None else 0
+        if attempts >= 5:
+            conn.execute("UPDATE otp_records SET is_used = 1 WHERE id = ?", (row["id"],))
+            return False, "Maximum verification attempts (5) exceeded. Please request a new OTP."
+
+        expires_at_str = str(row["expires_at"])
+        try:
+            exp_dt = datetime.fromisoformat(expires_at_str)
+        except Exception:
+            exp_dt = datetime.now()
+
+        if datetime.now() > exp_dt:
+            conn.execute("UPDATE otp_records SET is_used = 1 WHERE id = ?", (row["id"],))
+            return False, "OTP has expired. Please request a new code."
+
+        stored_code = row["otp_code"]
+        if stored_code == hashed_input or stored_code == otp_code.strip():
+            conn.execute("UPDATE otp_records SET is_used = 1 WHERE id = ?", (row["id"],))
+            return True, "OTP verified successfully."
+        else:
+            new_attempts = attempts + 1
+            if new_attempts >= 5:
+                conn.execute("UPDATE otp_records SET attempts = ?, is_used = 1 WHERE id = ?", (new_attempts, row["id"]))
+                return False, "Maximum verification attempts (5) exceeded. Please request a new OTP."
+            else:
+                conn.execute("UPDATE otp_records SET attempts = ? WHERE id = ?", (new_attempts, row["id"]))
+                remaining = 5 - new_attempts
+                return False, f"Incorrect OTP code. {remaining} attempt(s) remaining."
+
+
+def verify_otp(phone: str, otp_code: str) -> bool:
+    """Backward-compatible boolean wrapper for OTP verification."""
+    success, _ = verify_otp_detailed(phone, otp_code)
+    return success
 
 
 def create_patient_record(
