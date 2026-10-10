@@ -4,7 +4,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from database import register_model_version
 from models import TrainingConfig, train_all_models
@@ -16,10 +21,11 @@ LOGGER = configure_logging(__name__)
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Train NeuroScan AI brain tumour models")
-    parser.add_argument("--dataset_zip", required=True, help="Path to MRI dataset zip archive")
-    parser.add_argument("--epochs", type=int, default=12)
-    parser.add_argument("--batch_size", type=int, default=16)
-    parser.add_argument("--patience", type=int, default=4)
+    parser.add_argument("--dataset_zip", type=str, default=None, help="Path to MRI dataset zip archive (optional if data/raw/archive exists)")
+    parser.add_argument("--stage1_epochs", type=int, default=5)
+    parser.add_argument("--stage2_epochs", type=int, default=8)
+    parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument("--patience", type=int, default=3)
     parser.add_argument("--resume", action="store_true")
     return parser.parse_args()
 
@@ -30,7 +36,8 @@ def main() -> None:
     summary = train_all_models(
         TrainingConfig(
             dataset_zip=args.dataset_zip,
-            epochs=args.epochs,
+            stage1_epochs=args.stage1_epochs,
+            stage2_epochs=args.stage2_epochs,
             batch_size=args.batch_size,
             patience=args.patience,
             resume=args.resume,

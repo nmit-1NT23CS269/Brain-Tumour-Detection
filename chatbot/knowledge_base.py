@@ -241,11 +241,11 @@ INTENTS: list[dict] = [
 
 # Suggested quick-reply questions shown as buttons in the chat UI.
 SUGGESTED_QUESTIONS: list[str] = [
-    "What is NeuroScan AI?",
-    "How do I scan an MRI?",
-    "What does confidence mean?",
-    "Explain my last result",
-    "What is Grad-CAM?",
+    "What are common brain tumor symptoms?",
+    "What treatments are available for brain tumors?",
+    "Why is MRI used for brain tumors?",
+    "What are the common types of brain tumors?",
+    "How do I use NeuroScan AI?",
 ]
 
 FALLBACK_RESPONSES: list[str] = [

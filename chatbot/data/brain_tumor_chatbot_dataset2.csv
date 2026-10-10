@@ -1,0 +1,301 @@
+id,question,answer,intent,category,source
+1,What is the brain?,The brain is the main organ of the central nervous system and controls many functions of the body.,brain_definition,Brain Basics,NINDS
+2,Can you explain what the brain is?,The brain is the main organ of the central nervous system and controls many functions of the body.,brain_definition,Brain Basics,NINDS
+3,What does the human brain mean?,The brain is the main organ of the central nervous system and controls many functions of the body.,brain_definition,Brain Basics,NINDS
+4,What does the brain do?,"The brain controls functions such as movement, sensation, thinking, memory, emotions, and coordination.",brain_function,Brain Basics,NINDS
+5,What are the functions of the brain?,"The brain controls functions such as movement, sensation, thinking, memory, emotions, and coordination.",brain_function,Brain Basics,NINDS
+6,Why is the brain important?,"The brain controls functions such as movement, sensation, thinking, memory, emotions, and coordination.",brain_function,Brain Basics,NINDS
+7,What are the main parts of the brain?,"The major parts include the cerebrum, cerebellum, and brainstem.",brain_parts,Brain Basics,NINDS
+8,What are the different parts of the brain?,"The major parts include the cerebrum, cerebellum, and brainstem.",brain_parts,Brain Basics,NINDS
+9,Name the main parts of the brain.,"The major parts include the cerebrum, cerebellum, and brainstem.",brain_parts,Brain Basics,NINDS
+10,What is the cerebrum?,"The cerebrum is the largest part of the brain and is involved in thinking, memory, sensation, and voluntary movement.",cerebrum,Brain Basics,NINDS
+11,What is the function of the cerebrum?,"The cerebrum is the largest part of the brain and is involved in thinking, memory, sensation, and voluntary movement.",cerebrum,Brain Basics,NINDS
+12,What is the cerebellum?,"The cerebellum helps control balance, coordination, and precise movements.",cerebellum,Brain Basics,NINDS
+13,What does the cerebellum control?,"The cerebellum helps control balance, coordination, and precise movements.",cerebellum,Brain Basics,NINDS
+14,What is the brainstem?,The brainstem connects the brain with the spinal cord and controls several essential functions.,brainstem,Brain Basics,NINDS
+15,What does the brainstem do?,The brainstem connects the brain with the spinal cord and controls several essential functions.,brainstem,Brain Basics,NINDS
+16,What are neurons?,Neurons are specialized cells that transmit information through electrical and chemical signals.,neurons,Brain Basics,NINDS
+17,What do neurons do?,Neurons are specialized cells that transmit information through electrical and chemical signals.,neurons,Brain Basics,NINDS
+18,What is the nervous system?,"The nervous system is a network that carries information between the brain, spinal cord, and body.",nervous_system,Brain Basics,NINDS
+19,How does the nervous system work?,"The nervous system is a network that carries information between the brain, spinal cord, and body.",nervous_system,Brain Basics,NINDS
+20,What are the lobes of the brain?,"The cerebral cortex is commonly divided into frontal, parietal, temporal, and occipital lobes.",brain_lobes,Brain Basics,NINDS
+21,How many main brain lobes are there?,"The cerebral cortex is commonly divided into frontal, parietal, temporal, and occipital lobes.",brain_lobes,Brain Basics,NINDS
+22,What does the frontal lobe do?,"The frontal lobe is involved in planning, decision-making, movement, speech, and behavior.",frontal_lobe,Brain Basics,NINDS
+23,What is the function of the frontal lobe?,"The frontal lobe is involved in planning, decision-making, movement, speech, and behavior.",frontal_lobe,Brain Basics,NINDS
+24,What does the temporal lobe do?,"The temporal lobe is involved in hearing, memory, language, and aspects of emotion.",temporal_lobe,Brain Basics,NINDS
+25,What does the parietal lobe do?,The parietal lobe processes sensory information and contributes to spatial awareness.,parietal_lobe,Brain Basics,NINDS
+26,What does the occipital lobe do?,The occipital lobe is primarily involved in processing visual information.,occipital_lobe,Brain Basics,NINDS
+27,What protects the brain?,"The skull, meninges, cerebrospinal fluid, and protective barriers help protect the brain.",brain_protection,Brain Basics,NINDS
+28,What is cerebrospinal fluid?,Cerebrospinal fluid is a clear fluid that surrounds the brain and spinal cord and helps protect and support them.,csf,Brain Basics,NINDS
+29,What is a brain tumor?,A brain tumor is an abnormal growth of cells in or around the brain.,tumor_definition,Brain Tumor Basics,NCI
+30,Can you explain brain tumor?,A brain tumor is an abnormal growth of cells in or around the brain.,tumor_definition,Brain Tumor Basics,NCI
+31,What does brain tumor mean?,A brain tumor is an abnormal growth of cells in or around the brain.,tumor_definition,Brain Tumor Basics,NCI
+32,Are all brain tumors cancerous?,"No. Some brain tumors are benign, while others are malignant.",tumor_cancer,Brain Tumor Basics,NCI
+33,Is every brain tumor cancer?,"No. Some brain tumors are benign, while others are malignant.",tumor_cancer,Brain Tumor Basics,NCI
+34,What is a benign brain tumor?,"A benign tumor is non-cancerous, although it can still cause problems by pressing on nearby brain structures.",benign_tumor,Brain Tumor Basics,NCI
+35,What is a malignant brain tumor?,A malignant brain tumor contains cancerous cells and can grow or invade surrounding tissue.,malignant_tumor,Brain Tumor Basics,NCI
+36,What is a primary brain tumor?,A primary brain tumor begins in cells within the brain or nearby tissues.,primary_tumor,Brain Tumor Basics,NCI
+37,What is a secondary brain tumor?,"A secondary brain tumor, or brain metastasis, occurs when cancer from another part of the body spreads to the brain.",secondary_tumor,Brain Tumor Basics,NCI
+38,Can children get brain tumors?,Yes. Brain tumors can occur in children as well as adults.,pediatric_tumor,Brain Tumor Basics,NCI
+39,Can adults get brain tumors?,"Yes. Brain tumors can occur at any age, although the types and frequencies vary with age.",adult_tumor,Brain Tumor Basics,NCI
+40,Can a brain tumor grow?,"Some brain tumors grow slowly, while others can grow more quickly.",tumor_growth,Brain Tumor Basics,NCI
+41,Are brain tumors common?,"Brain tumors vary widely in type and frequency, and their occurrence differs by age and other factors.",tumor_frequency,Brain Tumor Basics,NCI
+42,Is every brain tumor life-threatening?,"No. Brain tumors vary widely in type, behavior, location, and severity.",life_threatening,Brain Tumor Basics,NCI
+43,Can a brain tumor have no symptoms?,Yes. Some brain tumors may cause few or no symptoms initially and may be discovered during imaging for another reason.,asymptomatic,Brain Tumor Basics,NCI
+44,What is glioma?,Glioma is a type of tumor that develops from glial cells or related cells in the central nervous system.,glioma_definition,Tumor Types,NCI
+45,Can you explain glioma?,Glioma is a type of tumor that develops from glial cells or related cells in the central nervous system.,glioma_definition,Tumor Types,NCI
+46,What is glioblastoma?,Glioblastoma is an aggressive type of malignant brain tumor.,glioblastoma,Tumor Types,NCI
+47,What does glioblastoma mean?,Glioblastoma is an aggressive type of malignant brain tumor.,glioblastoma,Tumor Types,NCI
+48,What is meningioma?,"Meningioma develops from the meninges, the protective membranes surrounding the brain and spinal cord.",meningioma,Tumor Types,NCI
+49,Where does meningioma develop?,"Meningioma develops from the meninges, the protective membranes surrounding the brain and spinal cord.",meningioma,Tumor Types,NCI
+50,What is a pituitary tumor?,A pituitary tumor develops in the pituitary gland and may affect hormone production.,pituitary_tumor,Tumor Types,NCI
+51,Where is a pituitary tumor found?,A pituitary tumor develops in the pituitary gland and may affect hormone production.,pituitary_tumor,Tumor Types,NCI
+52,What is medulloblastoma?,Medulloblastoma is a type of tumor that commonly develops in the cerebellum and occurs more often in children.,medulloblastoma,Tumor Types,NCI
+53,What are the common types of brain tumors?,"Common types include gliomas, meningiomas, pituitary tumors, and other tumors affecting the brain or nearby structures.",tumor_types,Tumor Types,NCI
+54,What kinds of brain tumors are there?,"Common types include gliomas, meningiomas, pituitary tumors, and other tumors affecting the brain or nearby structures.",tumor_types,Tumor Types,NCI
+55,What are common brain tumor symptoms?,"Symptoms depend on the tumor's location, size, and growth and may include headaches, seizures, vision changes, or problems with movement or thinking.",tumor_symptoms,Symptoms,NCI
+56,What symptoms can a brain tumor cause?,"Symptoms depend on the tumor's location, size, and growth and may include headaches, seizures, vision changes, or problems with movement or thinking.",tumor_symptoms,Symptoms,NCI
+57,Can a brain tumor cause headaches?,"Yes. Headaches can occur with brain tumors, although headaches have many other possible causes.",headache,Symptoms,NCI
+58,Is headache a symptom of brain tumor?,"Yes. Headaches can occur with brain tumors, although headaches have many other possible causes.",headache,Symptoms,NCI
+59,Can a brain tumor cause seizures?,Yes. Seizures can be a symptom of some brain tumors.,seizures,Symptoms,NCI
+60,Are seizures a symptom of brain tumors?,Yes. Seizures can be a symptom of some brain tumors.,seizures,Symptoms,NCI
+61,Can brain tumors cause vision problems?,Yes. Some brain tumors can affect vision depending on their location.,vision_problems,Symptoms,NCI
+62,Can a tumor affect eyesight?,Yes. Some brain tumors can affect vision depending on their location.,vision_problems,Symptoms,NCI
+63,Can a brain tumor cause vomiting?,"Nausea or vomiting can occur with some brain tumors, particularly when increased pressure inside the skull is present.",vomiting,Symptoms,NCI
+64,Can a brain tumor affect memory?,Some brain tumors can affect memory or other cognitive functions depending on their location.,memory_changes,Symptoms,NCI
+65,Can a brain tumor affect speech?,Yes. A tumor affecting areas involved in language or speech can cause communication difficulties.,speech_changes,Symptoms,NCI
+66,Can a brain tumor cause weakness?,Some brain tumors can cause weakness or difficulty moving parts of the body.,weakness,Symptoms,NCI
+67,Can a brain tumor affect balance?,Yes. Tumors affecting certain brain regions can cause balance or coordination problems.,balance_problems,Symptoms,NCI
+68,Can brain tumors change personality?,"Some brain tumors can cause changes in behavior, personality, or emotional responses depending on their location.",personality_changes,Symptoms,NCI
+69,Can a brain tumor cause dizziness?,"Some brain tumors can cause dizziness or balance problems, depending on their location.",dizziness,Symptoms,NCI
+70,Can a brain tumor cause hearing problems?,Some tumors can affect hearing when they involve structures or nerves associated with hearing.,hearing,Symptoms,NCI
+71,Can a brain tumor cause numbness?,Some brain tumors can cause numbness or altered sensation depending on their location.,numbness,Symptoms,NCI
+72,Can a brain tumor cause difficulty walking?,Yes. Tumors affecting areas involved in movement or coordination can cause difficulty walking.,walking,Symptoms,NCI
+73,Can brain tumors affect emotions?,Some brain tumors can affect mood or emotional behavior depending on the brain region involved.,emotions,Symptoms,NCI
+74,What causes brain tumors?,The exact cause of many brain tumors is unknown. Certain genetic conditions and previous radiation exposure can increase risk for some tumors.,tumor_causes,Causes,NCI
+75,Why do brain tumors happen?,The exact cause of many brain tumors is unknown. Certain genetic conditions and previous radiation exposure can increase risk for some tumors.,tumor_causes,Causes,NCI
+76,Is radiation a risk factor for brain tumors?,"Exposure to certain types of radiation, especially high-dose ionizing radiation, can increase the risk of some brain tumors.",radiation_risk,Risk Factors,NCI
+77,Are brain tumors hereditary?,"Most brain tumors are not inherited, but certain rare genetic conditions can increase the risk.",hereditary,Risk Factors,NCI
+78,Does family history matter for brain tumors?,"A family history can be relevant, particularly when certain inherited genetic conditions are present.",family_history,Risk Factors,NCI
+79,Can lifestyle cause brain tumors?,There is no simple lifestyle factor known to cause most brain tumors.,lifestyle,Risk Factors,NCI
+80,What is an MRI scan?,MRI uses magnetic fields and radio waves to create detailed images of structures inside the body.,mri_definition,MRI & Diagnosis,NCI
+81,What does MRI mean?,MRI stands for magnetic resonance imaging and uses magnetic fields and radio waves to create detailed images.,mri_definition,MRI & Diagnosis,NCI
+82,Why is MRI used for brain tumors?,MRI provides detailed images of the brain and can help doctors identify and evaluate abnormalities.,mri_purpose,MRI & Diagnosis,NCI
+83,Why do doctors use MRI for the brain?,MRI provides detailed images of the brain and can help doctors identify and evaluate abnormalities.,mri_purpose,MRI & Diagnosis,NCI
+84,Can MRI detect a brain tumor?,"MRI can show abnormal areas that may represent a brain tumor, but diagnosis requires medical evaluation.",mri_detection,MRI & Diagnosis,NCI
+85,What does a brain MRI show?,A brain MRI can provide detailed images of brain structures and abnormalities.,mri_information,MRI & Diagnosis,NCI
+86,Is MRI painful?,"MRI itself is generally painless, although some people may find lying still inside the scanner uncomfortable.",mri_pain,MRI & Diagnosis,NCI
+87,Does MRI use radiation?,No. MRI does not use ionizing radiation; it uses magnetic fields and radio waves.,mri_radiation,MRI & Diagnosis,NCI
+88,What is contrast in MRI?,Contrast agents can make certain tissues or abnormalities easier to see on an MRI.,mri_contrast,MRI & Diagnosis,NCI
+89,What is a CT scan?,CT uses X-rays and computer processing to create detailed images of the body.,ct_scan,MRI & Diagnosis,NCI
+90,What is a biopsy?,A biopsy involves removing a sample of tissue so it can be examined to help determine the type of tumor.,biopsy,MRI & Diagnosis,NCI
+91,Can MRI alone confirm a tumor type?,"MRI can provide important information, but determining the exact tumor type may require additional evaluation, including tissue examination.",mri_confirmation,MRI & Diagnosis,NCI
+92,What is a neurological examination?,"A neurological examination assesses functions such as movement, sensation, coordination, reflexes, and mental function.",neurological_exam,Diagnosis,NINDS
+93,What is tumor grading?,Tumor grading describes how abnormal tumor cells look and can provide information about how aggressively a tumor may behave.,tumor_grading,Tumor Grading,NCI
+94,What is a Grade 1 tumor?,Grade 1 tumors generally have cells that look more like normal cells and tend to grow more slowly.,grade_one,Tumor Grading,NCI
+95,What is a Grade 2 tumor?,Grade 2 tumors generally have features suggesting slower growth but may have a risk of progression.,grade_two,Tumor Grading,NCI
+96,What is a Grade 3 tumor?,Grade 3 tumors generally contain more abnormal cells and tend to grow more rapidly.,grade_three,Tumor Grading,NCI
+97,What is a Grade 4 tumor?,Grade 4 tumors generally have highly abnormal features and tend to be more aggressive.,grade_four,Tumor Grading,NCI
+98,What is the difference between tumor grades?,Tumor grades reflect how abnormal tumor cells appear and can provide information about expected behavior and growth.,grade_difference,Tumor Grading,NCI
+99,How are brain tumors treated?,"Treatment depends on the tumor type, location, size, grade, and the person's overall situation.",treatment,Treatment,NCI
+100,What treatments are available for brain tumors?,"Treatment depends on the tumor type, location, size, grade, and the person's overall situation.",treatment,Treatment,NCI
+101,Is surgery used for brain tumors?,Surgery may be used to remove all or part of a tumor when it can be done safely.,surgery,Treatment,NCI
+102,Can brain tumors be treated with surgery?,Surgery may be used to remove all or part of a tumor when it can be done safely.,surgery,Treatment,NCI
+103,What is radiation therapy?,Radiation therapy uses high-energy radiation to damage and destroy tumor cells.,radiation_therapy,Treatment,NCI
+104,What is chemotherapy?,Chemotherapy uses medicines that target cancer cells and may be used for certain brain tumors.,chemotherapy,Treatment,NCI
+105,What is targeted therapy?,Targeted therapy uses medicines designed to act on specific features of cancer cells.,targeted_therapy,Treatment,NCI
+106,Can a brain tumor be removed completely?,"Some tumors can be completely removed, while others cannot be safely removed because of their location or involvement with important brain structures.",tumor_removal,Treatment,NCI
+107,Does every brain tumor need surgery?,"No. Treatment varies by tumor type and individual circumstances, and some tumors may be monitored or treated with other approaches.",surgery_need,Treatment,NCI
+108,Can brain tumors come back after treatment?,"Some brain tumors can recur after treatment, so follow-up monitoring may be necessary.",recurrence,Treatment,NCI
+109,What is tumor recurrence?,Recurrence means that a tumor returns after a period when it was reduced or no longer detectable.,recurrence_definition,Treatment,NCI
+110,What happens after brain tumor treatment?,"Follow-up may include medical visits, imaging tests, rehabilitation, and monitoring for recurrence or treatment effects.",follow_up,Recovery,NCI
+111,Can people recover after brain tumor treatment?,"Recovery varies greatly depending on the tumor, treatment, location, and individual factors.",recovery,Recovery,NCI
+112,Is rehabilitation needed after treatment?,"Some people may benefit from physical, occupational, speech, or other rehabilitation after treatment.",rehabilitation,Recovery,NCI
+113,What is brain tumor prognosis?,"Prognosis describes the expected course or outcome of a disease and depends on factors such as tumor type, grade, location, and treatment response.",prognosis,Prognosis,NCI
+114,Does tumor size affect prognosis?,Tumor size can be one factor considered when doctors evaluate a person's condition and treatment options.,tumor_size_prognosis,Prognosis,NCI
+115,Does tumor location matter?,"Yes. Tumor location can affect symptoms, treatment options, and potential effects on brain function.",tumor_location,Prognosis,NCI
+116,Can brain tumors be prevented?,There is no guaranteed way to prevent most brain tumors because their causes are not fully understood.,prevention,Prevention,NCI
+117,Can a healthy lifestyle prevent brain tumors?,"A healthy lifestyle supports overall health, but it cannot guarantee prevention of brain tumors.",healthy_lifestyle,Prevention,NCI
+118,When should someone see a doctor for symptoms?,"Persistent, worsening, unusual, or concerning neurological symptoms should be evaluated by a healthcare professional.",doctor_visit,Medical Guidance,NCI
+119,Should everyone with a headache get an MRI?,"No. Whether an MRI is needed depends on the symptoms, medical history, examination, and a healthcare professional's assessment.",headache_mri,Medical Guidance,NCI
+120,Are seizures always caused by brain tumors?,"No. Seizures have many possible causes, and having a seizure does not necessarily mean a person has a brain tumor.",seizure_causes,Medical Guidance,NCI
+121,What is a brain lesion?,A brain lesion is an area of abnormal or damaged tissue seen or identified in the brain.,lesion,Medical Terms,NINDS
+122,What is brain edema?,Brain edema means swelling caused by an increase of fluid in brain tissue.,edema,Medical Terms,NCI
+123,What is metastasis?,Metastasis occurs when cancer cells spread from their original location to another part of the body.,metastasis,Medical Terms,NCI
+124,What is pathology?,Pathology is the examination of cells or tissues to help identify and characterize disease.,pathology,Medical Terms,NCI
+125,What is the difference between tumor and cancer?,A tumor is an abnormal mass of tissue; cancer refers to malignant disease that can invade tissues or spread.,tumor_vs_cancer,Medical Terms,NCI
+126,What is the central nervous system?,The central nervous system consists of the brain and spinal cord.,cns,Brain Basics,NINDS
+127,Can an MRI result diagnose me?,"An MRI result should be interpreted by a qualified healthcare professional together with symptoms, examination findings, and other information.",diagnosis_warning,Safety,NCI
+128,Can this chatbot diagnose brain tumors?,No. This chatbot provides general educational information and should not be used as a substitute for professional medical diagnosis or treatment.,chatbot_limitations,Safety,NCI
+129,Tell me about the human brain.,The brain is the main organ of the central nervous system and controls many functions of the body.,brain_definition,Brain Basics,NINDS
+130,Explain the brain in simple words.,The brain is the main organ of the central nervous system and controls many functions of the body.,brain_definition,Brain Basics,NINDS
+131,What is the human brain?,The brain is the main organ of the central nervous system and controls many functions of the body.,brain_definition,Brain Basics,NINDS
+132,How does the brain control the body?,"The brain controls functions such as movement, sensation, thinking, memory, emotions, and coordination.",brain_function,Brain Basics,NINDS
+133,What are the important functions of the brain?,"The brain controls functions such as movement, sensation, thinking, memory, emotions, and coordination.",brain_function,Brain Basics,NINDS
+134,What is the role of the brain?,"The brain controls functions such as movement, sensation, thinking, memory, emotions, and coordination.",brain_function,Brain Basics,NINDS
+135,Which parts make up the brain?,"The major parts include the cerebrum, cerebellum, and brainstem.",brain_parts,Brain Basics,NINDS
+136,How is the brain divided?,"The major parts include the cerebrum, cerebellum, and brainstem.",brain_parts,Brain Basics,NINDS
+137,Can you name the major brain regions?,"The major parts include the cerebrum, cerebellum, and brainstem.",brain_parts,Brain Basics,NINDS
+138,Which part of the brain is the cerebrum?,"The cerebrum is the largest part of the brain and is involved in thinking, memory, sensation, and voluntary movement.",cerebrum,Brain Basics,NINDS
+139,Why is the cerebrum important?,"The cerebrum is the largest part of the brain and is involved in thinking, memory, sensation, and voluntary movement.",cerebrum,Brain Basics,NINDS
+140,Which brain part is responsible for thinking?,"The cerebrum is the largest part of the brain and is involved in thinking, memory, sensation, and voluntary movement.",cerebrum,Brain Basics,NINDS
+141,Why is the cerebellum important?,"The cerebellum helps control balance, coordination, and precise movements.",cerebellum,Brain Basics,NINDS
+142,Which brain part controls coordination?,"The cerebellum helps control balance, coordination, and precise movements.",cerebellum,Brain Basics,NINDS
+143,What role does the cerebellum play?,"The cerebellum helps control balance, coordination, and precise movements.",cerebellum,Brain Basics,NINDS
+144,Why is the brainstem important?,The brainstem connects the brain with the spinal cord and controls several essential functions.,brainstem,Brain Basics,NINDS
+145,Which part connects the brain and spinal cord?,The brainstem connects the brain with the spinal cord and controls several essential functions.,brainstem,Brain Basics,NINDS
+146,What functions are controlled by the brainstem?,The brainstem connects the brain with the spinal cord and controls several essential functions.,brainstem,Brain Basics,NINDS
+147,What are brain neurons?,Neurons are specialized cells that transmit information through electrical and chemical signals.,neurons,Brain Basics,NINDS
+148,How do neurons send information?,Neurons are specialized cells that transmit information through electrical and chemical signals.,neurons,Brain Basics,NINDS
+149,Why are neurons important?,Neurons are specialized cells that transmit information through electrical and chemical signals.,neurons,Brain Basics,NINDS
+150,What are the four brain lobes?,"The cerebral cortex is commonly divided into frontal, parietal, temporal, and occipital lobes.",brain_lobes,Brain Basics,NINDS
+151,Can you list the cerebral lobes?,"The cerebral cortex is commonly divided into frontal, parietal, temporal, and occipital lobes.",brain_lobes,Brain Basics,NINDS
+152,What are the major lobes?,"The cerebral cortex is commonly divided into frontal, parietal, temporal, and occipital lobes.",brain_lobes,Brain Basics,NINDS
+153,Which brain lobe controls planning?,"The frontal lobe is involved in planning, decision-making, movement, speech, and behavior.",frontal_lobe,Brain Basics,NINDS
+154,What functions are controlled by the frontal lobe?,"The frontal lobe is involved in planning, decision-making, movement, speech, and behavior.",frontal_lobe,Brain Basics,NINDS
+155,Where is the frontal lobe involved?,"The frontal lobe is involved in planning, decision-making, movement, speech, and behavior.",frontal_lobe,Brain Basics,NINDS
+156,How would you define a brain tumor?,A brain tumor is an abnormal growth of cells in or around the brain.,tumor_definition,Brain Tumor Basics,NCI
+157,What happens in a brain tumor?,A brain tumor is an abnormal growth of cells in or around the brain.,tumor_definition,Brain Tumor Basics,NCI
+158,What does an abnormal brain growth mean?,A brain tumor is an abnormal growth of cells in or around the brain.,tumor_definition,Brain Tumor Basics,NCI
+159,Are brain tumors always cancer?,"No. Some brain tumors are benign, while others are malignant.",tumor_cancer,Brain Tumor Basics,NCI
+160,Does having a brain tumor mean cancer?,"No. Some brain tumors are benign, while others are malignant.",tumor_cancer,Brain Tumor Basics,NCI
+161,Are some brain tumors non-cancerous?,"No. Some brain tumors are benign, while others are malignant.",tumor_cancer,Brain Tumor Basics,NCI
+162,What does benign brain tumor mean?,"A benign tumor is non-cancerous, although it can still cause problems by pressing on nearby brain structures.",benign_tumor,Brain Tumor Basics,NCI
+163,Is a benign brain tumor cancer?,"A benign tumor is non-cancerous, although it can still cause problems by pressing on nearby brain structures.",benign_tumor,Brain Tumor Basics,NCI
+164,Can a benign brain tumor still cause problems?,"A benign tumor is non-cancerous, although it can still cause problems by pressing on nearby brain structures.",benign_tumor,Brain Tumor Basics,NCI
+165,What does malignant brain tumor mean?,A malignant brain tumor contains cancerous cells and can grow or invade surrounding tissue.,malignant_tumor,Brain Tumor Basics,NCI
+166,Is a malignant brain tumor cancerous?,A malignant brain tumor contains cancerous cells and can grow or invade surrounding tissue.,malignant_tumor,Brain Tumor Basics,NCI
+167,How is a malignant tumor different?,A malignant brain tumor contains cancerous cells and can grow or invade surrounding tissue.,malignant_tumor,Brain Tumor Basics,NCI
+168,What does primary brain tumor mean?,A primary brain tumor begins in cells within the brain or nearby tissues.,primary_tumor,Brain Tumor Basics,NCI
+169,Where does a primary brain tumor start?,A primary brain tumor begins in cells within the brain or nearby tissues.,primary_tumor,Brain Tumor Basics,NCI
+170,What is a primary tumor in the brain?,A primary brain tumor begins in cells within the brain or nearby tissues.,primary_tumor,Brain Tumor Basics,NCI
+171,What is brain metastasis?,"A secondary brain tumor, or brain metastasis, occurs when cancer from another part of the body spreads to the brain.",secondary_tumor,Brain Tumor Basics,NCI
+172,How can cancer spread to the brain?,"A secondary brain tumor, or brain metastasis, occurs when cancer from another part of the body spreads to the brain.",secondary_tumor,Brain Tumor Basics,NCI
+173,What does secondary brain tumor mean?,"A secondary brain tumor, or brain metastasis, occurs when cancer from another part of the body spreads to the brain.",secondary_tumor,Brain Tumor Basics,NCI
+174,Where does glioma come from?,Glioma is a type of tumor that develops from glial cells or related cells in the central nervous system.,glioma_definition,Tumor Types,NCI
+175,What type of tumor is glioma?,Glioma is a type of tumor that develops from glial cells or related cells in the central nervous system.,glioma_definition,Tumor Types,NCI
+176,Tell me about gliomas.,Glioma is a type of tumor that develops from glial cells or related cells in the central nervous system.,glioma_definition,Tumor Types,NCI
+177,Is glioblastoma a brain tumor?,Glioblastoma is an aggressive type of malignant brain tumor.,glioblastoma,Tumor Types,NCI
+178,What type of tumor is glioblastoma?,Glioblastoma is an aggressive type of malignant brain tumor.,glioblastoma,Tumor Types,NCI
+179,Tell me about glioblastoma.,Glioblastoma is an aggressive type of malignant brain tumor.,glioblastoma,Tumor Types,NCI
+180,Is meningioma a brain tumor?,"Meningioma develops from the meninges, the protective membranes surrounding the brain and spinal cord.",meningioma,Tumor Types,NCI
+181,What causes a meningioma?,"Meningioma develops from the meninges, the protective membranes surrounding the brain and spinal cord.",meningioma,Tumor Types,NCI
+182,Tell me about meningioma.,"Meningioma develops from the meninges, the protective membranes surrounding the brain and spinal cord.",meningioma,Tumor Types,NCI
+183,What happens with a pituitary tumor?,A pituitary tumor develops in the pituitary gland and may affect hormone production.,pituitary_tumor,Tumor Types,NCI
+184,Tell me about pituitary tumors.,A pituitary tumor develops in the pituitary gland and may affect hormone production.,pituitary_tumor,Tumor Types,NCI
+185,Can a pituitary tumor affect hormones?,A pituitary tumor develops in the pituitary gland and may affect hormone production.,pituitary_tumor,Tumor Types,NCI
+186,What are different brain tumor types?,"Common types include gliomas, meningiomas, pituitary tumors, and other tumors affecting the brain or nearby structures.",tumor_types,Tumor Types,NCI
+187,Can you list brain tumor types?,"Common types include gliomas, meningiomas, pituitary tumors, and other tumors affecting the brain or nearby structures.",tumor_types,Tumor Types,NCI
+188,Which tumors can occur in the brain?,"Common types include gliomas, meningiomas, pituitary tumors, and other tumors affecting the brain or nearby structures.",tumor_types,Tumor Types,NCI
+189,How do brain tumors show symptoms?,"Symptoms depend on the tumor's location, size, and growth and may include headaches, seizures, vision changes, or problems with movement or thinking.",tumor_symptoms,Symptoms,NCI
+190,What signs can indicate a brain tumor?,"Symptoms depend on the tumor's location, size, and growth and may include headaches, seizures, vision changes, or problems with movement or thinking.",tumor_symptoms,Symptoms,NCI
+191,What are signs of brain tumors?,"Symptoms depend on the tumor's location, size, and growth and may include headaches, seizures, vision changes, or problems with movement or thinking.",tumor_symptoms,Symptoms,NCI
+192,Are headaches related to brain tumors?,"Yes. Headaches can occur with brain tumors, although headaches have many other possible causes.",headache,Symptoms,NCI
+193,What kind of symptom can a brain tumor cause?,"Yes. Headaches can occur with brain tumors, although headaches have many other possible causes.",headache,Symptoms,NCI
+194,Can brain tumors cause head pain?,"Yes. Headaches can occur with brain tumors, although headaches have many other possible causes.",headache,Symptoms,NCI
+195,Why can brain tumors cause seizures?,Yes. Seizures can be a symptom of some brain tumors.,seizures,Symptoms,NCI
+196,Can seizures happen with a brain tumor?,Yes. Seizures can be a symptom of some brain tumors.,seizures,Symptoms,NCI
+197,Are seizures associated with brain tumors?,Yes. Seizures can be a symptom of some brain tumors.,seizures,Symptoms,NCI
+198,Can a brain tumor affect vision?,Yes. Some brain tumors can affect vision depending on their location.,vision_problems,Symptoms,NCI
+199,What vision changes can occur?,Yes. Some brain tumors can affect vision depending on their location.,vision_problems,Symptoms,NCI
+200,Can tumors cause eyesight changes?,Yes. Some brain tumors can affect vision depending on their location.,vision_problems,Symptoms,NCI
+201,Can tumors affect memory?,Some brain tumors can affect memory or other cognitive functions depending on their location.,memory_changes,Symptoms,NCI
+202,Can a brain tumor cause forgetfulness?,Some brain tumors can affect memory or other cognitive functions depending on their location.,memory_changes,Symptoms,NCI
+203,Do brain tumors affect thinking and memory?,Some brain tumors can affect memory or other cognitive functions depending on their location.,memory_changes,Symptoms,NCI
+204,Can brain tumors affect language?,Yes. A tumor affecting areas involved in language or speech can cause communication difficulties.,speech_changes,Symptoms,NCI
+205,Can a tumor cause speech difficulty?,Yes. A tumor affecting areas involved in language or speech can cause communication difficulties.,speech_changes,Symptoms,NCI
+206,Can brain tumors change speech?,Yes. A tumor affecting areas involved in language or speech can cause communication difficulties.,speech_changes,Symptoms,NCI
+207,Can a brain tumor cause muscle weakness?,Some brain tumors can cause weakness or difficulty moving parts of the body.,weakness,Symptoms,NCI
+208,Why can brain tumors cause weakness?,Some brain tumors can cause weakness or difficulty moving parts of the body.,weakness,Symptoms,NCI
+209,Can tumors affect movement?,Some brain tumors can cause weakness or difficulty moving parts of the body.,weakness,Symptoms,NCI
+210,Can brain tumors cause balance problems?,Yes. Tumors affecting certain brain regions can cause balance or coordination problems.,balance_problems,Symptoms,NCI
+211,Why can a tumor affect coordination?,Yes. Tumors affecting certain brain regions can cause balance or coordination problems.,balance_problems,Symptoms,NCI
+212,Can brain tumors make walking difficult?,Yes. Tumors affecting certain brain regions can cause balance or coordination problems.,balance_problems,Symptoms,NCI
+213,Why do people develop brain tumors?,The exact cause of many brain tumors is unknown. Certain genetic conditions and previous radiation exposure can increase risk for some tumors.,tumor_causes,Causes,NCI
+214,What are the causes of brain tumors?,The exact cause of many brain tumors is unknown. Certain genetic conditions and previous radiation exposure can increase risk for some tumors.,tumor_causes,Causes,NCI
+215,How do brain tumors develop?,The exact cause of many brain tumors is unknown. Certain genetic conditions and previous radiation exposure can increase risk for some tumors.,tumor_causes,Causes,NCI
+216,Can radiation increase brain tumor risk?,"Exposure to certain types of radiation, especially high-dose ionizing radiation, can increase the risk of some brain tumors.",radiation_risk,Risk Factors,NCI
+217,Does radiation exposure increase risk?,"Exposure to certain types of radiation, especially high-dose ionizing radiation, can increase the risk of some brain tumors.",radiation_risk,Risk Factors,NCI
+218,Is radiation linked to brain tumors?,"Exposure to certain types of radiation, especially high-dose ionizing radiation, can increase the risk of some brain tumors.",radiation_risk,Risk Factors,NCI
+219,Can brain tumors run in families?,"Most brain tumors are not inherited, but certain rare genetic conditions can increase the risk.",hereditary,Risk Factors,NCI
+220,Can genetics cause brain tumors?,"Most brain tumors are not inherited, but certain rare genetic conditions can increase the risk.",hereditary,Risk Factors,NCI
+221,Are some brain tumors inherited?,"Most brain tumors are not inherited, but certain rare genetic conditions can increase the risk.",hereditary,Risk Factors,NCI
+222,How does MRI work?,MRI uses magnetic fields and radio waves to create detailed images of structures inside the body.,mri_definition,MRI & Diagnosis,NCI
+223,What does MRI stand for?,MRI uses magnetic fields and radio waves to create detailed images of structures inside the body.,mri_definition,MRI & Diagnosis,NCI
+224,Can you explain MRI?,MRI uses magnetic fields and radio waves to create detailed images of structures inside the body.,mri_definition,MRI & Diagnosis,NCI
+225,What is the purpose of brain MRI?,MRI provides detailed images of the brain and can help doctors identify and evaluate abnormalities.,mri_purpose,MRI & Diagnosis,NCI
+226,How does MRI help with tumors?,MRI provides detailed images of the brain and can help doctors identify and evaluate abnormalities.,mri_purpose,MRI & Diagnosis,NCI
+227,Why would a doctor order a brain MRI?,MRI provides detailed images of the brain and can help doctors identify and evaluate abnormalities.,mri_purpose,MRI & Diagnosis,NCI
+228,Will an MRI show a brain tumor?,"MRI can show abnormal areas that may represent a brain tumor, but diagnosis requires medical evaluation.",mri_detection,MRI & Diagnosis,NCI
+229,How can MRI find a tumor?,"MRI can show abnormal areas that may represent a brain tumor, but diagnosis requires medical evaluation.",mri_detection,MRI & Diagnosis,NCI
+230,Can a scan detect brain tumors?,"MRI can show abnormal areas that may represent a brain tumor, but diagnosis requires medical evaluation.",mri_detection,MRI & Diagnosis,NCI
+231,Is there radiation in an MRI?,No. MRI does not use ionizing radiation; it uses magnetic fields and radio waves.,mri_radiation,MRI & Diagnosis,NCI
+232,Does MRI expose you to radiation?,No. MRI does not use ionizing radiation; it uses magnetic fields and radio waves.,mri_radiation,MRI & Diagnosis,NCI
+233,Is MRI radiation-free?,No. MRI does not use ionizing radiation; it uses magnetic fields and radio waves.,mri_radiation,MRI & Diagnosis,NCI
+234,Why is contrast used in MRI?,Contrast agents can make certain tissues or abnormalities easier to see on an MRI.,mri_contrast,MRI & Diagnosis,NCI
+235,What is an MRI contrast agent?,Contrast agents can make certain tissues or abnormalities easier to see on an MRI.,mri_contrast,MRI & Diagnosis,NCI
+236,Why do some MRI scans use contrast?,Contrast agents can make certain tissues or abnormalities easier to see on an MRI.,mri_contrast,MRI & Diagnosis,NCI
+237,How is a CT scan used?,CT uses X-rays and computer processing to create detailed images of the body.,ct_scan,MRI & Diagnosis,NCI
+238,What does CT mean?,CT uses X-rays and computer processing to create detailed images of the body.,ct_scan,MRI & Diagnosis,NCI
+239,What is the difference between CT and MRI?,CT uses X-rays and computer processing to create detailed images of the body.,ct_scan,MRI & Diagnosis,NCI
+240,Why is a brain biopsy done?,A biopsy involves removing a sample of tissue so it can be examined to help determine the type of tumor.,biopsy,MRI & Diagnosis,NCI
+241,How does a biopsy identify a tumor?,A biopsy involves removing a sample of tissue so it can be examined to help determine the type of tumor.,biopsy,MRI & Diagnosis,NCI
+242,What does tumor biopsy mean?,A biopsy involves removing a sample of tissue so it can be examined to help determine the type of tumor.,biopsy,MRI & Diagnosis,NCI
+243,Why are brain tumors graded?,Tumor grading describes how abnormal tumor cells look and can provide information about how aggressively a tumor may behave.,tumor_grading,Tumor Grading,NCI
+244,What does tumor grade mean?,Tumor grading describes how abnormal tumor cells look and can provide information about how aggressively a tumor may behave.,tumor_grading,Tumor Grading,NCI
+245,How are brain tumors graded?,Tumor grading describes how abnormal tumor cells look and can provide information about how aggressively a tumor may behave.,tumor_grading,Tumor Grading,NCI
+246,What are the treatment options for brain tumors?,"Treatment depends on the tumor type, location, size, grade, and the person's overall situation.",treatment,Treatment,NCI
+247,How can brain tumors be treated?,"Treatment depends on the tumor type, location, size, grade, and the person's overall situation.",treatment,Treatment,NCI
+248,What determines brain tumor treatment?,"Treatment depends on the tumor type, location, size, grade, and the person's overall situation.",treatment,Treatment,NCI
+249,When is brain tumor surgery used?,Surgery may be used to remove all or part of a tumor when it can be done safely.,surgery,Treatment,NCI
+250,Can doctors remove brain tumors surgically?,Surgery may be used to remove all or part of a tumor when it can be done safely.,surgery,Treatment,NCI
+251,Why is surgery performed for brain tumors?,Surgery may be used to remove all or part of a tumor when it can be done safely.,surgery,Treatment,NCI
+252,How does radiation therapy treat tumors?,Radiation therapy uses high-energy radiation to damage and destroy tumor cells.,radiation_therapy,Treatment,NCI
+253,Why is radiation used for brain tumors?,Radiation therapy uses high-energy radiation to damage and destroy tumor cells.,radiation_therapy,Treatment,NCI
+254,What is brain radiation treatment?,Radiation therapy uses high-energy radiation to damage and destroy tumor cells.,radiation_therapy,Treatment,NCI
+255,Can chemotherapy treat brain tumors?,Chemotherapy uses medicines that target cancer cells and may be used for certain brain tumors.,chemotherapy,Treatment,NCI
+256,How does chemotherapy work for tumors?,Chemotherapy uses medicines that target cancer cells and may be used for certain brain tumors.,chemotherapy,Treatment,NCI
+257,What is chemo treatment for brain tumors?,Chemotherapy uses medicines that target cancer cells and may be used for certain brain tumors.,chemotherapy,Treatment,NCI
+258,How does targeted therapy work?,Targeted therapy uses medicines designed to act on specific features of cancer cells.,targeted_therapy,Treatment,NCI
+259,What is targeted treatment?,Targeted therapy uses medicines designed to act on specific features of cancer cells.,targeted_therapy,Treatment,NCI
+260,Can targeted drugs treat brain tumors?,Targeted therapy uses medicines designed to act on specific features of cancer cells.,targeted_therapy,Treatment,NCI
+261,Can brain tumors return?,"Some brain tumors can recur after treatment, so follow-up monitoring may be necessary.",recurrence,Treatment,NCI
+262,What happens if a brain tumor comes back?,"Some brain tumors can recur after treatment, so follow-up monitoring may be necessary.",recurrence,Treatment,NCI
+263,Can tumors recur after treatment?,"Some brain tumors can recur after treatment, so follow-up monitoring may be necessary.",recurrence,Treatment,NCI
+264,Why are follow-up scans needed?,"Follow-up may include medical visits, imaging tests, rehabilitation, and monitoring for recurrence or treatment effects.",follow_up,Recovery,NCI
+265,What follow-up is done after treatment?,"Follow-up may include medical visits, imaging tests, rehabilitation, and monitoring for recurrence or treatment effects.",follow_up,Recovery,NCI
+266,How are patients monitored after treatment?,"Follow-up may include medical visits, imaging tests, rehabilitation, and monitoring for recurrence or treatment effects.",follow_up,Recovery,NCI
+267,How long does recovery take?,"Recovery varies greatly depending on the tumor, treatment, location, and individual factors.",recovery,Recovery,NCI
+268,What affects recovery after treatment?,"Recovery varies greatly depending on the tumor, treatment, location, and individual factors.",recovery,Recovery,NCI
+269,What is recovery like after a brain tumor?,"Recovery varies greatly depending on the tumor, treatment, location, and individual factors.",recovery,Recovery,NCI
+270,What factors affect brain tumor prognosis?,"Prognosis describes the expected course or outcome of a disease and depends on factors such as tumor type, grade, location, and treatment response.",prognosis,Prognosis,NCI
+271,What does prognosis mean?,"Prognosis describes the expected course or outcome of a disease and depends on factors such as tumor type, grade, location, and treatment response.",prognosis,Prognosis,NCI
+272,How is prognosis determined?,"Prognosis describes the expected course or outcome of a disease and depends on factors such as tumor type, grade, location, and treatment response.",prognosis,Prognosis,NCI
+273,Is there a way to lower brain tumor risk?,There is no guaranteed way to prevent most brain tumors because their causes are not fully understood.,prevention,Prevention,NCI
+274,How can brain tumors be prevented?,There is no guaranteed way to prevent most brain tumors because their causes are not fully understood.,prevention,Prevention,NCI
+275,When should I see a doctor for neurological symptoms?,"Persistent, worsening, unusual, or concerning neurological symptoms should be evaluated by a healthcare professional.",doctor_visit,Medical Guidance,NCI
+276,When should brain symptoms be checked?,"Persistent, worsening, unusual, or concerning neurological symptoms should be evaluated by a healthcare professional.",doctor_visit,Medical Guidance,NCI
+277,When is medical evaluation necessary?,"Persistent, worsening, unusual, or concerning neurological symptoms should be evaluated by a healthcare professional.",doctor_visit,Medical Guidance,NCI
+278,What does brain lesion mean?,A brain lesion is an area of abnormal or damaged tissue seen or identified in the brain.,lesion,Medical Terms,NINDS
+279,What is an abnormal brain lesion?,A brain lesion is an area of abnormal or damaged tissue seen or identified in the brain.,lesion,Medical Terms,NINDS
+280,What does a lesion on MRI mean?,A brain lesion is an area of abnormal or damaged tissue seen or identified in the brain.,lesion,Medical Terms,NINDS
+281,What does brain swelling mean?,Brain edema means swelling caused by an increase of fluid in brain tissue.,edema,Medical Terms,NCI
+282,What is cerebral edema?,Brain edema means swelling caused by an increase of fluid in brain tissue.,edema,Medical Terms,NCI
+283,Why can brain swelling happen?,Brain edema means swelling caused by an increase of fluid in brain tissue.,edema,Medical Terms,NCI
+284,What does cancer metastasis to the brain mean?,Metastasis occurs when cancer cells spread from their original location to another part of the body.,metastasis,Medical Terms,NCI
+285,How does cancer spread to the brain?,Metastasis occurs when cancer cells spread from their original location to another part of the body.,metastasis,Medical Terms,NCI
+286,What is metastatic brain cancer?,Metastasis occurs when cancer cells spread from their original location to another part of the body.,metastasis,Medical Terms,NCI
+287,Can a chatbot diagnose a brain tumor?,"An MRI result should be interpreted by a qualified healthcare professional together with symptoms, examination findings, and other information.",diagnosis_warning,Safety,NCI
+288,Can I rely on an MRI result alone?,"An MRI result should be interpreted by a qualified healthcare professional together with symptoms, examination findings, and other information.",diagnosis_warning,Safety,NCI
+289,Can AI confirm that I have a brain tumor?,"An MRI result should be interpreted by a qualified healthcare professional together with symptoms, examination findings, and other information.",diagnosis_warning,Safety,NCI
+290,Can this chatbot give me a medical diagnosis?,No. This chatbot provides general educational information and should not be used as a substitute for professional medical diagnosis or treatment.,chatbot_limitations,Safety,NCI
+291,Is this chatbot a replacement for a doctor?,No. This chatbot provides general educational information and should not be used as a substitute for professional medical diagnosis or treatment.,chatbot_limitations,Safety,NCI
+292,Can I use this chatbot to diagnose myself?,No. This chatbot provides general educational information and should not be used as a substitute for professional medical diagnosis or treatment.,chatbot_limitations,Safety,NCI
+293,Is MRI safe?,"MRI is generally considered safe for most people, but safety screening is important because the scanner uses a strong magnetic field.",mri_safety,MRI & Diagnosis,NCI
+294,Can everyone have an MRI?,"MRI is generally safe for most people, but people with certain implants or devices may require special evaluation.",mri_safety,MRI & Diagnosis,NCI
+295,Are there MRI risks?,"MRI is generally safe, but metal objects, some implants, and contrast agents can require special precautions.",mri_safety,MRI & Diagnosis,NCI
+296,Why does tumor location matter?,"Tumor location can affect symptoms, treatment options, and potential effects on brain function.",tumor_location,Prognosis,NCI
+297,Can the location of a tumor affect symptoms?,Yes. Symptoms can vary depending on which brain region is affected.,tumor_location,Prognosis,NCI
+298,Does tumor size matter?,Tumor size can be one factor considered when doctors evaluate a person's condition and treatment options.,tumor_size_prognosis,Prognosis,NCI
+299,When should severe neurological symptoms be treated urgently?,"Sudden or severe neurological symptoms require prompt medical evaluation, especially if there is loss of consciousness, a new seizure, severe weakness, or sudden speech or vision changes.",symptom_emergency,Safety,NINDS
+300,Is a new seizure an emergency?,A first or prolonged seizure can require urgent medical assessment. Emergency care is especially important when a seizure lasts unusually long or repeats without recovery.,symptom_emergency,Safety,NINDS

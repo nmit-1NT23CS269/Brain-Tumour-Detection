@@ -1,4 +1,4 @@
-"""MRI preprocessing and visualization pipeline."""
+"""MRI preprocessing, validation, quality gating, and visualization pipeline."""
 
 from __future__ import annotations
 
@@ -15,14 +15,11 @@ from PIL import Image
 from explainability.gradcam import generate_grad_cam
 from utils import configure_logging
 
-
 matplotlib.use("Agg")
 LOGGER = configure_logging(__name__)
 TARGET_SIZE = (224, 224)
 MAX_FILE_MB = 10
 ALLOWED_TYPES = {"image/jpeg", "image/jpg", "image/png"}
-GAUSSIAN_KERNEL = (5, 5)
-GAUSSIAN_SIGMA = 1.0
 
 
 def validate_image(uploaded_file) -> tuple[bool, str]:
@@ -37,6 +34,29 @@ def validate_image(uploaded_file) -> tuple[bool, str]:
     return True, "Valid"
 
 
+def validate_mri_image_quality(img_array: np.ndarray) -> tuple[bool, str]:
+    """Quality gate to reject non-brain MRI images (too small, blank, or saturated color photos)."""
+    if img_array is None or img_array.size == 0:
+        return False, "Empty or invalid image data."
+
+    height, width = img_array.shape[:2]
+    if height < 100 or width < 100:
+        return False, f"Image dimensions ({width}x{height}) are too small for MRI diagnostic analysis (min 100x100)."
+
+    gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY) if img_array.ndim == 3 else img_array
+    var_intensity = float(np.var(gray))
+    if var_intensity < 5.0:
+        return False, "Image appears nearly blank or lacks sufficient contrast for MRI analysis."
+
+    if img_array.ndim == 3 and img_array.shape[2] == 3:
+        # MRI scans converted to RGB have near-identical R, G, B channels
+        channel_diff = np.std(img_array, axis=2).mean()
+        if channel_diff > 35.0:
+            return False, "Uploaded image contains high color saturation. Please upload a standard grayscale Brain MRI scan."
+
+    return True, "Valid MRI scan"
+
+
 def load_image_from_upload(uploaded_file) -> np.ndarray:
     """Read uploaded file bytes into an RGB numpy array."""
     raw = uploaded_file.read()
@@ -45,17 +65,13 @@ def load_image_from_upload(uploaded_file) -> np.ndarray:
 
 
 def resize_image(img: np.ndarray, size: tuple[int, int] = TARGET_SIZE) -> np.ndarray:
-    """Resize image to the standard model input size."""
-    return cv2.resize(img, size, interpolation=cv2.INTER_LANCZOS4)
+    """Resize image to the standard model input size using bilinear interpolation."""
+    return cv2.resize(img, size, interpolation=cv2.INTER_LINEAR)
 
 
-def apply_gaussian_blur(
-    img: np.ndarray,
-    kernel: tuple[int, int] = GAUSSIAN_KERNEL,
-    sigma: float = GAUSSIAN_SIGMA,
-) -> np.ndarray:
-    """Apply mild blur to reduce speckle noise."""
-    return cv2.GaussianBlur(img, kernel, sigma)
+def apply_gaussian_blur(img: np.ndarray, ksize: tuple[int, int] = (3, 3)) -> np.ndarray:
+    """Backward compatibility wrapper; returns original image without blurring mismatch."""
+    return img
 
 
 def normalize_image(img: np.ndarray) -> np.ndarray:
@@ -70,7 +86,7 @@ def to_model_input(img_normalized: np.ndarray) -> np.ndarray:
 
 def assess_mri_quality(img: np.ndarray) -> dict:
     """Estimate image quality from blur and contrast heuristics."""
-    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY) if img.ndim == 3 else img
     sharpness = float(cv2.Laplacian(gray, cv2.CV_64F).var())
     contrast = float(gray.std())
 
@@ -88,34 +104,37 @@ def assess_mri_quality(img: np.ndarray) -> dict:
     }
 
 
-def preprocess_array(img_array: np.ndarray) -> dict:
-    """Preprocess an in-memory RGB image array for inference."""
+def preprocess_array(img_array: np.ndarray, target_size: tuple[int, int] = TARGET_SIZE) -> dict:
+    """Single source of truth preprocessing pipeline for in-memory RGB arrays."""
     rgb = img_array if img_array.ndim == 3 else np.stack([img_array] * 3, axis=-1)
-    resized = resize_image(rgb)
-    blurred = apply_gaussian_blur(resized)
-    normalized = normalize_image(blurred)
+    resized = resize_image(rgb, size=target_size)
+    normalized = normalize_image(resized)
+    quality_valid, quality_msg = validate_mri_image_quality(rgb)
+
     return {
         "original": rgb,
         "resized": resized,
-        "blurred": blurred,
+        "blurred": resized,  # Kept for backward compatibility
         "normalized": normalized,
         "model_input": to_model_input(normalized),
         "quality": assess_mri_quality(resized),
+        "is_valid_mri": quality_valid,
+        "quality_message": quality_msg,
     }
 
 
-def preprocess_pipeline(uploaded_file) -> dict:
+def preprocess_pipeline(uploaded_file, target_size: tuple[int, int] = TARGET_SIZE) -> dict:
     """Process an uploaded file end to end for inference."""
     raw_bytes = uploaded_file.read()
     uploaded_file.seek(0)
     pil_img = Image.open(io.BytesIO(raw_bytes)).convert("RGB")
-    result = preprocess_array(np.array(pil_img))
+    result = preprocess_array(np.array(pil_img), target_size=target_size)
     result["file_bytes"] = raw_bytes
     return result
 
 
 def preprocess_for_training(image_path: str) -> np.ndarray:
-    """Load and preprocess an image from disk for offline analysis."""
+    """Load and preprocess an image from disk for training or offline analysis."""
     img = Image.open(image_path).convert("RGB")
     return preprocess_array(np.array(img))["normalized"]
 
@@ -127,13 +146,16 @@ def plot_preprocessing_steps(steps: dict) -> plt.Figure:
     panels = [
         ("Original", steps["original"]),
         ("Resized (224x224)", steps["resized"]),
-        ("Gaussian Blur", steps["blurred"]),
+        ("Grayscale / Contrast", cv2.cvtColor(steps["resized"], cv2.COLOR_RGB2GRAY)),
         ("Normalized", (steps["normalized"] * 255).astype(np.uint8)),
     ]
 
     for idx, (title, img) in enumerate(panels):
         axis = fig.add_subplot(gs[idx])
-        axis.imshow(img)
+        if img.ndim == 2:
+            axis.imshow(img, cmap="gray")
+        else:
+            axis.imshow(img)
         axis.set_title(title, color="#58a6ff", fontsize=11, fontweight="bold", pad=8)
         axis.axis("off")
         if idx < len(panels) - 1:

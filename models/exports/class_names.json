@@ -1,0 +1,14 @@
+{
+  "class_names": [
+    "Glioma",
+    "Meningioma",
+    "Normal",
+    "Pituitary"
+  ],
+  "class_indices": {
+    "Glioma": 0,
+    "Meningioma": 1,
+    "Normal": 2,
+    "Pituitary": 3
+  }
+}

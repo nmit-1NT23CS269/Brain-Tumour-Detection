@@ -20,8 +20,11 @@
 - **Automated PDF Diagnostic Reports**: Generates comprehensive PDF reports including original MRI, preprocessed scan, Grad-CAM heatmap, tumor segmentation overlay, AI summary, and doctor clinical recommendations.
 
 ### 2. 🤖 Mastishka AI Medical Assistant
-- Integrated offline rule-based and knowledge-driven medical chatbot (`chatbot/`).
-- Provides real-time guidance on MRI scan results, tumor terminology (Glioma, Meningioma, Pituitary), platform features, and next clinical steps.
+- **ChatGPT-Style Conversational AI (`chatbot/`)**: Provider-agnostic LLM integration (OpenAI, Gemini, Anthropic, local Ollama) combined with Context-Aware chat history for open-ended, natural language Q&A.
+- **Hybrid RAG Retriever (`retriever.py`)**: Combines 50% keyword overlap (with synonym expansion for terms like *tumour*, *mri*, *head pain*, *cure*) and 50% TF-IDF cosine similarity (word 1–2 n-grams + char_wb 3–4 n-grams) over NCI/NINDS knowledge base CSVs.
+- **Patient Privacy & PII Sanitization (`llm_client.py`)**: Automatically strips patient codes (`PAT-XXXXXX`), email addresses, and phone numbers before sending prompts to external LLM providers.
+- **Medical Safety Protocols**: Immediate emergency keyword interception (redirecting crisis queries to urgent medical care), self-diagnosis safeguards ("do I have a tumor?"), and mandatory medical disclaimers for Treatment, Prognosis, Symptoms, Medical Guidance, and Risk Factors.
+- **Offline Fallback & Citation**: Runs seamlessly offline using local knowledge base retrieval when no LLM API key is present. Automatically cites authoritative sources (*Sources: NCI, NINDS*) and supports dynamic scan result explanations.
 
 ### 3. 👨‍⚕️ Mandatory Doctor Credential Upload & Admin Verification
 - **Doctor Registration Security**: Doctors must upload valid medical credentials (**Medical Degree Certificate** and **Medical Registration License**) in PDF, PNG, or JPG formats.
@@ -152,16 +155,24 @@ Copy `.env.example` to `.env` to configure environment variables:
 | `DEMO_DOCTOR_PASSWORD` | `Doctor@123` | Password for demo doctor account. |
 | `DEMO_ADMIN_EMAIL` | `admin.demo@example.com` | Email address for demo admin account. |
 | `DEMO_ADMIN_PASSWORD` | `Admin@123` | Password for demo admin account. |
+| `LLM_PROVIDER` | `""` (empty) | LLM provider (`openai`, `gemini`, `anthropic`, `ollama`, or empty for local offline fallback mode). |
+| `LLM_API_KEY` | `""` | API key for the selected cloud LLM provider. |
+| `LLM_MODEL` | `""` | Model identifier (e.g., `gemini-1.5-flash`, `gpt-3.5-turbo`, `claude-3-haiku-20240307`, `llama3`). |
+| `LLM_TIMEOUT` | `20` | Maximum request timeout in seconds for LLM calls. |
+| `RETRIEVAL_THRESHOLD` | `0.25` | Minimum hybrid confidence score threshold required for knowledge retrieval. |
 
 ---
 
 ## 🧪 Automated Testing & CI
 
-Execute the pytest suite to verify preprocessing, model prediction, password hashing, and security rules:
+Execute the pytest suite to verify preprocessing, model prediction, authentication security rules, and Mastishka chatbot retrieval:
 
 ```powershell
-# Run full smoke test suite
-pytest -v tests/test_smoke.py
+# Run full test suite (smoke tests + chatbot QA tests)
+pytest -v tests/test_smoke.py tests/test_chatbot.py
+
+# Rebuild chatbot knowledge base
+python chatbot/build_knowledge_base.py
 ```
 
 Automated testing is integrated with **GitHub Actions CI** (`.github/workflows/tests.yml`), running tests automatically on every push and pull request.

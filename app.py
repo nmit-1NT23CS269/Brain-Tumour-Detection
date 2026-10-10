@@ -12,6 +12,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
+from dotenv import load_dotenv
 
 from authentication import (
     clear_session,
@@ -33,7 +34,7 @@ from authentication import (
     can_doctor_scan_patient,
 )
 from backend import analyze_uploaded_scan
-from chatbot import SUGGESTED_QUESTIONS, get_response as mastishka_response
+from chatbot import SUGGESTED_QUESTIONS, get_response as mastishka_response, get_response_dict as mastishka_response_dict
 from database import (
     create_patient_record,
     get_dashboard_stats,
@@ -73,6 +74,7 @@ from reports import generate_pdf_report
 
 
 matplotlib.use("Agg")
+load_dotenv()
 initialize_database()
 
 st.set_page_config(
@@ -369,6 +371,8 @@ def page_login() -> None:
         demo_patient_password = os.getenv("DEMO_PATIENT_PASSWORD", "Patient@123")
         demo_doctor_email = os.getenv("DEMO_DOCTOR_EMAIL", "doctor.demo@example.com")
         demo_doctor_password = os.getenv("DEMO_DOCTOR_PASSWORD", "Doctor@123")
+        demo_pending_doctor_email = os.getenv("DEMO_PENDING_DOCTOR_EMAIL", "pending.doctor@example.com")
+        demo_pending_doctor_password = os.getenv("DEMO_PENDING_DOCTOR_PASSWORD", "Doctor@123")
         demo_admin_email = os.getenv("DEMO_ADMIN_EMAIL", "admin.demo@example.com")
         demo_admin_password = os.getenv("DEMO_ADMIN_PASSWORD", "Admin@123")
 
@@ -376,7 +380,7 @@ def page_login() -> None:
         st.subheader("🔑 Demonstration Credentials & Quick Login")
         st.caption("Faculty & Evaluator Demo Environment — One-Click Authentication into standard SQLite RBAC accounts.")
 
-        dcol1, dcol2, dcol3 = st.columns(3)
+        dcol1, dcol2, dcol3, dcol4 = st.columns(4)
 
         with dcol1:
             st.markdown("#### 👤 Demo Patient")
@@ -417,17 +421,36 @@ def page_login() -> None:
                 else:
                     st.error(message)
 
+        with dcol4:
+            st.markdown("#### ⏳ Pending Doctor")
+            st.write(f"**Email**: `{demo_pending_doctor_email}`  \n**Data**: Pending Application, Uploaded Credentials")
+            if st.button("⚡ Login as Pending Doctor", use_container_width=True, type="secondary"):
+                success, message, user = login_user(demo_pending_doctor_email, demo_pending_doctor_password)
+                if success and user:
+                    set_session(user)
+                    st.session_state["page"] = "doctor_pending"
+                    st.success("Authenticated as Pending Doctor!")
+                    st.rerun()
+                else:
+                    st.error(message)
+
         st.markdown("---")
         st.info("💡 **Pending Doctor Application Demo**: To demonstrate Doctor Document Review and Verification, log in as **Admin**, click **Doctor Verifications**, and inspect `pending.doctor@example.com` (`dr_pending_demo`).")
         _card_end()
 
 
 
-def _save_scan_result(result: dict, uploaded_file, patient_id: int | None = None, doctor_id: int | None = None) -> int:
+def _save_scan_result(
+    result: dict,
+    uploaded_file,
+    patient_id: int | None = None,
+    doctor_id: int | None = None,
+    target_user_id: int | None = None,
+) -> int:
     segmentation = result.get("segmentation") or {}
-    target_user_id = patient_id if patient_id else current_user_id()
+    user_id = target_user_id if target_user_id is not None else current_user_id()
     return save_prediction(
-        user_id=target_user_id,
+        user_id=user_id,
         patient_id=patient_id,
         doctor_id=doctor_id,
         image_filename=uploaded_file.name,
@@ -702,7 +725,7 @@ def page_about() -> None:
 
 
 def page_mastishka() -> None:
-    _hero("🧠 Mastishka Assistant", "Ask basic questions about NeuroScan AI, tumour types, or your latest scan")
+    _hero("🧠 Mastishka Assistant", "Conversational AI Medical Assistant & NeuroScan Knowledge Base")
 
     st.session_state.setdefault(
         "mastishka_chat",
@@ -710,16 +733,17 @@ def page_mastishka() -> None:
             {
                 "role": "assistant",
                 "content": (
-                    "Hi, I'm **Mastishka** 🧠 — your NeuroScan AI assistant. Ask me about "
-                    "tumour types, how the app works, or your latest scan result. I run entirely "
-                    "offline (no external AI API), so I stick to basic, pre-defined answers."
+                    "Hi, I'm **Mastishka** 🧠 — your NeuroScan AI assistant. Ask me anything about "
+                    "brain tumors, MRI scans, symptoms, treatments, or your latest scan result. "
+                    "I combine knowledge from NCI & NINDS datasets with conversational AI."
                 ),
+                "retrieved_facts": [],
             }
         ],
     )
 
     _card_start()
-    st.caption("Quick questions")
+    st.caption("Suggested Questions by Category")
     quick_cols = st.columns(len(SUGGESTED_QUESTIONS))
     quick_pick = None
     for col, question in zip(quick_cols, SUGGESTED_QUESTIONS):
@@ -731,15 +755,47 @@ def page_mastishka() -> None:
     for turn in st.session_state["mastishka_chat"]:
         with st.chat_message(turn["role"]):
             st.markdown(turn["content"])
+            facts = turn.get("retrieved_facts", [])
+            if facts:
+                with st.expander("📚 Retrieved Knowledge Sources"):
+                    for f in facts:
+                        st.markdown(
+                            f"**Category: {f['category']}** | *Source: {f['source']}* (Score: {f.get('score', 0):.2f})\n\n"
+                            f"**Q:** {f['question']}\n\n"
+                            f"**A:** {f['answer']}"
+                        )
     _card_end()
 
     user_message = st.chat_input("Ask Mastishka a question...")
     incoming = quick_pick or user_message
 
     if incoming:
-        st.session_state["mastishka_chat"].append({"role": "user", "content": incoming})
-        reply = mastishka_response(incoming, scan_result=st.session_state.get("last_scan_result"))
-        st.session_state["mastishka_chat"].append({"role": "assistant", "content": reply})
+        # Append user message
+        st.session_state["mastishka_chat"].append({"role": "user", "content": incoming, "retrieved_facts": []})
+
+        # Process with RAG & conversation history
+        res_dict = mastishka_response_dict(
+            message=incoming,
+            chat_history=st.session_state["mastishka_chat"],
+            scan_result=st.session_state.get("last_scan_result"),
+        )
+
+        reply_text = res_dict["answer"]
+        category = res_dict.get("category")
+        source = res_dict.get("source")
+
+        # Format disclaimers & sources
+        if category in {"Treatment", "Prognosis", "Symptoms", "Medical Guidance", "Risk Factors"} and "Disclaimer:" not in reply_text:
+            reply_text += "\n\n*Disclaimer: This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment.*"
+
+        if source in {"NCI", "NINDS", "NCI, NINDS"} and "Sources:" not in reply_text and "Source:" not in reply_text:
+            reply_text += f"\n\n*Sources: {source}*"
+
+        st.session_state["mastishka_chat"].append({
+            "role": "assistant",
+            "content": reply_text,
+            "retrieved_facts": res_dict.get("retrieved_facts", []),
+        })
         st.rerun()
 
     if st.button("Clear conversation"):
@@ -861,7 +917,7 @@ def page_doctor_dashboard() -> None:
                     result = analyze_uploaded_scan(uploaded_file)
 
                 # Save prediction record linked to patient_id and doctor_id
-                pred_id = _save_scan_result(result, uploaded_file, patient_id=scanning_patient_id, doctor_id=doctor_id)
+                pred_id = _save_scan_result(result, uploaded_file, target_user_id=scanning_patient_id, doctor_id=doctor_id)
                 log_audit_event(
                     user_id=doctor_id,
                     action="DOCTOR_PERFORMED_PATIENT_SCAN",

@@ -1,36 +1,24 @@
-"""Mastishka: a lightweight, offline, rule-based Q&A assistant for NeuroScan AI.
+"""Mastishka: Hybrid RAG Medical AI Assistant for NeuroScan AI.
 
-No external API or API key is required — this is a keyword/fuzzy-matching
-FAQ engine, which keeps the capstone project self-contained and free to run.
-It optionally becomes "context-aware": if a scan result dict (matching the
-shape returned by backend.analyze_uploaded_scan) is passed in, it can answer
-questions about the user's most recent scan in plain language.
+Combines emergency & diagnostic safety protocols, platform rules, hybrid keyword+TF-IDF
+retrieval over NCI/NINDS knowledge bases, provider-agnostic LLM generation (ChatGPT style),
+context-aware conversation history follow-ups, and graceful offline fallback.
 """
 
 from __future__ import annotations
 
 import difflib
+import os
 import random
 import re
 from typing import Any
 
-from .knowledge_base import FALLBACK_RESPONSES, INTENTS
+from .knowledge_base import FALLBACK_RESPONSES, INTENTS, SUGGESTED_QUESTIONS
+from .llm_client import get_llm_client, sanitize_pii
+from .retriever import DEFAULT_RETRIEVAL_THRESHOLD, extract_keywords, get_retriever
 
 _WORD_RE = re.compile(r"[a-zA-Z']+")
 
-# Common words filtered out before scoring so generic question phrasing
-# ("what does X mean", "tell me about the Y") doesn't inflate overlap with
-# the wrong intent just because both messages happen to be questions.
-_STOPWORDS = {
-    "a", "about", "an", "and", "are", "can", "could", "do", "does", "for",
-    "give", "how", "i", "in", "is", "it", "its", "me", "mean", "means",
-    "my", "of", "on", "please", "should", "tell", "that", "the", "there",
-    "this", "to", "was", "what", "when", "where", "which", "who", "will",
-    "with", "would", "you", "your",
-}
-
-# Phrases that indicate the user is asking about their own scan result,
-# handled separately from the static knowledge base since the answer is dynamic.
 _RESULT_QUERY_PATTERNS = [
     "my result", "my scan", "my report", "my prediction", "my diagnosis",
     "explain my result", "explain my scan", "what does my result mean",
@@ -38,52 +26,80 @@ _RESULT_QUERY_PATTERNS = [
     "explain the result", "what does this mean",
 ]
 
+EMERGENCY_KEYWORDS = [
+    "sudden severe headache",
+    "seizure now",
+    "loss of consciousness",
+    "unconscious",
+    "can't speak",
+    "cant speak",
+    "cannot speak",
+    "suicidal",
+    "suicidal thoughts",
+    "thinking of suicide",
+]
 
-def _tokenize(text: str, drop_stopwords: bool = True) -> set[str]:
-    words = {w.lower() for w in _WORD_RE.findall(text)}
-    if not drop_stopwords:
-        return words
-    filtered = words - _STOPWORDS
-    # If filtering stopwords wipes out a very short pattern/message
-    # entirely (e.g. the message really is just "what is this"), fall
-    # back to the unfiltered set rather than losing all signal.
-    return filtered or words
+EMERGENCY_RESPONSE = (
+    "🚨 **EMERGENCY MEDICAL NOTICE**: If you or someone nearby is experiencing urgent or severe "
+    "symptoms (such as a sudden severe headache, active seizure, loss of consciousness, "
+    "inability to speak, or suicidal thoughts), **please seek immediate emergency medical care** "
+    "(call 911 or your local emergency number, or go to the nearest emergency room immediately)."
+)
 
+DIAGNOSE_QUERY_PATTERNS = [
+    "do i have a tumor",
+    "do i have a brain tumor",
+    "do i have cancer",
+    "diagnose me",
+    "is this a tumor in my brain",
+    "confirm if i have a tumor",
+    "tell me if i have a tumor",
+    "am i sick",
+]
 
-def _score_intent(user_tokens: set[str], patterns: list[str]) -> float:
-    """Score how well a message matches an intent's example patterns.
+DIAGNOSE_DISCLAIMER_RESPONSE = (
+    "No. This chatbot provides general educational information and should "
+    "not be used as a substitute for professional medical diagnosis or treatment. "
+    "If you have concerns about personal symptoms or scan findings, please consult a qualified neurologist or radiologist."
+)
 
-    Uses a token-level F1 score (so both short, on-topic messages AND longer
-    messages with extra words score well) plus light per-word fuzzy matching
-    to tolerate small typos. Whole-string fuzzy matching is deliberately
-    avoided: on short patterns it produces misleading high scores for
-    unrelated, coincidentally similar-looking text.
-    """
-    if not user_tokens:
-        return 0.0
-    best = 0.0
-    for pattern in patterns:
-        pattern_tokens = _tokenize(pattern)
-        if not pattern_tokens:
-            continue
-        matched = 0.0
-        for token in pattern_tokens:
-            if token in user_tokens:
-                matched += 1.0
-            elif len(token) > 3 and difflib.get_close_matches(token, user_tokens, n=1, cutoff=0.84):
-                matched += 0.8  # small credit for a likely typo
-        recall = matched / len(pattern_tokens)
-        precision = matched / len(user_tokens)
-        if recall + precision == 0:
-            continue
-        f1 = 2 * recall * precision / (recall + precision)
-        best = max(best, f1)
-    return best
+DISCLAIMER_CATEGORIES = {
+    "Treatment",
+    "Prognosis",
+    "Symptoms",
+    "Medical Guidance",
+    "Risk Factors",
+}
+
+MEDICAL_DISCLAIMER = (
+    "*Disclaimer: This information is for educational purposes only and is not a substitute "
+    "for professional medical advice, diagnosis, or treatment.*"
+)
+
+SYSTEM_PROMPT = (
+    "You are Mastishka, a friendly medical education assistant inside NeuroScan AI. "
+    "Answer using the provided KNOWLEDGE facts first. You may add general, well-established "
+    "medical context and explain in simple words, but never invent statistics or specific drug doses. "
+    "Never diagnose or give personal treatment advice; recommend seeing a doctor for personal concerns. "
+    "If the question is unrelated to health/brain/the app, answer briefly and politely steer back, "
+    "or answer normally if harmless. Be conversational, use short paragraphs and bullet points "
+    "when helpful, and match the user's language."
+)
 
 
 def _is_result_query(user_text: str) -> bool:
     lowered = user_text.lower()
     return any(phrase in lowered for phrase in _RESULT_QUERY_PATTERNS)
+
+
+def _is_emergency_query(user_text: str) -> bool:
+    lowered = user_text.lower()
+    return any(kw in lowered for kw in EMERGENCY_KEYWORDS)
+
+
+def _is_diagnose_query(user_text: str) -> bool:
+    lowered = user_text.lower()
+    return any(pattern in lowered for pattern in DIAGNOSE_QUERY_PATTERNS)
 
 
 def _explain_scan_result(scan_result: dict[str, Any]) -> str:
@@ -100,47 +116,200 @@ def _explain_scan_result(scan_result: dict[str, Any]) -> str:
         return (
             f"Your most recent scan was classified as **Normal** ({confidence_text.lower() or 'model prediction'}, "
             f"{confidence_pct} confidence). MRI quality was rated **{quality}**. No dominant tumour-like "
-            f"pattern was detected, but routine clinical correlation is still recommended."
+            f"pattern was detected, but routine clinical correlation is still recommended.\n\n"
+            f"*Remember: This AI screening result is for research/education only and is not a clinical diagnosis.*"
         )
     return (
         f"Your most recent scan was classified as **{predicted_class}** ({confidence_text.lower() or 'model prediction'}, "
         f"{confidence_pct} confidence). The model focused most on {focus_region}. Estimated severity: "
-        f"**{severity}**. MRI quality was rated **{quality}**. Remember: this is an AI screening signal, "
-        f"not a clinical diagnosis — please discuss it with a qualified radiologist or clinician."
+        f"**{severity}**. MRI quality was rated **{quality}**.\n\n"
+        f"*Remember: This AI screening result is for research/education only and is not a clinical diagnosis — "
+        f"please discuss it with a qualified radiologist or neuro-oncologist.*"
     )
 
 
-def get_response(message: str, scan_result: dict[str, Any] | None = None, threshold: float = 0.34) -> str:
-    """Return Mastishka's reply to a user message.
+def extract_context_keywords_from_history(chat_history: list[dict[str, str]] | None) -> set[str]:
+    """Extract topic keywords from recent conversation turns to support follow-ups."""
+    if not chat_history:
+        return set()
+    recent = chat_history[-4:]
+    text = " ".join([m.get("content", "") for m in recent])
+    return extract_keywords(text)
 
-    Args:
-        message: raw user text.
-        scan_result: optional dict from backend.analyze_uploaded_scan for the
-            user's most recent scan, enabling context-aware answers.
-        threshold: minimum match score (0-1) required to accept an intent.
-    """
+
+def get_response_dict(
+    message: str,
+    chat_history: list[dict[str, str]] | None = None,
+    scan_result: dict[str, Any] | None = None,
+    threshold: float = DEFAULT_RETRIEVAL_THRESHOLD,
+) -> dict[str, Any]:
+    """Process user message and return structured response dictionary with RAG metadata."""
     message = (message or "").strip()
+    message = sanitize_pii(message)
     if not message:
-        return "Ask me anything about NeuroScan AI — tumour types, how to use the app, or your latest result."
+        return {
+            "answer": "Ask me anything about NeuroScan AI — tumour types, how to use the app, or your latest result.",
+            "intent": "greeting",
+            "category": "Platform",
+            "source": "System",
+            "confidence": 1.0,
+            "retrieved_facts": [],
+            "suggested_questions": SUGGESTED_QUESTIONS[:3],
+        }
 
+    # 1. Emergency Medical Safety Check
+    if _is_emergency_query(message):
+        return {
+            "answer": EMERGENCY_RESPONSE,
+            "intent": "emergency",
+            "category": "Emergency",
+            "source": "Safety Protocol",
+            "confidence": 1.0,
+            "retrieved_facts": [],
+            "suggested_questions": [],
+        }
+
+    # 2. Self-Diagnosis Safeguard Check
+    if _is_diagnose_query(message):
+        return {
+            "answer": DIAGNOSE_DISCLAIMER_RESPONSE,
+            "intent": "chatbot_limitations",
+            "category": "Safety",
+            "source": "NCI",
+            "confidence": 1.0,
+            "retrieved_facts": [],
+            "suggested_questions": [],
+        }
+
+    # 3. Dynamic Scan Result Explanation
     if _is_result_query(message):
         if scan_result:
-            return _explain_scan_result(scan_result)
-        return (
-            "I don't see a scan result yet in this session. Head to 'Upload & Scan', analyze an MRI, "
-            "and then ask me again — I'll be able to explain it."
-        )
+            return {
+                "answer": _explain_scan_result(scan_result),
+                "intent": "explain_scan_result",
+                "category": "Platform",
+                "source": "NeuroScan Model",
+                "confidence": 1.0,
+                "retrieved_facts": [],
+                "suggested_questions": [],
+            }
+        return {
+            "answer": (
+                "I don't see a scan result yet in this session. Head to 'Upload & Scan', analyze an MRI, "
+                "and then ask me again — I'll be able to explain it."
+            ),
+            "intent": "explain_scan_result",
+            "category": "Platform",
+            "source": "System",
+            "confidence": 1.0,
+            "retrieved_facts": [],
+            "suggested_questions": [],
+        }
 
-    user_tokens = _tokenize(message)
-    best_intent = None
-    best_score = 0.0
-    for intent in INTENTS:
-        score = _score_intent(user_tokens, intent["patterns"])
-        if score > best_score:
-            best_score = score
-            best_intent = intent
+    # 4. Hybrid Knowledge Base Retrieval
+    context_kw = extract_context_keywords_from_history(chat_history)
+    retriever = get_retriever()
+    retrieved_facts = retriever.retrieve(message, top_k=4, context_keywords=context_kw)
 
-    if best_intent is not None and best_score >= threshold:
-        return random.choice(best_intent["responses"])
+    top_score = retrieved_facts[0]["score"] if retrieved_facts else 0.0
+    top_intent = retrieved_facts[0]["intent"] if retrieved_facts else "fallback"
+    top_category = retrieved_facts[0]["category"] if retrieved_facts else "Fallback"
+    top_sources = list({f["source"] for f in retrieved_facts if f.get("source")})
 
-    return random.choice(FALLBACK_RESPONSES)
+    # 5. LLM Generation Path (if configured & available)
+    llm_client = get_llm_client()
+    if llm_client.is_available() and top_score >= threshold:
+        try:
+            # Build prompt with retrieved facts + chat history
+            facts_text = "\n".join([
+                f"- Fact {i+1} [{f['source']}]: {f['question']} -> {f['answer']}"
+                for i, f in enumerate(retrieved_facts)
+            ])
+            augmented_system = f"{SYSTEM_PROMPT}\n\nKNOWLEDGE FACTS:\n{facts_text}"
+
+            # Pass last 6 conversation turns
+            history_turns = []
+            if chat_history:
+                for turn in chat_history[-6:]:
+                    history_turns.append({
+                        "role": turn["role"],
+                        "content": sanitize_pii(turn["content"]),
+                    })
+            history_turns.append({"role": "user", "content": sanitize_pii(message)})
+
+            llm_response = llm_client.generate(augmented_system, history_turns)
+
+            return {
+                "answer": llm_response,
+                "intent": top_intent,
+                "category": top_category,
+                "source": ", ".join(top_sources) if top_sources else "NCI/NINDS",
+                "confidence": round(top_score, 4),
+                "retrieved_facts": retrieved_facts,
+                "suggested_questions": [],
+            }
+        except Exception as e:
+            logger.warning(f"LLM generation failed, falling back to offline retrieval: {e}")
+
+    # 6. Offline Fallback Mode
+    if retrieved_facts and top_score >= threshold:
+        best_fact = retrieved_facts[0]
+        answer_text = best_fact["answer"]
+
+        return {
+            "answer": answer_text,
+            "intent": best_fact["intent"],
+            "category": best_fact["category"],
+            "source": best_fact["source"],
+            "confidence": round(top_score, 4),
+            "retrieved_facts": retrieved_facts,
+            "suggested_questions": [],
+        }
+
+    # Low Confidence Fallback
+    fallback_text = (
+        "I'm not sure about that. I can answer general questions about brain tumors, "
+        "MRI, symptoms and treatment. For personal medical advice please consult a doctor."
+    )
+    return {
+        "answer": fallback_text,
+        "intent": "fallback",
+        "category": "Fallback",
+        "source": "System",
+        "confidence": round(top_score, 4),
+        "retrieved_facts": retrieved_facts,
+        "suggested_questions": [
+            "What are common brain tumor symptoms?",
+            "What treatments are available for brain tumors?",
+            "Why is MRI used for brain tumors?",
+        ],
+    }
+
+
+def get_response(
+    message: str,
+    chat_history: list[dict[str, str]] | None = None,
+    scan_result: dict[str, Any] | None = None,
+    threshold: float = DEFAULT_RETRIEVAL_THRESHOLD,
+) -> str:
+    """Return Mastishka's formatted text response for a user message."""
+    res = get_response_dict(message, chat_history=chat_history, scan_result=scan_result, threshold=threshold)
+    answer = res["answer"]
+    category = res.get("category")
+    source = res.get("source")
+
+    # Append medical disclaimer if sensitive category
+    if category in DISCLAIMER_CATEGORIES and MEDICAL_DISCLAIMER not in answer:
+        answer = f"{answer}\n\n{MEDICAL_DISCLAIMER}"
+
+    # Append Source caption if response comes from dataset
+    if source in {"NCI", "NINDS", "NCI, NINDS"} and "Source:" not in answer:
+        answer = f"{answer}\n\n*Sources: {source}*"
+
+    # Append suggested questions if fallback
+    suggested = res.get("suggested_questions")
+    if res.get("intent") == "fallback" and suggested:
+        suggestions_str = "\n".join([f"• {q}" for q in suggested])
+        answer = f"{answer}\n\n**Suggested Questions:**\n{suggestions_str}"
+
+    return answer

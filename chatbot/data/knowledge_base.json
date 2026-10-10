@@ -1,0 +1,2498 @@
+[
+  {
+    "id": 1,
+    "question": "What is the brain?",
+    "answer": "The brain is the main organ of the central nervous system and controls many functions of the body.",
+    "intent": "brain_definition",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 2,
+    "question": "Can you explain what the brain is?",
+    "answer": "The brain is the main organ of the central nervous system and controls many functions of the body.",
+    "intent": "brain_definition",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 3,
+    "question": "What does the human brain mean?",
+    "answer": "The brain is the main organ of the central nervous system and controls many functions of the body.",
+    "intent": "brain_definition",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 4,
+    "question": "What does the brain do?",
+    "answer": "The brain controls functions such as movement, sensation, thinking, memory, emotions, and coordination.",
+    "intent": "brain_function",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 5,
+    "question": "What are the functions of the brain?",
+    "answer": "The brain controls functions such as movement, sensation, thinking, memory, emotions, and coordination.",
+    "intent": "brain_function",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 6,
+    "question": "Why is the brain important?",
+    "answer": "The brain controls functions such as movement, sensation, thinking, memory, emotions, and coordination.",
+    "intent": "brain_function",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 7,
+    "question": "What are the main parts of the brain?",
+    "answer": "The major parts include the cerebrum, cerebellum, and brainstem.",
+    "intent": "brain_parts",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 8,
+    "question": "What are the different parts of the brain?",
+    "answer": "The major parts include the cerebrum, cerebellum, and brainstem.",
+    "intent": "brain_parts",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 9,
+    "question": "Name the main parts of the brain.",
+    "answer": "The major parts include the cerebrum, cerebellum, and brainstem.",
+    "intent": "brain_parts",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 10,
+    "question": "What is the cerebrum?",
+    "answer": "The cerebrum is the largest part of the brain and is involved in thinking, memory, sensation, and voluntary movement.",
+    "intent": "cerebrum",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 11,
+    "question": "What is the function of the cerebrum?",
+    "answer": "The cerebrum is the largest part of the brain and is involved in thinking, memory, sensation, and voluntary movement.",
+    "intent": "cerebrum",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 12,
+    "question": "What is the cerebellum?",
+    "answer": "The cerebellum helps control balance, coordination, and precise movements.",
+    "intent": "cerebellum",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 13,
+    "question": "What does the cerebellum control?",
+    "answer": "The cerebellum helps control balance, coordination, and precise movements.",
+    "intent": "cerebellum",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 14,
+    "question": "What is the brainstem?",
+    "answer": "The brainstem connects the brain with the spinal cord and controls several essential functions.",
+    "intent": "brainstem",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 15,
+    "question": "What does the brainstem do?",
+    "answer": "The brainstem connects the brain with the spinal cord and controls several essential functions.",
+    "intent": "brainstem",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 16,
+    "question": "What are neurons?",
+    "answer": "Neurons are specialized cells that transmit information through electrical and chemical signals.",
+    "intent": "neurons",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 17,
+    "question": "What do neurons do?",
+    "answer": "Neurons are specialized cells that transmit information through electrical and chemical signals.",
+    "intent": "neurons",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 18,
+    "question": "What is the nervous system?",
+    "answer": "The nervous system is a network that carries information between the brain, spinal cord, and body.",
+    "intent": "nervous_system",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 19,
+    "question": "How does the nervous system work?",
+    "answer": "The nervous system is a network that carries information between the brain, spinal cord, and body.",
+    "intent": "nervous_system",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 20,
+    "question": "What are the lobes of the brain?",
+    "answer": "The cerebral cortex is commonly divided into frontal, parietal, temporal, and occipital lobes.",
+    "intent": "brain_lobes",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 21,
+    "question": "How many main brain lobes are there?",
+    "answer": "The cerebral cortex is commonly divided into frontal, parietal, temporal, and occipital lobes.",
+    "intent": "brain_lobes",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 22,
+    "question": "What does the frontal lobe do?",
+    "answer": "The frontal lobe is involved in planning, decision-making, movement, speech, and behavior.",
+    "intent": "frontal_lobe",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 23,
+    "question": "What is the function of the frontal lobe?",
+    "answer": "The frontal lobe is involved in planning, decision-making, movement, speech, and behavior.",
+    "intent": "frontal_lobe",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 24,
+    "question": "What does the temporal lobe do?",
+    "answer": "The temporal lobe is involved in hearing, memory, language, and aspects of emotion.",
+    "intent": "temporal_lobe",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 25,
+    "question": "What does the parietal lobe do?",
+    "answer": "The parietal lobe processes sensory information and contributes to spatial awareness.",
+    "intent": "parietal_lobe",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 26,
+    "question": "What does the occipital lobe do?",
+    "answer": "The occipital lobe is primarily involved in processing visual information.",
+    "intent": "occipital_lobe",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 27,
+    "question": "What protects the brain?",
+    "answer": "The skull, meninges, cerebrospinal fluid, and protective barriers help protect the brain.",
+    "intent": "brain_protection",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 28,
+    "question": "What is cerebrospinal fluid?",
+    "answer": "Cerebrospinal fluid is a clear fluid that surrounds the brain and spinal cord and helps protect and support them.",
+    "intent": "csf",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 29,
+    "question": "What is a brain tumor?",
+    "answer": "A brain tumor is an abnormal growth of cells in or around the brain.",
+    "intent": "tumor_definition",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 30,
+    "question": "Can you explain brain tumor?",
+    "answer": "A brain tumor is an abnormal growth of cells in or around the brain.",
+    "intent": "tumor_definition",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 31,
+    "question": "What does brain tumor mean?",
+    "answer": "A brain tumor is an abnormal growth of cells in or around the brain.",
+    "intent": "tumor_definition",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 32,
+    "question": "Are all brain tumors cancerous?",
+    "answer": "No. Some brain tumors are benign, while others are malignant.",
+    "intent": "tumor_cancer",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 33,
+    "question": "Is every brain tumor cancer?",
+    "answer": "No. Some brain tumors are benign, while others are malignant.",
+    "intent": "tumor_cancer",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 34,
+    "question": "What is a benign brain tumor?",
+    "answer": "A benign tumor is non-cancerous, although it can still cause problems by pressing on nearby brain structures.",
+    "intent": "benign_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 35,
+    "question": "What is a malignant brain tumor?",
+    "answer": "A malignant brain tumor contains cancerous cells and can grow or invade surrounding tissue.",
+    "intent": "malignant_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 36,
+    "question": "What is a primary brain tumor?",
+    "answer": "A primary brain tumor begins in cells within the brain or nearby tissues.",
+    "intent": "primary_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 37,
+    "question": "What is a secondary brain tumor?",
+    "answer": "A secondary brain tumor, or brain metastasis, occurs when cancer from another part of the body spreads to the brain.",
+    "intent": "secondary_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 38,
+    "question": "Can children get brain tumors?",
+    "answer": "Yes. Brain tumors can occur in children as well as adults.",
+    "intent": "pediatric_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 39,
+    "question": "Can adults get brain tumors?",
+    "answer": "Yes. Brain tumors can occur at any age, although the types and frequencies vary with age.",
+    "intent": "adult_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 40,
+    "question": "Can a brain tumor grow?",
+    "answer": "Some brain tumors grow slowly, while others can grow more quickly.",
+    "intent": "tumor_growth",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 41,
+    "question": "Are brain tumors common?",
+    "answer": "Brain tumors vary widely in type and frequency, and their occurrence differs by age and other factors.",
+    "intent": "tumor_frequency",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 42,
+    "question": "Is every brain tumor life-threatening?",
+    "answer": "No. Brain tumors vary widely in type, behavior, location, and severity.",
+    "intent": "life_threatening",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 43,
+    "question": "Can a brain tumor have no symptoms?",
+    "answer": "Yes. Some brain tumors may cause few or no symptoms initially and may be discovered during imaging for another reason.",
+    "intent": "asymptomatic",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 44,
+    "question": "What is glioma?",
+    "answer": "Glioma is a type of tumor that develops from glial cells or related cells in the central nervous system.",
+    "intent": "glioma_definition",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 45,
+    "question": "Can you explain glioma?",
+    "answer": "Glioma is a type of tumor that develops from glial cells or related cells in the central nervous system.",
+    "intent": "glioma_definition",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 46,
+    "question": "What is glioblastoma?",
+    "answer": "Glioblastoma is an aggressive type of malignant brain tumor.",
+    "intent": "glioblastoma",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 47,
+    "question": "What does glioblastoma mean?",
+    "answer": "Glioblastoma is an aggressive type of malignant brain tumor.",
+    "intent": "glioblastoma",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 48,
+    "question": "What is meningioma?",
+    "answer": "Meningioma develops from the meninges, the protective membranes surrounding the brain and spinal cord.",
+    "intent": "meningioma",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 49,
+    "question": "Where does meningioma develop?",
+    "answer": "Meningioma develops from the meninges, the protective membranes surrounding the brain and spinal cord.",
+    "intent": "meningioma",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 50,
+    "question": "What is a pituitary tumor?",
+    "answer": "A pituitary tumor develops in the pituitary gland and may affect hormone production.",
+    "intent": "pituitary_tumor",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 51,
+    "question": "Where is a pituitary tumor found?",
+    "answer": "A pituitary tumor develops in the pituitary gland and may affect hormone production.",
+    "intent": "pituitary_tumor",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 52,
+    "question": "What is medulloblastoma?",
+    "answer": "Medulloblastoma is a type of tumor that commonly develops in the cerebellum and occurs more often in children.",
+    "intent": "medulloblastoma",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 53,
+    "question": "What are the common types of brain tumors?",
+    "answer": "Common types include gliomas, meningiomas, pituitary tumors, and other tumors affecting the brain or nearby structures.",
+    "intent": "tumor_types",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 54,
+    "question": "What kinds of brain tumors are there?",
+    "answer": "Common types include gliomas, meningiomas, pituitary tumors, and other tumors affecting the brain or nearby structures.",
+    "intent": "tumor_types",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 55,
+    "question": "What are common brain tumor symptoms?",
+    "answer": "Symptoms depend on the tumor's location, size, and growth and may include headaches, seizures, vision changes, or problems with movement or thinking.",
+    "intent": "tumor_symptoms",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 56,
+    "question": "What symptoms can a brain tumor cause?",
+    "answer": "Symptoms depend on the tumor's location, size, and growth and may include headaches, seizures, vision changes, or problems with movement or thinking.",
+    "intent": "tumor_symptoms",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 57,
+    "question": "Can a brain tumor cause headaches?",
+    "answer": "Yes. Headaches can occur with brain tumors, although headaches have many other possible causes.",
+    "intent": "headache",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 58,
+    "question": "Is headache a symptom of brain tumor?",
+    "answer": "Yes. Headaches can occur with brain tumors, although headaches have many other possible causes.",
+    "intent": "headache",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 59,
+    "question": "Can a brain tumor cause seizures?",
+    "answer": "Yes. Seizures can be a symptom of some brain tumors.",
+    "intent": "seizures",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 60,
+    "question": "Are seizures a symptom of brain tumors?",
+    "answer": "Yes. Seizures can be a symptom of some brain tumors.",
+    "intent": "seizures",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 61,
+    "question": "Can brain tumors cause vision problems?",
+    "answer": "Yes. Some brain tumors can affect vision depending on their location.",
+    "intent": "vision_problems",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 62,
+    "question": "Can a tumor affect eyesight?",
+    "answer": "Yes. Some brain tumors can affect vision depending on their location.",
+    "intent": "vision_problems",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 63,
+    "question": "Can a brain tumor cause vomiting?",
+    "answer": "Nausea or vomiting can occur with some brain tumors, particularly when increased pressure inside the skull is present.",
+    "intent": "vomiting",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 64,
+    "question": "Can a brain tumor affect memory?",
+    "answer": "Some brain tumors can affect memory or other cognitive functions depending on their location.",
+    "intent": "memory_changes",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 65,
+    "question": "Can a brain tumor affect speech?",
+    "answer": "Yes. A tumor affecting areas involved in language or speech can cause communication difficulties.",
+    "intent": "speech_changes",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 66,
+    "question": "Can a brain tumor cause weakness?",
+    "answer": "Some brain tumors can cause weakness or difficulty moving parts of the body.",
+    "intent": "weakness",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 67,
+    "question": "Can a brain tumor affect balance?",
+    "answer": "Yes. Tumors affecting certain brain regions can cause balance or coordination problems.",
+    "intent": "balance_problems",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 68,
+    "question": "Can brain tumors change personality?",
+    "answer": "Some brain tumors can cause changes in behavior, personality, or emotional responses depending on their location.",
+    "intent": "personality_changes",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 69,
+    "question": "Can a brain tumor cause dizziness?",
+    "answer": "Some brain tumors can cause dizziness or balance problems, depending on their location.",
+    "intent": "dizziness",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 70,
+    "question": "Can a brain tumor cause hearing problems?",
+    "answer": "Some tumors can affect hearing when they involve structures or nerves associated with hearing.",
+    "intent": "hearing",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 71,
+    "question": "Can a brain tumor cause numbness?",
+    "answer": "Some brain tumors can cause numbness or altered sensation depending on their location.",
+    "intent": "numbness",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 72,
+    "question": "Can a brain tumor cause difficulty walking?",
+    "answer": "Yes. Tumors affecting areas involved in movement or coordination can cause difficulty walking.",
+    "intent": "walking",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 73,
+    "question": "Can brain tumors affect emotions?",
+    "answer": "Some brain tumors can affect mood or emotional behavior depending on the brain region involved.",
+    "intent": "emotions",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 74,
+    "question": "What causes brain tumors?",
+    "answer": "The exact cause of many brain tumors is unknown. Certain genetic conditions and previous radiation exposure can increase risk for some tumors.",
+    "intent": "tumor_causes",
+    "category": "Causes",
+    "source": "NCI"
+  },
+  {
+    "id": 75,
+    "question": "Why do brain tumors happen?",
+    "answer": "The exact cause of many brain tumors is unknown. Certain genetic conditions and previous radiation exposure can increase risk for some tumors.",
+    "intent": "tumor_causes",
+    "category": "Causes",
+    "source": "NCI"
+  },
+  {
+    "id": 76,
+    "question": "Is radiation a risk factor for brain tumors?",
+    "answer": "Exposure to certain types of radiation, especially high-dose ionizing radiation, can increase the risk of some brain tumors.",
+    "intent": "radiation_risk",
+    "category": "Risk Factors",
+    "source": "NCI"
+  },
+  {
+    "id": 77,
+    "question": "Are brain tumors hereditary?",
+    "answer": "Most brain tumors are not inherited, but certain rare genetic conditions can increase the risk.",
+    "intent": "hereditary",
+    "category": "Risk Factors",
+    "source": "NCI"
+  },
+  {
+    "id": 78,
+    "question": "Does family history matter for brain tumors?",
+    "answer": "A family history can be relevant, particularly when certain inherited genetic conditions are present.",
+    "intent": "family_history",
+    "category": "Risk Factors",
+    "source": "NCI"
+  },
+  {
+    "id": 79,
+    "question": "Can lifestyle cause brain tumors?",
+    "answer": "There is no simple lifestyle factor known to cause most brain tumors.",
+    "intent": "lifestyle",
+    "category": "Risk Factors",
+    "source": "NCI"
+  },
+  {
+    "id": 80,
+    "question": "What is an MRI scan?",
+    "answer": "MRI uses magnetic fields and radio waves to create detailed images of structures inside the body.",
+    "intent": "mri_definition",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 81,
+    "question": "What does MRI mean?",
+    "answer": "MRI uses magnetic fields and radio waves to create detailed images of structures inside the body.",
+    "intent": "mri_definition",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 82,
+    "question": "Why is MRI used for brain tumors?",
+    "answer": "MRI provides detailed images of the brain and can help doctors identify and evaluate abnormalities.",
+    "intent": "mri_purpose",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 83,
+    "question": "Why do doctors use MRI for the brain?",
+    "answer": "MRI provides detailed images of the brain and can help doctors identify and evaluate abnormalities.",
+    "intent": "mri_purpose",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 84,
+    "question": "Can MRI detect a brain tumor?",
+    "answer": "MRI can show abnormal areas that may represent a brain tumor, but diagnosis requires medical evaluation.",
+    "intent": "mri_detection",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 85,
+    "question": "What does a brain MRI show?",
+    "answer": "A brain MRI can provide detailed images of brain structures and abnormalities.",
+    "intent": "mri_information",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 86,
+    "question": "Is MRI painful?",
+    "answer": "MRI itself is generally painless, although some people may find lying still inside the scanner uncomfortable.",
+    "intent": "mri_pain",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 87,
+    "question": "Does MRI use radiation?",
+    "answer": "No. MRI does not use ionizing radiation; it uses magnetic fields and radio waves.",
+    "intent": "mri_radiation",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 88,
+    "question": "What is contrast in MRI?",
+    "answer": "Contrast agents can make certain tissues or abnormalities easier to see on an MRI.",
+    "intent": "mri_contrast",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 89,
+    "question": "What is a CT scan?",
+    "answer": "CT uses X-rays and computer processing to create detailed images of the body.",
+    "intent": "ct_scan",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 90,
+    "question": "What is a biopsy?",
+    "answer": "A biopsy involves removing a sample of tissue so it can be examined to help determine the type of tumor.",
+    "intent": "biopsy",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 91,
+    "question": "Can MRI alone confirm a tumor type?",
+    "answer": "MRI can provide important information, but determining the exact tumor type may require additional evaluation, including tissue examination.",
+    "intent": "mri_confirmation",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 92,
+    "question": "What is a neurological examination?",
+    "answer": "A neurological examination assesses functions such as movement, sensation, coordination, reflexes, and mental function.",
+    "intent": "neurological_exam",
+    "category": "Diagnosis",
+    "source": "NINDS"
+  },
+  {
+    "id": 93,
+    "question": "What is tumor grading?",
+    "answer": "Tumor grading describes how abnormal tumor cells look and can provide information about how aggressively a tumor may behave.",
+    "intent": "tumor_grading",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 94,
+    "question": "What is a Grade 1 tumor?",
+    "answer": "Grade 1 tumors generally have cells that look more like normal cells and tend to grow more slowly.",
+    "intent": "grade_one",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 95,
+    "question": "What is a Grade 2 tumor?",
+    "answer": "Grade 2 tumors generally have features suggesting slower growth but may have a risk of progression.",
+    "intent": "grade_two",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 96,
+    "question": "What is a Grade 3 tumor?",
+    "answer": "Grade 3 tumors generally contain more abnormal cells and tend to grow more rapidly.",
+    "intent": "grade_three",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 97,
+    "question": "What is a Grade 4 tumor?",
+    "answer": "Grade 4 tumors generally have highly abnormal features and tend to be more aggressive.",
+    "intent": "grade_four",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 98,
+    "question": "What is the difference between tumor grades?",
+    "answer": "Tumor grades reflect how abnormal tumor cells appear and can provide information about expected behavior and growth.",
+    "intent": "grade_difference",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 99,
+    "question": "How are brain tumors treated?",
+    "answer": "Treatment depends on the tumor type, location, size, grade, and the person's overall situation.",
+    "intent": "treatment",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 100,
+    "question": "What treatments are available for brain tumors?",
+    "answer": "Treatment depends on the tumor type, location, size, grade, and the person's overall situation.",
+    "intent": "treatment",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 101,
+    "question": "Is surgery used for brain tumors?",
+    "answer": "Surgery may be used to remove all or part of a tumor when it can be done safely.",
+    "intent": "surgery",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 102,
+    "question": "Can brain tumors be treated with surgery?",
+    "answer": "Surgery may be used to remove all or part of a tumor when it can be done safely.",
+    "intent": "surgery",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 103,
+    "question": "What is radiation therapy?",
+    "answer": "Radiation therapy uses high-energy radiation to damage and destroy tumor cells.",
+    "intent": "radiation_therapy",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 104,
+    "question": "What is chemotherapy?",
+    "answer": "Chemotherapy uses medicines that target cancer cells and may be used for certain brain tumors.",
+    "intent": "chemotherapy",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 105,
+    "question": "What is targeted therapy?",
+    "answer": "Targeted therapy uses medicines designed to act on specific features of cancer cells.",
+    "intent": "targeted_therapy",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 106,
+    "question": "Can a brain tumor be removed completely?",
+    "answer": "Some tumors can be completely removed, while others cannot be safely removed because of their location or involvement with important brain structures.",
+    "intent": "tumor_removal",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 107,
+    "question": "Does every brain tumor need surgery?",
+    "answer": "No. Treatment varies by tumor type and individual circumstances, and some tumors may be monitored or treated with other approaches.",
+    "intent": "surgery_need",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 108,
+    "question": "Can brain tumors come back after treatment?",
+    "answer": "Some brain tumors can recur after treatment, so follow-up monitoring may be necessary.",
+    "intent": "recurrence",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 109,
+    "question": "What is tumor recurrence?",
+    "answer": "Recurrence means that a tumor returns after a period when it was reduced or no longer detectable.",
+    "intent": "recurrence_definition",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 110,
+    "question": "What happens after brain tumor treatment?",
+    "answer": "Follow-up may include medical visits, imaging tests, rehabilitation, and monitoring for recurrence or treatment effects.",
+    "intent": "follow_up",
+    "category": "Recovery",
+    "source": "NCI"
+  },
+  {
+    "id": 111,
+    "question": "Can people recover after brain tumor treatment?",
+    "answer": "Recovery varies greatly depending on the tumor, treatment, location, and individual factors.",
+    "intent": "recovery",
+    "category": "Recovery",
+    "source": "NCI"
+  },
+  {
+    "id": 112,
+    "question": "Is rehabilitation needed after treatment?",
+    "answer": "Some people may benefit from physical, occupational, speech, or other rehabilitation after treatment.",
+    "intent": "rehabilitation",
+    "category": "Recovery",
+    "source": "NCI"
+  },
+  {
+    "id": 113,
+    "question": "What is brain tumor prognosis?",
+    "answer": "Prognosis describes the expected course or outcome of a disease and depends on factors such as tumor type, grade, location, and treatment response.",
+    "intent": "prognosis",
+    "category": "Prognosis",
+    "source": "NCI"
+  },
+  {
+    "id": 114,
+    "question": "Does tumor size affect prognosis?",
+    "answer": "Tumor size can be one factor considered when doctors evaluate a person's condition and treatment options.",
+    "intent": "tumor_size_prognosis",
+    "category": "Prognosis",
+    "source": "NCI"
+  },
+  {
+    "id": 115,
+    "question": "Does tumor location matter?",
+    "answer": "Yes. Tumor location can affect symptoms, treatment options, and potential effects on brain function.",
+    "intent": "tumor_location",
+    "category": "Prognosis",
+    "source": "NCI"
+  },
+  {
+    "id": 116,
+    "question": "Can brain tumors be prevented?",
+    "answer": "There is no guaranteed way to prevent most brain tumors because their causes are not fully understood.",
+    "intent": "prevention",
+    "category": "Prevention",
+    "source": "NCI"
+  },
+  {
+    "id": 117,
+    "question": "Can a healthy lifestyle prevent brain tumors?",
+    "answer": "A healthy lifestyle supports overall health, but it cannot guarantee prevention of brain tumors.",
+    "intent": "healthy_lifestyle",
+    "category": "Prevention",
+    "source": "NCI"
+  },
+  {
+    "id": 118,
+    "question": "When should someone see a doctor for symptoms?",
+    "answer": "Persistent, worsening, unusual, or concerning neurological symptoms should be evaluated by a healthcare professional.",
+    "intent": "doctor_visit",
+    "category": "Medical Guidance",
+    "source": "NCI"
+  },
+  {
+    "id": 119,
+    "question": "Should everyone with a headache get an MRI?",
+    "answer": "No. Whether an MRI is needed depends on the symptoms, medical history, examination, and a healthcare professional's assessment.",
+    "intent": "headache_mri",
+    "category": "Medical Guidance",
+    "source": "NCI"
+  },
+  {
+    "id": 120,
+    "question": "Are seizures always caused by brain tumors?",
+    "answer": "No. Seizures have many possible causes, and having a seizure does not necessarily mean a person has a brain tumor.",
+    "intent": "seizure_causes",
+    "category": "Medical Guidance",
+    "source": "NCI"
+  },
+  {
+    "id": 121,
+    "question": "What is a brain lesion?",
+    "answer": "A brain lesion is an area of abnormal or damaged tissue seen or identified in the brain.",
+    "intent": "lesion",
+    "category": "Medical Terms",
+    "source": "NINDS"
+  },
+  {
+    "id": 122,
+    "question": "What is brain edema?",
+    "answer": "Brain edema means swelling caused by an increase of fluid in brain tissue.",
+    "intent": "edema",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 123,
+    "question": "What is metastasis?",
+    "answer": "Metastasis occurs when cancer cells spread from their original location to another part of the body.",
+    "intent": "metastasis",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 124,
+    "question": "What is pathology?",
+    "answer": "Pathology is the examination of cells or tissues to help identify and characterize disease.",
+    "intent": "pathology",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 125,
+    "question": "What is the difference between tumor and cancer?",
+    "answer": "A tumor is an abnormal mass of tissue; cancer refers to malignant disease that can invade tissues or spread.",
+    "intent": "tumor_vs_cancer",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 126,
+    "question": "What is the central nervous system?",
+    "answer": "The central nervous system consists of the brain and spinal cord.",
+    "intent": "cns",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 127,
+    "question": "Can an MRI result diagnose me?",
+    "answer": "An MRI result should be interpreted by a qualified healthcare professional together with symptoms, examination findings, and other information.",
+    "intent": "diagnosis_warning",
+    "category": "Safety",
+    "source": "NCI"
+  },
+  {
+    "id": 128,
+    "question": "Can this chatbot diagnose brain tumors?",
+    "answer": "No. This chatbot provides general educational information and should not be used as a substitute for professional medical diagnosis or treatment.",
+    "intent": "chatbot_limitations",
+    "category": "Safety",
+    "source": "NCI"
+  },
+  {
+    "id": 129,
+    "question": "Tell me about the human brain.",
+    "answer": "The brain is the main organ of the central nervous system and controls many functions of the body.",
+    "intent": "brain_definition",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 130,
+    "question": "Explain the brain in simple words.",
+    "answer": "The brain is the main organ of the central nervous system and controls many functions of the body.",
+    "intent": "brain_definition",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 131,
+    "question": "What is the human brain?",
+    "answer": "The brain is the main organ of the central nervous system and controls many functions of the body.",
+    "intent": "brain_definition",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 132,
+    "question": "How does the brain control the body?",
+    "answer": "The brain controls functions such as movement, sensation, thinking, memory, emotions, and coordination.",
+    "intent": "brain_function",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 133,
+    "question": "What are the important functions of the brain?",
+    "answer": "The brain controls functions such as movement, sensation, thinking, memory, emotions, and coordination.",
+    "intent": "brain_function",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 134,
+    "question": "What is the role of the brain?",
+    "answer": "The brain controls functions such as movement, sensation, thinking, memory, emotions, and coordination.",
+    "intent": "brain_function",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 135,
+    "question": "Which parts make up the brain?",
+    "answer": "The major parts include the cerebrum, cerebellum, and brainstem.",
+    "intent": "brain_parts",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 136,
+    "question": "How is the brain divided?",
+    "answer": "The major parts include the cerebrum, cerebellum, and brainstem.",
+    "intent": "brain_parts",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 137,
+    "question": "Can you name the major brain regions?",
+    "answer": "The major parts include the cerebrum, cerebellum, and brainstem.",
+    "intent": "brain_parts",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 138,
+    "question": "Which part of the brain is the cerebrum?",
+    "answer": "The cerebrum is the largest part of the brain and is involved in thinking, memory, sensation, and voluntary movement.",
+    "intent": "cerebrum",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 139,
+    "question": "Why is the cerebrum important?",
+    "answer": "The cerebrum is the largest part of the brain and is involved in thinking, memory, sensation, and voluntary movement.",
+    "intent": "cerebrum",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 140,
+    "question": "Which brain part is responsible for thinking?",
+    "answer": "The cerebrum is the largest part of the brain and is involved in thinking, memory, sensation, and voluntary movement.",
+    "intent": "cerebrum",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 141,
+    "question": "Why is the cerebellum important?",
+    "answer": "The cerebellum helps control balance, coordination, and precise movements.",
+    "intent": "cerebellum",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 142,
+    "question": "Which brain part controls coordination?",
+    "answer": "The cerebellum helps control balance, coordination, and precise movements.",
+    "intent": "cerebellum",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 143,
+    "question": "What role does the cerebellum play?",
+    "answer": "The cerebellum helps control balance, coordination, and precise movements.",
+    "intent": "cerebellum",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 144,
+    "question": "Why is the brainstem important?",
+    "answer": "The brainstem connects the brain with the spinal cord and controls several essential functions.",
+    "intent": "brainstem",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 145,
+    "question": "Which part connects the brain and spinal cord?",
+    "answer": "The brainstem connects the brain with the spinal cord and controls several essential functions.",
+    "intent": "brainstem",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 146,
+    "question": "What functions are controlled by the brainstem?",
+    "answer": "The brainstem connects the brain with the spinal cord and controls several essential functions.",
+    "intent": "brainstem",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 147,
+    "question": "What are brain neurons?",
+    "answer": "Neurons are specialized cells that transmit information through electrical and chemical signals.",
+    "intent": "neurons",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 148,
+    "question": "How do neurons send information?",
+    "answer": "Neurons are specialized cells that transmit information through electrical and chemical signals.",
+    "intent": "neurons",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 149,
+    "question": "Why are neurons important?",
+    "answer": "Neurons are specialized cells that transmit information through electrical and chemical signals.",
+    "intent": "neurons",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 150,
+    "question": "What are the four brain lobes?",
+    "answer": "The cerebral cortex is commonly divided into frontal, parietal, temporal, and occipital lobes.",
+    "intent": "brain_lobes",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 151,
+    "question": "Can you list the cerebral lobes?",
+    "answer": "The cerebral cortex is commonly divided into frontal, parietal, temporal, and occipital lobes.",
+    "intent": "brain_lobes",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 152,
+    "question": "What are the major lobes?",
+    "answer": "The cerebral cortex is commonly divided into frontal, parietal, temporal, and occipital lobes.",
+    "intent": "brain_lobes",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 153,
+    "question": "Which brain lobe controls planning?",
+    "answer": "The frontal lobe is involved in planning, decision-making, movement, speech, and behavior.",
+    "intent": "frontal_lobe",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 154,
+    "question": "What functions are controlled by the frontal lobe?",
+    "answer": "The frontal lobe is involved in planning, decision-making, movement, speech, and behavior.",
+    "intent": "frontal_lobe",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 155,
+    "question": "Where is the frontal lobe involved?",
+    "answer": "The frontal lobe is involved in planning, decision-making, movement, speech, and behavior.",
+    "intent": "frontal_lobe",
+    "category": "Brain Basics",
+    "source": "NINDS"
+  },
+  {
+    "id": 156,
+    "question": "How would you define a brain tumor?",
+    "answer": "A brain tumor is an abnormal growth of cells in or around the brain.",
+    "intent": "tumor_definition",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 157,
+    "question": "What happens in a brain tumor?",
+    "answer": "A brain tumor is an abnormal growth of cells in or around the brain.",
+    "intent": "tumor_definition",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 158,
+    "question": "What does an abnormal brain growth mean?",
+    "answer": "A brain tumor is an abnormal growth of cells in or around the brain.",
+    "intent": "tumor_definition",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 159,
+    "question": "Are brain tumors always cancer?",
+    "answer": "No. Some brain tumors are benign, while others are malignant.",
+    "intent": "tumor_cancer",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 160,
+    "question": "Does having a brain tumor mean cancer?",
+    "answer": "No. Some brain tumors are benign, while others are malignant.",
+    "intent": "tumor_cancer",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 161,
+    "question": "Are some brain tumors non-cancerous?",
+    "answer": "No. Some brain tumors are benign, while others are malignant.",
+    "intent": "tumor_cancer",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 162,
+    "question": "What does benign brain tumor mean?",
+    "answer": "A benign tumor is non-cancerous, although it can still cause problems by pressing on nearby brain structures.",
+    "intent": "benign_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 163,
+    "question": "Is a benign brain tumor cancer?",
+    "answer": "A benign tumor is non-cancerous, although it can still cause problems by pressing on nearby brain structures.",
+    "intent": "benign_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 164,
+    "question": "Can a benign brain tumor still cause problems?",
+    "answer": "A benign tumor is non-cancerous, although it can still cause problems by pressing on nearby brain structures.",
+    "intent": "benign_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 165,
+    "question": "What does malignant brain tumor mean?",
+    "answer": "A malignant brain tumor contains cancerous cells and can grow or invade surrounding tissue.",
+    "intent": "malignant_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 166,
+    "question": "Is a malignant brain tumor cancerous?",
+    "answer": "A malignant brain tumor contains cancerous cells and can grow or invade surrounding tissue.",
+    "intent": "malignant_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 167,
+    "question": "How is a malignant tumor different?",
+    "answer": "A malignant brain tumor contains cancerous cells and can grow or invade surrounding tissue.",
+    "intent": "malignant_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 168,
+    "question": "What does primary brain tumor mean?",
+    "answer": "A primary brain tumor begins in cells within the brain or nearby tissues.",
+    "intent": "primary_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 169,
+    "question": "Where does a primary brain tumor start?",
+    "answer": "A primary brain tumor begins in cells within the brain or nearby tissues.",
+    "intent": "primary_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 170,
+    "question": "What is a primary tumor in the brain?",
+    "answer": "A primary brain tumor begins in cells within the brain or nearby tissues.",
+    "intent": "primary_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 171,
+    "question": "What is brain metastasis?",
+    "answer": "A secondary brain tumor, or brain metastasis, occurs when cancer from another part of the body spreads to the brain.",
+    "intent": "secondary_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 172,
+    "question": "How can cancer spread to the brain?",
+    "answer": "A secondary brain tumor, or brain metastasis, occurs when cancer from another part of the body spreads to the brain.",
+    "intent": "secondary_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 173,
+    "question": "What does secondary brain tumor mean?",
+    "answer": "A secondary brain tumor, or brain metastasis, occurs when cancer from another part of the body spreads to the brain.",
+    "intent": "secondary_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 174,
+    "question": "Where does glioma come from?",
+    "answer": "Glioma is a type of tumor that develops from glial cells or related cells in the central nervous system.",
+    "intent": "glioma_definition",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 175,
+    "question": "What type of tumor is glioma?",
+    "answer": "Glioma is a type of tumor that develops from glial cells or related cells in the central nervous system.",
+    "intent": "glioma_definition",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 176,
+    "question": "Tell me about gliomas.",
+    "answer": "Glioma is a type of tumor that develops from glial cells or related cells in the central nervous system.",
+    "intent": "glioma_definition",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 177,
+    "question": "Is glioblastoma a brain tumor?",
+    "answer": "Glioblastoma is an aggressive type of malignant brain tumor.",
+    "intent": "glioblastoma",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 178,
+    "question": "What type of tumor is glioblastoma?",
+    "answer": "Glioblastoma is an aggressive type of malignant brain tumor.",
+    "intent": "glioblastoma",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 179,
+    "question": "Tell me about glioblastoma.",
+    "answer": "Glioblastoma is an aggressive type of malignant brain tumor.",
+    "intent": "glioblastoma",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 180,
+    "question": "Is meningioma a brain tumor?",
+    "answer": "Meningioma develops from the meninges, the protective membranes surrounding the brain and spinal cord.",
+    "intent": "meningioma",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 181,
+    "question": "What causes a meningioma?",
+    "answer": "Meningioma develops from the meninges, the protective membranes surrounding the brain and spinal cord.",
+    "intent": "meningioma",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 182,
+    "question": "Tell me about meningioma.",
+    "answer": "Meningioma develops from the meninges, the protective membranes surrounding the brain and spinal cord.",
+    "intent": "meningioma",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 183,
+    "question": "What happens with a pituitary tumor?",
+    "answer": "A pituitary tumor develops in the pituitary gland and may affect hormone production.",
+    "intent": "pituitary_tumor",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 184,
+    "question": "Tell me about pituitary tumors.",
+    "answer": "A pituitary tumor develops in the pituitary gland and may affect hormone production.",
+    "intent": "pituitary_tumor",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 185,
+    "question": "Can a pituitary tumor affect hormones?",
+    "answer": "A pituitary tumor develops in the pituitary gland and may affect hormone production.",
+    "intent": "pituitary_tumor",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 186,
+    "question": "What are different brain tumor types?",
+    "answer": "Common types include gliomas, meningiomas, pituitary tumors, and other tumors affecting the brain or nearby structures.",
+    "intent": "tumor_types",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 187,
+    "question": "Can you list brain tumor types?",
+    "answer": "Common types include gliomas, meningiomas, pituitary tumors, and other tumors affecting the brain or nearby structures.",
+    "intent": "tumor_types",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 188,
+    "question": "Which tumors can occur in the brain?",
+    "answer": "Common types include gliomas, meningiomas, pituitary tumors, and other tumors affecting the brain or nearby structures.",
+    "intent": "tumor_types",
+    "category": "Tumor Types",
+    "source": "NCI"
+  },
+  {
+    "id": 189,
+    "question": "How do brain tumors show symptoms?",
+    "answer": "Symptoms depend on the tumor's location, size, and growth and may include headaches, seizures, vision changes, or problems with movement or thinking.",
+    "intent": "tumor_symptoms",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 190,
+    "question": "What signs can indicate a brain tumor?",
+    "answer": "Symptoms depend on the tumor's location, size, and growth and may include headaches, seizures, vision changes, or problems with movement or thinking.",
+    "intent": "tumor_symptoms",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 191,
+    "question": "What are signs of brain tumors?",
+    "answer": "Symptoms depend on the tumor's location, size, and growth and may include headaches, seizures, vision changes, or problems with movement or thinking.",
+    "intent": "tumor_symptoms",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 192,
+    "question": "Are headaches related to brain tumors?",
+    "answer": "Yes. Headaches can occur with brain tumors, although headaches have many other possible causes.",
+    "intent": "headache",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 193,
+    "question": "What kind of symptom can a brain tumor cause?",
+    "answer": "Yes. Headaches can occur with brain tumors, although headaches have many other possible causes.",
+    "intent": "headache",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 194,
+    "question": "Can brain tumors cause head pain?",
+    "answer": "Yes. Headaches can occur with brain tumors, although headaches have many other possible causes.",
+    "intent": "headache",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 195,
+    "question": "Why can brain tumors cause seizures?",
+    "answer": "Yes. Seizures can be a symptom of some brain tumors.",
+    "intent": "seizures",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 196,
+    "question": "Can seizures happen with a brain tumor?",
+    "answer": "Yes. Seizures can be a symptom of some brain tumors.",
+    "intent": "seizures",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 197,
+    "question": "Are seizures associated with brain tumors?",
+    "answer": "Yes. Seizures can be a symptom of some brain tumors.",
+    "intent": "seizures",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 198,
+    "question": "Can a brain tumor affect vision?",
+    "answer": "Yes. Some brain tumors can affect vision depending on their location.",
+    "intent": "vision_problems",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 199,
+    "question": "What vision changes can occur?",
+    "answer": "Yes. Some brain tumors can affect vision depending on their location.",
+    "intent": "vision_problems",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 200,
+    "question": "Can tumors cause eyesight changes?",
+    "answer": "Yes. Some brain tumors can affect vision depending on their location.",
+    "intent": "vision_problems",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 201,
+    "question": "Can tumors affect memory?",
+    "answer": "Some brain tumors can affect memory or other cognitive functions depending on their location.",
+    "intent": "memory_changes",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 202,
+    "question": "Can a brain tumor cause forgetfulness?",
+    "answer": "Some brain tumors can affect memory or other cognitive functions depending on their location.",
+    "intent": "memory_changes",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 203,
+    "question": "Do brain tumors affect thinking and memory?",
+    "answer": "Some brain tumors can affect memory or other cognitive functions depending on their location.",
+    "intent": "memory_changes",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 204,
+    "question": "Can brain tumors affect language?",
+    "answer": "Yes. A tumor affecting areas involved in language or speech can cause communication difficulties.",
+    "intent": "speech_changes",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 205,
+    "question": "Can a tumor cause speech difficulty?",
+    "answer": "Yes. A tumor affecting areas involved in language or speech can cause communication difficulties.",
+    "intent": "speech_changes",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 206,
+    "question": "Can brain tumors change speech?",
+    "answer": "Yes. A tumor affecting areas involved in language or speech can cause communication difficulties.",
+    "intent": "speech_changes",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 207,
+    "question": "Can a brain tumor cause muscle weakness?",
+    "answer": "Some brain tumors can cause weakness or difficulty moving parts of the body.",
+    "intent": "weakness",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 208,
+    "question": "Why can brain tumors cause weakness?",
+    "answer": "Some brain tumors can cause weakness or difficulty moving parts of the body.",
+    "intent": "weakness",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 209,
+    "question": "Can tumors affect movement?",
+    "answer": "Some brain tumors can cause weakness or difficulty moving parts of the body.",
+    "intent": "weakness",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 210,
+    "question": "Can brain tumors cause balance problems?",
+    "answer": "Yes. Tumors affecting certain brain regions can cause balance or coordination problems.",
+    "intent": "balance_problems",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 211,
+    "question": "Why can a tumor affect coordination?",
+    "answer": "Yes. Tumors affecting certain brain regions can cause balance or coordination problems.",
+    "intent": "balance_problems",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 212,
+    "question": "Can brain tumors make walking difficult?",
+    "answer": "Yes. Tumors affecting certain brain regions can cause balance or coordination problems.",
+    "intent": "balance_problems",
+    "category": "Symptoms",
+    "source": "NCI"
+  },
+  {
+    "id": 213,
+    "question": "Why do people develop brain tumors?",
+    "answer": "The exact cause of many brain tumors is unknown. Certain genetic conditions and previous radiation exposure can increase risk for some tumors.",
+    "intent": "tumor_causes",
+    "category": "Causes",
+    "source": "NCI"
+  },
+  {
+    "id": 214,
+    "question": "What are the causes of brain tumors?",
+    "answer": "The exact cause of many brain tumors is unknown. Certain genetic conditions and previous radiation exposure can increase risk for some tumors.",
+    "intent": "tumor_causes",
+    "category": "Causes",
+    "source": "NCI"
+  },
+  {
+    "id": 215,
+    "question": "How do brain tumors develop?",
+    "answer": "The exact cause of many brain tumors is unknown. Certain genetic conditions and previous radiation exposure can increase risk for some tumors.",
+    "intent": "tumor_causes",
+    "category": "Causes",
+    "source": "NCI"
+  },
+  {
+    "id": 216,
+    "question": "Can radiation increase brain tumor risk?",
+    "answer": "Exposure to certain types of radiation, especially high-dose ionizing radiation, can increase the risk of some brain tumors.",
+    "intent": "radiation_risk",
+    "category": "Risk Factors",
+    "source": "NCI"
+  },
+  {
+    "id": 217,
+    "question": "Does radiation exposure increase risk?",
+    "answer": "Exposure to certain types of radiation, especially high-dose ionizing radiation, can increase the risk of some brain tumors.",
+    "intent": "radiation_risk",
+    "category": "Risk Factors",
+    "source": "NCI"
+  },
+  {
+    "id": 218,
+    "question": "Is radiation linked to brain tumors?",
+    "answer": "Exposure to certain types of radiation, especially high-dose ionizing radiation, can increase the risk of some brain tumors.",
+    "intent": "radiation_risk",
+    "category": "Risk Factors",
+    "source": "NCI"
+  },
+  {
+    "id": 219,
+    "question": "Can brain tumors run in families?",
+    "answer": "Most brain tumors are not inherited, but certain rare genetic conditions can increase the risk.",
+    "intent": "hereditary",
+    "category": "Risk Factors",
+    "source": "NCI"
+  },
+  {
+    "id": 220,
+    "question": "Can genetics cause brain tumors?",
+    "answer": "Most brain tumors are not inherited, but certain rare genetic conditions can increase the risk.",
+    "intent": "hereditary",
+    "category": "Risk Factors",
+    "source": "NCI"
+  },
+  {
+    "id": 221,
+    "question": "Are some brain tumors inherited?",
+    "answer": "Most brain tumors are not inherited, but certain rare genetic conditions can increase the risk.",
+    "intent": "hereditary",
+    "category": "Risk Factors",
+    "source": "NCI"
+  },
+  {
+    "id": 222,
+    "question": "How does MRI work?",
+    "answer": "MRI uses magnetic fields and radio waves to create detailed images of structures inside the body.",
+    "intent": "mri_definition",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 223,
+    "question": "What does MRI stand for?",
+    "answer": "MRI uses magnetic fields and radio waves to create detailed images of structures inside the body.",
+    "intent": "mri_definition",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 224,
+    "question": "Can you explain MRI?",
+    "answer": "MRI uses magnetic fields and radio waves to create detailed images of structures inside the body.",
+    "intent": "mri_definition",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 225,
+    "question": "What is the purpose of brain MRI?",
+    "answer": "MRI provides detailed images of the brain and can help doctors identify and evaluate abnormalities.",
+    "intent": "mri_purpose",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 226,
+    "question": "How does MRI help with tumors?",
+    "answer": "MRI provides detailed images of the brain and can help doctors identify and evaluate abnormalities.",
+    "intent": "mri_purpose",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 227,
+    "question": "Why would a doctor order a brain MRI?",
+    "answer": "MRI provides detailed images of the brain and can help doctors identify and evaluate abnormalities.",
+    "intent": "mri_purpose",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 228,
+    "question": "Will an MRI show a brain tumor?",
+    "answer": "MRI can show abnormal areas that may represent a brain tumor, but diagnosis requires medical evaluation.",
+    "intent": "mri_detection",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 229,
+    "question": "How can MRI find a tumor?",
+    "answer": "MRI can show abnormal areas that may represent a brain tumor, but diagnosis requires medical evaluation.",
+    "intent": "mri_detection",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 230,
+    "question": "Can a scan detect brain tumors?",
+    "answer": "MRI can show abnormal areas that may represent a brain tumor, but diagnosis requires medical evaluation.",
+    "intent": "mri_detection",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 231,
+    "question": "Is there radiation in an MRI?",
+    "answer": "No. MRI does not use ionizing radiation; it uses magnetic fields and radio waves.",
+    "intent": "mri_radiation",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 232,
+    "question": "Does MRI expose you to radiation?",
+    "answer": "No. MRI does not use ionizing radiation; it uses magnetic fields and radio waves.",
+    "intent": "mri_radiation",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 233,
+    "question": "Is MRI radiation-free?",
+    "answer": "No. MRI does not use ionizing radiation; it uses magnetic fields and radio waves.",
+    "intent": "mri_radiation",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 234,
+    "question": "Why is contrast used in MRI?",
+    "answer": "Contrast agents can make certain tissues or abnormalities easier to see on an MRI.",
+    "intent": "mri_contrast",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 235,
+    "question": "What is an MRI contrast agent?",
+    "answer": "Contrast agents can make certain tissues or abnormalities easier to see on an MRI.",
+    "intent": "mri_contrast",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 236,
+    "question": "Why do some MRI scans use contrast?",
+    "answer": "Contrast agents can make certain tissues or abnormalities easier to see on an MRI.",
+    "intent": "mri_contrast",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 237,
+    "question": "How is a CT scan used?",
+    "answer": "CT uses X-rays and computer processing to create detailed images of the body.",
+    "intent": "ct_scan",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 238,
+    "question": "What does CT mean?",
+    "answer": "CT uses X-rays and computer processing to create detailed images of the body.",
+    "intent": "ct_scan",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 239,
+    "question": "What is the difference between CT and MRI?",
+    "answer": "CT uses X-rays and computer processing to create detailed images of the body.",
+    "intent": "ct_scan",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 240,
+    "question": "Why is a brain biopsy done?",
+    "answer": "A biopsy involves removing a sample of tissue so it can be examined to help determine the type of tumor.",
+    "intent": "biopsy",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 241,
+    "question": "How does a biopsy identify a tumor?",
+    "answer": "A biopsy involves removing a sample of tissue so it can be examined to help determine the type of tumor.",
+    "intent": "biopsy",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 242,
+    "question": "What does tumor biopsy mean?",
+    "answer": "A biopsy involves removing a sample of tissue so it can be examined to help determine the type of tumor.",
+    "intent": "biopsy",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 243,
+    "question": "Why are brain tumors graded?",
+    "answer": "Tumor grading describes how abnormal tumor cells look and can provide information about how aggressively a tumor may behave.",
+    "intent": "tumor_grading",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 244,
+    "question": "What does tumor grade mean?",
+    "answer": "Tumor grading describes how abnormal tumor cells look and can provide information about how aggressively a tumor may behave.",
+    "intent": "tumor_grading",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 245,
+    "question": "How are brain tumors graded?",
+    "answer": "Tumor grading describes how abnormal tumor cells look and can provide information about how aggressively a tumor may behave.",
+    "intent": "tumor_grading",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 246,
+    "question": "What are the treatment options for brain tumors?",
+    "answer": "Treatment depends on the tumor type, location, size, grade, and the person's overall situation.",
+    "intent": "treatment",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 247,
+    "question": "How can brain tumors be treated?",
+    "answer": "Treatment depends on the tumor type, location, size, grade, and the person's overall situation.",
+    "intent": "treatment",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 248,
+    "question": "What determines brain tumor treatment?",
+    "answer": "Treatment depends on the tumor type, location, size, grade, and the person's overall situation.",
+    "intent": "treatment",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 249,
+    "question": "When is brain tumor surgery used?",
+    "answer": "Surgery may be used to remove all or part of a tumor when it can be done safely.",
+    "intent": "surgery",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 250,
+    "question": "Can doctors remove brain tumors surgically?",
+    "answer": "Surgery may be used to remove all or part of a tumor when it can be done safely.",
+    "intent": "surgery",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 251,
+    "question": "Why is surgery performed for brain tumors?",
+    "answer": "Surgery may be used to remove all or part of a tumor when it can be done safely.",
+    "intent": "surgery",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 252,
+    "question": "How does radiation therapy treat tumors?",
+    "answer": "Radiation therapy uses high-energy radiation to damage and destroy tumor cells.",
+    "intent": "radiation_therapy",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 253,
+    "question": "Why is radiation used for brain tumors?",
+    "answer": "Radiation therapy uses high-energy radiation to damage and destroy tumor cells.",
+    "intent": "radiation_therapy",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 254,
+    "question": "What is brain radiation treatment?",
+    "answer": "Radiation therapy uses high-energy radiation to damage and destroy tumor cells.",
+    "intent": "radiation_therapy",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 255,
+    "question": "Can chemotherapy treat brain tumors?",
+    "answer": "Chemotherapy uses medicines that target cancer cells and may be used for certain brain tumors.",
+    "intent": "chemotherapy",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 256,
+    "question": "How does chemotherapy work for tumors?",
+    "answer": "Chemotherapy uses medicines that target cancer cells and may be used for certain brain tumors.",
+    "intent": "chemotherapy",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 257,
+    "question": "What is chemo treatment for brain tumors?",
+    "answer": "Chemotherapy uses medicines that target cancer cells and may be used for certain brain tumors.",
+    "intent": "chemotherapy",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 258,
+    "question": "How does targeted therapy work?",
+    "answer": "Targeted therapy uses medicines designed to act on specific features of cancer cells.",
+    "intent": "targeted_therapy",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 259,
+    "question": "What is targeted treatment?",
+    "answer": "Targeted therapy uses medicines designed to act on specific features of cancer cells.",
+    "intent": "targeted_therapy",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 260,
+    "question": "Can targeted drugs treat brain tumors?",
+    "answer": "Targeted therapy uses medicines designed to act on specific features of cancer cells.",
+    "intent": "targeted_therapy",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 261,
+    "question": "Can brain tumors return?",
+    "answer": "Some brain tumors can recur after treatment, so follow-up monitoring may be necessary.",
+    "intent": "recurrence",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 262,
+    "question": "What happens if a brain tumor comes back?",
+    "answer": "Some brain tumors can recur after treatment, so follow-up monitoring may be necessary.",
+    "intent": "recurrence",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 263,
+    "question": "Can tumors recur after treatment?",
+    "answer": "Some brain tumors can recur after treatment, so follow-up monitoring may be necessary.",
+    "intent": "recurrence",
+    "category": "Treatment",
+    "source": "NCI"
+  },
+  {
+    "id": 264,
+    "question": "Why are follow-up scans needed?",
+    "answer": "Follow-up may include medical visits, imaging tests, rehabilitation, and monitoring for recurrence or treatment effects.",
+    "intent": "follow_up",
+    "category": "Recovery",
+    "source": "NCI"
+  },
+  {
+    "id": 265,
+    "question": "What follow-up is done after treatment?",
+    "answer": "Follow-up may include medical visits, imaging tests, rehabilitation, and monitoring for recurrence or treatment effects.",
+    "intent": "follow_up",
+    "category": "Recovery",
+    "source": "NCI"
+  },
+  {
+    "id": 266,
+    "question": "How are patients monitored after treatment?",
+    "answer": "Follow-up may include medical visits, imaging tests, rehabilitation, and monitoring for recurrence or treatment effects.",
+    "intent": "follow_up",
+    "category": "Recovery",
+    "source": "NCI"
+  },
+  {
+    "id": 267,
+    "question": "How long does recovery take?",
+    "answer": "Recovery varies greatly depending on the tumor, treatment, location, and individual factors.",
+    "intent": "recovery",
+    "category": "Recovery",
+    "source": "NCI"
+  },
+  {
+    "id": 268,
+    "question": "What affects recovery after treatment?",
+    "answer": "Recovery varies greatly depending on the tumor, treatment, location, and individual factors.",
+    "intent": "recovery",
+    "category": "Recovery",
+    "source": "NCI"
+  },
+  {
+    "id": 269,
+    "question": "What is recovery like after a brain tumor?",
+    "answer": "Recovery varies greatly depending on the tumor, treatment, location, and individual factors.",
+    "intent": "recovery",
+    "category": "Recovery",
+    "source": "NCI"
+  },
+  {
+    "id": 270,
+    "question": "What factors affect brain tumor prognosis?",
+    "answer": "Prognosis describes the expected course or outcome of a disease and depends on factors such as tumor type, grade, location, and treatment response.",
+    "intent": "prognosis",
+    "category": "Prognosis",
+    "source": "NCI"
+  },
+  {
+    "id": 271,
+    "question": "What does prognosis mean?",
+    "answer": "Prognosis describes the expected course or outcome of a disease and depends on factors such as tumor type, grade, location, and treatment response.",
+    "intent": "prognosis",
+    "category": "Prognosis",
+    "source": "NCI"
+  },
+  {
+    "id": 272,
+    "question": "How is prognosis determined?",
+    "answer": "Prognosis describes the expected course or outcome of a disease and depends on factors such as tumor type, grade, location, and treatment response.",
+    "intent": "prognosis",
+    "category": "Prognosis",
+    "source": "NCI"
+  },
+  {
+    "id": 273,
+    "question": "Is there a way to lower brain tumor risk?",
+    "answer": "There is no guaranteed way to prevent most brain tumors because their causes are not fully understood.",
+    "intent": "prevention",
+    "category": "Prevention",
+    "source": "NCI"
+  },
+  {
+    "id": 274,
+    "question": "How can brain tumors be prevented?",
+    "answer": "There is no guaranteed way to prevent most brain tumors because their causes are not fully understood.",
+    "intent": "prevention",
+    "category": "Prevention",
+    "source": "NCI"
+  },
+  {
+    "id": 275,
+    "question": "When should I see a doctor for neurological symptoms?",
+    "answer": "Persistent, worsening, unusual, or concerning neurological symptoms should be evaluated by a healthcare professional.",
+    "intent": "doctor_visit",
+    "category": "Medical Guidance",
+    "source": "NCI"
+  },
+  {
+    "id": 276,
+    "question": "When should brain symptoms be checked?",
+    "answer": "Persistent, worsening, unusual, or concerning neurological symptoms should be evaluated by a healthcare professional.",
+    "intent": "doctor_visit",
+    "category": "Medical Guidance",
+    "source": "NCI"
+  },
+  {
+    "id": 277,
+    "question": "When is medical evaluation necessary?",
+    "answer": "Persistent, worsening, unusual, or concerning neurological symptoms should be evaluated by a healthcare professional.",
+    "intent": "doctor_visit",
+    "category": "Medical Guidance",
+    "source": "NCI"
+  },
+  {
+    "id": 278,
+    "question": "What does brain lesion mean?",
+    "answer": "A brain lesion is an area of abnormal or damaged tissue seen or identified in the brain.",
+    "intent": "lesion",
+    "category": "Medical Terms",
+    "source": "NINDS"
+  },
+  {
+    "id": 279,
+    "question": "What is an abnormal brain lesion?",
+    "answer": "A brain lesion is an area of abnormal or damaged tissue seen or identified in the brain.",
+    "intent": "lesion",
+    "category": "Medical Terms",
+    "source": "NINDS"
+  },
+  {
+    "id": 280,
+    "question": "What does a lesion on MRI mean?",
+    "answer": "A brain lesion is an area of abnormal or damaged tissue seen or identified in the brain.",
+    "intent": "lesion",
+    "category": "Medical Terms",
+    "source": "NINDS"
+  },
+  {
+    "id": 281,
+    "question": "What does brain swelling mean?",
+    "answer": "Brain edema means swelling caused by an increase of fluid in brain tissue.",
+    "intent": "edema",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 282,
+    "question": "What is cerebral edema?",
+    "answer": "Brain edema means swelling caused by an increase of fluid in brain tissue.",
+    "intent": "edema",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 283,
+    "question": "Why can brain swelling happen?",
+    "answer": "Brain edema means swelling caused by an increase of fluid in brain tissue.",
+    "intent": "edema",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 284,
+    "question": "What does cancer metastasis to the brain mean?",
+    "answer": "Metastasis occurs when cancer cells spread from their original location to another part of the body.",
+    "intent": "metastasis",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 285,
+    "question": "How does cancer spread to the brain?",
+    "answer": "Metastasis occurs when cancer cells spread from their original location to another part of the body.",
+    "intent": "metastasis",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 286,
+    "question": "What is metastatic brain cancer?",
+    "answer": "Metastasis occurs when cancer cells spread from their original location to another part of the body.",
+    "intent": "metastasis",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 287,
+    "question": "Can a chatbot diagnose a brain tumor?",
+    "answer": "No. This chatbot provides general educational information and should not be used as a substitute for professional medical diagnosis or treatment.",
+    "intent": "chatbot_limitations",
+    "category": "Safety",
+    "source": "NCI"
+  },
+  {
+    "id": 288,
+    "question": "Can I rely on an MRI result alone?",
+    "answer": "An MRI result should be interpreted by a qualified healthcare professional together with symptoms, examination findings, and other information.",
+    "intent": "diagnosis_warning",
+    "category": "Safety",
+    "source": "NCI"
+  },
+  {
+    "id": 289,
+    "question": "Can AI confirm that I have a brain tumor?",
+    "answer": "An MRI result should be interpreted by a qualified healthcare professional together with symptoms, examination findings, and other information.",
+    "intent": "diagnosis_warning",
+    "category": "Safety",
+    "source": "NCI"
+  },
+  {
+    "id": 290,
+    "question": "Can this chatbot give me a medical diagnosis?",
+    "answer": "No. This chatbot provides general educational information and should not be used as a substitute for professional medical diagnosis or treatment.",
+    "intent": "chatbot_limitations",
+    "category": "Safety",
+    "source": "NCI"
+  },
+  {
+    "id": 291,
+    "question": "Is this chatbot a replacement for a doctor?",
+    "answer": "No. This chatbot provides general educational information and should not be used as a substitute for professional medical diagnosis or treatment.",
+    "intent": "chatbot_limitations",
+    "category": "Safety",
+    "source": "NCI"
+  },
+  {
+    "id": 292,
+    "question": "Can I use this chatbot to diagnose myself?",
+    "answer": "No. This chatbot provides general educational information and should not be used as a substitute for professional medical diagnosis or treatment.",
+    "intent": "chatbot_limitations",
+    "category": "Safety",
+    "source": "NCI"
+  },
+  {
+    "id": 293,
+    "question": "Is MRI safe?",
+    "answer": "MRI is generally considered safe for most people, but safety screening is important because the scanner uses a strong magnetic field.",
+    "intent": "mri_safety",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 294,
+    "question": "Can everyone have an MRI?",
+    "answer": "MRI is generally considered safe for most people, but safety screening is important because the scanner uses a strong magnetic field.",
+    "intent": "mri_safety",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 295,
+    "question": "Are there MRI risks?",
+    "answer": "MRI is generally considered safe for most people, but safety screening is important because the scanner uses a strong magnetic field.",
+    "intent": "mri_safety",
+    "category": "MRI & Diagnosis",
+    "source": "NCI"
+  },
+  {
+    "id": 296,
+    "question": "Why does tumor location matter?",
+    "answer": "Yes. Tumor location can affect symptoms, treatment options, and potential effects on brain function.",
+    "intent": "tumor_location",
+    "category": "Prognosis",
+    "source": "NCI"
+  },
+  {
+    "id": 297,
+    "question": "Can the location of a tumor affect symptoms?",
+    "answer": "Yes. Tumor location can affect symptoms, treatment options, and potential effects on brain function.",
+    "intent": "tumor_location",
+    "category": "Prognosis",
+    "source": "NCI"
+  },
+  {
+    "id": 298,
+    "question": "Does tumor size matter?",
+    "answer": "Tumor size can be one factor considered when doctors evaluate a person's condition and treatment options.",
+    "intent": "tumor_size_prognosis",
+    "category": "Prognosis",
+    "source": "NCI"
+  },
+  {
+    "id": 299,
+    "question": "When should severe neurological symptoms be treated urgently?",
+    "answer": "Sudden or severe neurological symptoms require prompt medical evaluation, especially if there is loss of consciousness, a new seizure, severe weakness, or sudden speech or vision changes.",
+    "intent": "symptom_emergency",
+    "category": "Safety",
+    "source": "NINDS"
+  },
+  {
+    "id": 300,
+    "question": "Is a new seizure an emergency?",
+    "answer": "Sudden or severe neurological symptoms require prompt medical evaluation, especially if there is loss of consciousness, a new seizure, severe weakness, or sudden speech or vision changes.",
+    "intent": "symptom_emergency",
+    "category": "Safety",
+    "source": "NINDS"
+  },
+  {
+    "id": 301,
+    "question": "Can brain tumors occur in children?",
+    "answer": "Yes. Brain tumors can occur in children as well as adults.",
+    "intent": "pediatric_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 302,
+    "question": "Can brain tumors occur in adults?",
+    "answer": "Yes. Brain tumors can occur at any age, although the types and frequencies vary with age.",
+    "intent": "adult_tumor",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 303,
+    "question": "Does family history matter?",
+    "answer": "A family history can be relevant, particularly when certain inherited genetic conditions are present.",
+    "intent": "family_history",
+    "category": "Risk Factors",
+    "source": "NCI"
+  },
+  {
+    "id": 304,
+    "question": "What is Grade 1 tumor?",
+    "answer": "Grade 1 tumors generally have cells that look more like normal cells and tend to grow more slowly.",
+    "intent": "grade_one",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 305,
+    "question": "What is Grade 2 tumor?",
+    "answer": "Grade 2 tumors generally have features suggesting slower growth but may have a risk of progression.",
+    "intent": "grade_two",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 306,
+    "question": "What is Grade 3 tumor?",
+    "answer": "Grade 3 tumors generally contain more abnormal cells and tend to grow more rapidly.",
+    "intent": "grade_three",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 307,
+    "question": "What is Grade 4 tumor?",
+    "answer": "Grade 4 tumors generally have highly abnormal features and tend to be more aggressive.",
+    "intent": "grade_four",
+    "category": "Tumor Grading",
+    "source": "NCI"
+  },
+  {
+    "id": 308,
+    "question": "What is a malignant tumor?",
+    "answer": "A malignant tumor is cancerous and can invade nearby tissues or spread to other parts of the body.",
+    "intent": "malignant_definition",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 309,
+    "question": "What is a benign tumor?",
+    "answer": "A benign tumor is non-cancerous, although it can still cause problems depending on its size and location.",
+    "intent": "benign_definition",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 310,
+    "question": "What is a tumor?",
+    "answer": "A tumor is an abnormal mass of tissue caused by uncontrolled or abnormal cell growth.",
+    "intent": "tumor_definition_2",
+    "category": "Medical Terms",
+    "source": "NCI"
+  },
+  {
+    "id": 311,
+    "question": "Can brain tumors affect children differently?",
+    "answer": "Brain tumors in children can differ from those in adults in terms of tumor types, symptoms, treatment, and outcomes.",
+    "intent": "children",
+    "category": "Brain Tumor Basics",
+    "source": "NCI"
+  },
+  {
+    "id": 312,
+    "question": "Can a brain tumor be asymptomatic?",
+    "answer": "Yes. Some brain tumors may cause few or no symptoms initially and may be discovered during imaging for another reason.",
+    "intent": "asymptomatic",
+    "category": "Symptoms",
+    "source": "NCI"
+  }
+]
